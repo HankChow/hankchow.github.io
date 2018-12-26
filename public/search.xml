@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[如何安装及管理 Ruby]]></title>
+    <url>%2F2018%2F12%2F25%2Fhow-to-install-and-manage-ruby%2F</url>
+    <content type="text"><![CDATA[可以使用 rvm 管理 Ruby 及其软件包。 预先安装 Ruby 需要使用到的软件包： 1yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel 使用 rvm 官方提供的脚本安装 rvm： 1curl -L get.rvm.io | sh -s stable 如果按照以上命令安装 rvm 失败，需要使用以下方式更新相关证书： 12curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import - 证书更新之后再次执行 curl -L get.rvm.io | sh -s stable 安装 rvm。安装完成时候可以设置 rvm 命令： 1source /etc/profile.d/rvm.sh 查看当前 Ruby 版本： 1ruby -v 使用 rvm 安装指定版本的 Ruby： 1rvm install &#123;ruby_version&#125; 如果安装过程太慢，可以考虑切换到其它安装源镜像，在 /usr/local.rvm/user/db 文件中加入： 1ruby_url=&#123;ruby_source_url&#125; 即可。]]></content>
+      <tags>
+        <tag>Ruby</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker 运行官方 MySQL 镜像无法远程连接的坑]]></title>
+    <url>%2F2018%2F12%2F01%2Fa-pitfall-of-connecting-failure-to-mysql-in-docker%2F</url>
+    <content type="text"><![CDATA[使用 Docker 官方提供的 MySQL 镜像进行安装、建立容器（必须指定端口映射和 root 口令）。 12docker pull mysql:latestdocker run -p 9527:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql 但此时如果直接远程连接该容器中的 MySQL 并输入口令后，则会出现报错信息： 1ERROR 2059 (HY000): Authentication plugin &apos;caching_sha2_password&apos; cannot be loaded: /usr/lib64/mysql/plugin/caching_sha2_password.so: cannot open shared object file: No such file or directory 根据报错信息，连接失败原因为口令使用了 caching_sha2_password 方式进行加密，通过 SELECT user, host, plugin, authentication_string FROM user WHERE user=&#39;root&#39;; 查询可以看到 root 用户的口令确实是使用 caching_sha2_password 方式进行加密，而客户端找不到 caching_sha2_password 插件，因此连接失败。 根据官方文档，可以将加密方式更改为 mysql_native_password。通过 ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;root&#39;; 将 root 用户的口令加密方式更改为 mysql_native_password，在远程即可正常连接 MySQL。]]></content>
+      <tags>
+        <tag>Docker</tag>
+        <tag>MySQL</tag>
+        <tag>坑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python re.findall() 中的关于括号的坑]]></title>
+    <url>%2F2018%2F12%2F01%2Fa-pitfall-of-re-findall-with-brackets-in-Python%2F</url>
+    <content type="text"><![CDATA[在 Python 中使用正则表达式进行匹配时，使用 re.search() 和 re.findall() 时对正则表达式的处理有所不同。 例如使用正则表达式 ([0-9A-F]{2}:){5}[0-9A-F]{2} 匹配一个 MAC 地址，待处理的字符串为 12:34:56:78:90:AB 。 使用 re.search() 进行匹配： 123import rematch = re.search('([0-9A-F]&#123;2&#125;:)&#123;5&#125;[0-9A-F]&#123;2&#125;', '12:34:56:78:90:AB').group()print(match) 结果为 ‘12:34:56:78:90:AB’ ，符合预期； 使用 re.findall() 进行匹配： 123import rematch = re.findall('([0-9A-F]&#123;2&#125;:)&#123;5&#125;[0-9A-F]&#123;2&#125;', '12:34:56:78:90:AB')print(match) 结果为 [‘90:’]，不符合预期。 主要原因是 re.findall() 在匹配的时候，返回的是括号所匹配到的结果，在这里是只返回 [0-9A-F]{2}: 的匹配结果，而且后面带有 {5} ，因此返回第五个符合的匹配；对于多个括号，则返回多个括号分别匹配到的结果；如果没有括号，则返回就返回整条语句所匹配到的结果。 解决方案是使用括号将整个正则表达式括起来，这样 re.findall() 将会从外到内将每一组括号匹配到的结果列出。 123import rematch = re.findall('(([0-9A-F]&#123;2&#125;:)&#123;5&#125;[0-9A-F]&#123;2&#125;)', '12:34:56:78:90:AB')print(match) 结果为 [(‘12:34:56:78:90:AB’, ‘90:’)] ，获取第一个元素即可。 实际上这是正则表达式所特有的 ， 任何一门高级语言使用正则都满足这个特点：有括号时只能匹配到括号中的内容，没有括号（相当于在最外层增加了一个括号）。在正则表达式里面 “()” 代表的是分组的意思，一个括号代表一个分组，匹配是只能匹配到 ”()” 中的内容。]]></content>
+      <tags>
+        <tag>坑</tag>
+        <tag>Python</tag>
+        <tag>正则表达式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python 在字典中根据条件筛选数据]]></title>
+    <url>%2F2018%2F12%2F01%2Ffilting-data-in-dictionaries-in-Python%2F</url>
+    <content type="text"><![CDATA[首先创建一个字典 1234import randomd = &#123;str(x): random.randint(60, 100) for x in range(1, 21)&#125;print(d) 执行结果为 1&#123;'1': 65, '2': 75, '3': 96, '4': 85, '5': 78, '6': 94, '7': 92, '8': 68, '9': 94, '10': 72, '11': 97, '12': 65, '13': 64, '14': 72, '15': 88, '16': 93, '17': 75, '18': 61, '19': 83, '20': 71&#125; 如果需要在字典中筛选出值大于 90 的 id(key) 都有哪些，有以下四种实现方式： 循环迭代 12345dd = &#123;&#125;for k in d: if d[k] &gt; 90: dd[k] = d[k]print(dd) 结果为： 1&#123;'3': 96, '6': 94, '7': 92, '9': 94, '11': 97, '16': 93&#125; filter() 函数 12dd = list(filter(lambda x: d[x] &gt; 90, d))print(dd) 结果为： 1['3', '6', '7', '9', '11', '16'] 字典解析式 12dd = &#123;k: v for k, v in d.items() if v &gt; 90&#125;print(dd) 结果为： 1&#123;'3': 96, '6': 94, '7': 92, '9': 94, '11': 97, '16': 93&#125; 生成器解析式 123dd = (&#123;k: v&#125; for k, v in d.items() if v &gt; 90)for i in dd: print(i) 结果为： 123456&#123;'3': 96&#125;&#123;'6': 94&#125;&#123;'7': 92&#125;&#123;'9': 94&#125;&#123;'11': 97&#125;&#123;'16': 93&#125;]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>奇技淫巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Saltstack 初始化部署]]></title>
+    <url>%2F2018%2F12%2F01%2Finitiation-of-saltstack%2F</url>
+    <content type="text"><![CDATA[主控端安装 salt-master： 123yum install -y salt-mastersystemctl enable salt-master.servicesystemctl start salt-master.service 被控端安装 salt-minion： 123yum install -y salt-minionsystemctl enable salt-minion.servicesystemctl start salt-minion.service 在主控端添加 TCP 4505、TCP 4506 的规则，在被控端无需配置防火墙。原理是被控端直接与主控端的 zeroMQ 建立长连接，接受广播到的任务信息并执行。 12iptables -I INPUT -m state --state new -m tcp -p tcp --dport 4505 -j ACCEPTiptables -I INPUT -m state --state new -m tcp -p tcp --dport 4506 -j ACCEPT 在主控端进行角色配置，修改主控端配置文件 /etc/salt/master： 123456789interface: &#123;主控端 IP 地址&#125;# 自动认证，如果不打开，需要通过 `salt-key -a &#123;id&#125;` 进行 key 的认证auto_accept: true# 指定 Saltstack 文件根目录位置file_roots: base: - /srv/salt 然后重启主控端的 Saltstack 服务。 在被控端进行角色配置，修改被控端配置文件 /etc/salt/minion： 1234master: &#123;主控端 IP 地址&#125;# 修改被控端主机识别 idid: &#123;id&#125; 然后重启被控端的 Saltstack 服务。]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>Linux</tag>
+        <tag>Saltstack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python 按照多个键进行排序]]></title>
+    <url>%2F2018%2F12%2F01%2Fsorting-with-multi-keys-in-Python%2F</url>
+    <content type="text"><![CDATA[在 Python 中，可以使用 list.sort() 或 sorted(list) 对列表进行排序，而且可以使用 key 参数使列表按照一定的键值来排序。 有一些情况下，需要首先对列表按照键值1来进行排序，排序后有多个元素的键值1相等，在每批键值1相等的元素当中，需要再按照键值2进行排序，甚至后续还有更多用以排序的键值。此时可以把 key 参数中 lambda 表达式的返回值修改为一个元组，其中元组的每个元素依次是需要依据排序的键值。 1234567891011121314151617181920212223242526from pprint import pprint lst = [ (2, 1), (1, 2), (1, 3), (1, 1) ] pprint(sorted(lst), key=lambda x: x[0])# 此时仅对第一个元素进行排序# [# (1, 2),# (1, 3), # (1, 1), # (2, 1) # ] pprint(sorted(lst), key=lambda x: (x[0], x[1]))# 此时先对第一个元素进行排序，在第一个元素相同的情况下，按第二个元素进行排序# [# (1, 1),# (1, 2), # (1, 3), # (2, 1) # ]]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[快速安装 zsh]]></title>
+    <url>%2F2018%2F12%2F01%2Fhow-to-install-zsh-quickly%2F</url>
+    <content type="text"><![CDATA[在新机器上快速安装比 bash 不知道高到哪里去了的 zsh。 12345678# 安装 zshyum -y install zsh# 把默认 shell 替换为 zshchsh -s /bin/zsh# 安装 oh-my-zshwhich curl || yum -y install curlcurl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh]]></content>
+      <tags>
+        <tag>zsh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux 下普通用户获取 sudo 权限的方法]]></title>
+    <url>%2F2018%2F12%2F01%2Fhow-to-grant-sudo-privilege-to-a-normal-user%2F</url>
+    <content type="text"><![CDATA[在 Linux 创建新用户后，如果需要使该用户能以 sudo 方式执行命令，需要把用户添加到 sudoers 文件中，否则在使用 sudo 的时候会报“{user} is not in the sudoers file”错误。此时需要将用户添加到 sudoers 文件中，并使其获得相应权限。 首先需要使用 root 用户，执行命令： 1visudo 打开 sudoers 文件，然后在其中添加 12&#123;user&#125; ALL=(ALL:ALL) ALL%&#123;user&#125; ALL=(ALL) NOPASSWD: ALL # 设置&#123;user&#125;组下面的用户使用 sudo 不需要输入密码 保存后，该用户即可使用 sudo 命令。 4个 ALL 之中，第 1 个 ALL 是用户(user)，第 2 个 ALL 是机器，第 3 个 ALL 是新用户身分(run_as_user, 如 root, oracle)，第 4 个ALL 是命令。]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Selenium 使用 Firefox 无头浏览器]]></title>
+    <url>%2F2018%2F12%2F01%2Fhow-to-use-headless-browser-of-firefox%2F</url>
+    <content type="text"><![CDATA[目前 Selenium 已经停止对 PhantomJS 的支持。虽然 webdriver.PhantomJS() 仍然可以使用，但最佳选择应该是 Firefox 或者 Chrome 对应的无头浏览器，如果需要使用 Firefox 无头浏览器，可以按照以下方式开启： 123456from selenium import webdriverfrom selenium.webdriver.firefox.options import Optionsoptions = Options()options.add_argument("-headless")driver = Firefox(firefox_options=options) 此时建立的 webdriver 对象就是一个 Firefox 的无头浏览器，如果需要使用 Chrome 无头浏览器，建立方法与 Firefox 差异不大。与 PhantomJS 无头浏览器相比，Firefox 无头浏览器建立对象的速度比较慢。]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>Firefox</tag>
+        <tag>PhantomJS</tag>
+        <tag>Selenium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ansible 的各个模块及相关参数]]></title>
+    <url>%2F2018%2F12%2F01%2Fsome-modules-and-related-parameters-in-Ansible%2F</url>
+    <content type="text"><![CDATA[command：在被控节点上执行命令 command 是 Ansible 的默认模块，可以不通过 -m 指明使用该模块 可以直接执行 -a 中的命令，但由于不通过 shell 执行，所以与 shell 有关的变量、重定向、管道等功能无法使用 kwargs： chdir：目录名。首先跳转到该目录后再执行命令 shell：在被控节点上通过 shell 执行命令 与 command 模块基本相同，而且由于通过 shell 执行，所以可以使用变量、重定向、管道等功能，并且使用所选用户的默认 shell kwargs： chdir：目录名。首先跳转到该目录后再执行命令 script：在被控节点上执行主控节点上的脚本 直接在 -a 中指明主控节点上的脚本位置即可，且这个脚本需要有 x 权限 ping：检测某个目的节点是否响应 这个检测过程并不向目的节点发送 ping 包，只是反映目的节点是否可控，目的节点即使在可达的情况下也不一定可控 不指定 -a yum：在被控节点上通过 yum 管理软件 kwargs： name：软件包名称。如果为 * ，则执行 yum -y updtae；名称前面加 @ 为安装软件包组；名称前面加 @^ 为安装环境组；这个参数也可以是 url，此时通过指定的 rpm 文件进行安装 state：软件安装状态。如果为 present、latest 或 installed 则执行安装软件；如果为 absent 或 removed 则执行移除软件 copy：从主控节点向被控节点复制文件 kwargs： src：主控节点的文件位置。可以是绝对路径或相对路径，如果是一个目录，将会进行递归复制 dest：被控节点的文件位置。必须为绝对路径，且如果 src 是一个目录，dest 也必须为一个目录 directory_mode：递归设定目录的权限。默认为系统默认权限 force：是否覆盖。默认为 yes，即当目标文件和源文件不同时，强制覆盖文件，如果为 no 则只有在目标文件不存在时才复制 fetch：从被控节点向主控节点复制文件 与 copy 模块并不仅仅是方向相反，copy 可以复制文件和目录，而 fetch 模块只能复制文件 kwargs： src：被控节点的文件位置。 dest：文件在主控节点中的保存位置。真实的保存目录需要注意，如果指定了 dest 参数为 /foo，被控节点为 bar，则文件将会保存在 /foo/bar/ 下 fail_on_missing：被控节点中的文件不存在时是否报错。默认为 no，当为 no 时即使文件不存在也不会报错，此时主控节点也不会创建相应的目录 synchronize：通过 rsync 传输文件 kwargs： src：源文件的位置。 dest：目标文件的位置。 mode：推送模式或拉取模式。默认为推送模式 push，从主控节点向被控节点传输文件 delete：是否删除文件使两方一致。两方的一致性以推送方为准，默认为 no service：用于管理服务 kwargs： name：服务名称。 state：对服务的操作。包括启动(started)、停止(stopped)、重启(restarted)、重新加载(reloaded) enabled：是否开机启动。且 state 和 enabled 两个参数中至少要有一个 sleep：在 state=restarted 的时候，指定在 stop 和 start 之间暂停的秒数 get_url：通过 http/https/ftp 下载文件 kwargs： url：下载的 uri dest：文件下载目标位置。如果 dest 为目录，则使用服务器提供的文件名，或者如果没有提供，将使用远程服务器上的 url 的基本名称。 timeout：设置超时时间。默认为 10s headers：指定访问时的请求头。以 key: value 的格式填写]]></content>
+      <tags>
+        <tag>Ansible</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[查看文件中的重复行]]></title>
+    <url>%2F2018%2F12%2F01%2Fhow-to-find-duplicated-lines-in-files%2F</url>
+    <content type="text"><![CDATA[1sort &lt;filename&gt; | uniq -cd uniq 命令用于报告重复的行，但只能用于相邻的两行，因此需要先用 sort 对文件中的个行进行排序。加入 -d 参数能把重复的行显示出来，加入 -c 参数能显示重复的行重复了多少次。]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用 pymysql 模块时查询返回字典的方法]]></title>
+    <url>%2F2018%2F11%2F30%2Fhow-to-return-dictionary-when-using-pymysql-module-for-querying%2F</url>
+    <content type="text"><![CDATA[使用 pymysql 模块在 MySQL 中进行查询时，如果是使用以下这种默认的查询方法时，调用 fetchone() 和 fetchall() 返回的查询结果将会分别是元组和嵌套元组，只能使用下标去访问查询出来的每个字段的值，相当不方便，也不灵活。 123456789101112131415import pymysqlconnection = &#123; "host": "", "user": "", "passwd": "", "db": "", "charset": "utf8"&#125;conn = pymysql.connect(**connection)cursor = conn.cursor()sql = "blabla"cursor.execute(sql)result = cursor.fetchall() 最方便的返回莫过于字典了，字段名作为键名，查询出来的值作为键值，与字段的顺序无关。需要在查询的时候返回字典，只需要在连接参数中指定一个 cursorclass 参数为 pymysql.cursors.DictCursor 即可，使用 fetchone() 和 fetchall() 返回的查询结果分别为字典和以每一行为一个字典组成的列表。 123456789101112131415import pymysqlconnection = &#123; "host": "", "user": "", "passwd": "", "db": "", "charset": "utf8", "cursorclass": pymysql.cursors.DictCursor&#125;conn = pymysql.connect(**connection)cursor = conn.cursor()sql = "blabla"cursor.execute(sql)result = cursor.fetchall()]]></content>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>Python</tag>
+        <tag>奇技淫巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[json.dumps() 中的 ensure_ascii 参数]]></title>
+    <url>%2F2018%2F11%2F30%2Fthe-parameter-ensure-ascii-in-json-dumps%2F</url>
+    <content type="text"><![CDATA[在使用 json.dumps() 的时候，如果数据中包含中文，需要指定一个参数 ensure_ascii 的值为 False。 这是因为 json.dumps() 在序列化时，对中文默认使用 ASCII 编码。 1234567import jsonprint(json.dumps("中"))# "\u4e2d"print(json.dumps("中", ensure_ascii=False))# "中"]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CentOS 7 上的 systemctl 配置]]></title>
+    <url>%2F2018%2F11%2F30%2Fsystemctl-configurations-on-CentOS-7%2F</url>
+    <content type="text"><![CDATA[CentOS 7 的服务 systemctl 脚本存放在目录 /usr/lib/systemd/ 下，有系统（system）和用户（user）之分，需要开机不登陆就能运行的程序，存在系统服务即 /usr/lib/systemd/system/ 目录下。 CentOS 7 的每一个服务以 .service 结尾，一般会分为 3 部分：[Unit]、[Service] 和 [Install]。 [Unit]部分主要是对这个服务的说明，内容包括Description和After，Description 用于描述服务，After用于描述服务类别 [Service]部分是服务的关键，是服务的一些具体运行参数的设置。Type=forking 是后台运行的形式，User=users 是设置服务运行的用户,Group=users 是设置服务运行的用户组,PIDFile 为存放 PID 的文件路径，ExecStart 为服务的具体运行命令,ExecReload 为重启命令，ExecStop 为停止命令，PrivateTmp=True 表示给服务分配独立的临时空间。 [Install]部分是服务安装的相关设置，可设置为多用户的。 注意：[Service]部分的启动、重启、停止命令全部要求使用绝对路径，使用相对路径则会报错。]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[YAML 语法]]></title>
+    <url>%2F2018%2F11%2F30%2FYAML-grammar%2F</url>
+    <content type="text"><![CDATA[YMAL：YMAL Ain’t Markup Language 123456789101112131415---# 一位职工记录name: Example Developerjob: Developerskill: Eliteemployed: Truefoods: - Apple - Orange - Strawberry - Mangolanguages: ruby: Elite python: Elite dotnet: Lame YAML 总是以 — （三个横杠）作为文件的开始，这是 YAML 格式的一部分； 普通的键值对直接以 key: value 的格式每行存储，冒号后面必须为一个空格； 对于列表，列表中的每个元素都以 - （一个横杠 + 一个空格）开始，且每个元素的缩进相同； 对于字典，字典中的每一个键值对和普通的键值对一样（其实整个文件存储的形式就是键值对），但同一个字典中每个键值对的缩进也要相同； 在值中含有冒号等引起解析歧义的字符时，需要用双引号将整个值包住； 使用 来引用变量。]]></content>
+      <tags>
+        <tag>YAML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ansible Inventory 文件]]></title>
+    <url>%2F2018%2F11%2F30%2FAnsible-Inventory-file%2F</url>
+    <content type="text"><![CDATA[Ansible 的 Inventory 文件主要记录了连接主机的信息和配置，默认路径为 /etc/ansible/hosts。 在 Inventory 文件中以行为单位直接写入主机的 host，如果仅填写了 host，则其它信息均按照默认值（如 ssh 端口为22）。也可以按照组的格式进行配置： 1234567891011[group1]host1host2[group2]host2host3[group3:children]group1group2 同一个主机可以同时属于多个组，如 host2 可以同时属于 group1 组和 group2 组。组也可以作为另一个组的成员，如 group1 和 group2 就是 group3 的成员，因此 host1、host2、host3 均属于 group3 组。 在每个 host 后可以使用变量来设置一些具体的参数，例如端口、登录用户名等。也可以为整个组设定变量： 123[group1:vars]ansible_ssh_port=2222ansible_ssh_user=root 常用的 Inventory 参数： 1234567891011121314151617181920212223242526272829303132ansible_ssh_host 将要连接的远程主机名.与你想要设定的主机的别名不同的话,可通过此变量设置.ansible_ssh_port ssh端口号.如果不是默认的端口号,通过此变量设置.ansible_ssh_user 默认的 ssh 用户名ansible_ssh_pass ssh 密码(这种方式并不安全,我们强烈建议使用 --ask-pass 或 SSH 密钥)ansible_sudo_pass sudo 密码(这种方式并不安全,我们强烈建议使用 --ask-sudo-pass)ansible_sudo_exe (new in version 1.8) sudo 命令路径(适用于1.8及以上版本)ansible_connection 与主机的连接类型.比如:local, ssh 或者 paramiko. Ansible 1.2 以前默认使用paramiko.1.2 以后默认使用 &apos;smart&apos;,&apos;smart&apos; 方式会根据是否支持 ControlPersist, 来判断&apos;ssh&apos; 方式是否可行.ansible_ssh_private_key_file ssh 使用的私钥文件.适用于有多个密钥,而你不想使用 SSH 代理的情况.ansible_shell_type 目标系统的shell类型.默认情况下,命令的执行使用 &apos;sh&apos; 语法,可设置为 &apos;csh&apos; 或 &apos;fish&apos;.ansible_python_interpreter 目标主机的 python 路径.适用于的情况: 系统中有多个 Python, 或者命令路径不是&quot;/usr/bin/python&quot;,比如 \*BSD, 或者 /usr/bin/python 不是 2.X 版本的 Python.我们不使用 &quot;/usr/bin/env&quot; 机制,因为这要求远程用户的路径设置正确,且要求 &quot;python&quot; 可执行程序名不可为 python以外的名字(实际有可能名为python26). 与 ansible_python_interpreter 的工作方式相同,可设定如 ruby 或 perl 的路径....]]></content>
+      <tags>
+        <tag>Ansible</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[各种文档链接]]></title>
+    <url>%2F2018%2F11%2F29%2Fdocs%2F</url>
+    <content type="text"><![CDATA[Ansible BeautifulSoup itchat requests scrapy]]></content>
+      <tags>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在新机器上快速安装 Python 3]]></title>
+    <url>%2F2018%2F11%2F29%2Fhow-to-install-Python-3-quickly%2F</url>
+    <content type="text"><![CDATA[对于以 Python 3 为主力开发语言的人来说，在一台新的机器上必须尽早安装上 Python 3。而对于绝大多数 Linux 发行版来说，都只默认安装了 Python 2 而没有 Python 3，而且有一些 Linux 自带的命令（例如 yum）会依赖 Python 2，这就需要在安装 Python 3 的同时保留 Python 2，并且使两者区分开来。 快速安装如下： 123456789101112131415161718192021222324# 版本号version="3.6.2"# 安装依赖包yum -y groupinstall "Development tools"yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel# 下载 Python 3 源码，版本号可改which wget || yum -y install wgetwget https://www.python.org/ftp/python/$version/Python-$version.tar.xz# 解包、编译、安装mkdir /usr/local/python3mv ./Python-$version.tar.xz /usr/local/python3cd /usr/local/python3tar -xvJf Python-$version.tar.xzcd Python-$versionwhich gcc || yum install -y gcc./configure --prefix=/usr/local/python3make &amp;&amp; make install# 设定 Python 3 和 pip3 的软连接ln -s /usr/local/python3/bin/python3 /usr/bin/python3ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>Linux</tag>
+        <tag>快速安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在 Vim 内 sudo 保存文件]]></title>
+    <url>%2F2018%2F11%2F29%2Fhow-save-files-using-sudo-without-quitting-vim%2F</url>
+    <content type="text"><![CDATA[有时候未使用 root 用户在一些较为重要的目录下使用 Vim 编辑文件时，往往会因为权限不足而无法保存，而退出去 sudo 后重新编辑又比较浪费时间。这个时候需要在 Vim 中执行下面这个命令，就可以在不退出 Vim 的前提下 sudo 保存文件。 1:w !sudo tee % :w 在 Vim 中是保存文件，这是毫无疑问的。 ！后面跟一个命令，表示让 Vim 执行一个外部命令。 tee 是一个把 stdin 保存到文件的小工具，具体用法是： 1tee &#123;filename&#125; 就能将 stdin 流保存到指定的文件中。 % 是 Vim 当中一个只读寄存器的名字，总保存着当前编辑文件的文件路径。]]></content>
+      <tags>
+        <tag>奇技淫巧</tag>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL 引擎 MyISAM 和 InnoDB 的区别]]></title>
+    <url>%2F2018%2F11%2F29%2Fthe-difference-between-MyISAM-and-InnoDB-in-MySQL%2F</url>
+    <content type="text"><![CDATA[MySQL 5.5 开始 InnoDB 成为 MySQL 的默认引擎（之前是 MyISAM）。 MyISAM 不支持事务，InnoDB 支持事务。对于 InnoDB 每一条 SQL 语句都默认封装成事务自动提交，但会影响速度。所以最好把多条 SQL 语句放在 begin 和 commit 之间组成一个事务。 MyISAM 不支持外键，InnoDB 支持外键。如果一个 InnoDB 表包含外键，这个表转为 MyISAM 表的时候会失败。 MyISAM 是非聚集索引，数据文件是分离的，索引保存的是数据文件的指针，主键索引和辅助索引是独立的。InnoDB 是聚集索引，数据文件和索引绑定在一起，因此必须要有主键，且通过主键索引的效率很高。但辅助索引需要两次查询，先查询到主键，然后再通过主键查询到数据。 MyISAM 用一个变量保存了整个表的行数，执行 SELECT COUNT(*) 的时候直接读出该变量即可，速度很快。InnoDB 不保存表的具体行数，执行 SELECT COUNT(*) 的时候需要全表扫描。 MyISAM 支持全文索引，查询效率较高。InnoDB 不支持全文索引。 MyISAM 更强调性能，更适用于执行 SELECT 较多的情况。InnoDB 更适用于 INSERT 和 UPDATE 较多的情况。 MyISAM 在 DELETE 操作时会重新建立一个表，InnoDB 会一行一行地删除记录。 MyISAM 不支持行锁，只支持表锁。MyISAM 同一个表上的读锁和写锁是互斥的，MyISAM 并发读写时如果等待队列中同时有读和写请求，默认写请求的优先级高，但 MyISAM 的写操作性能较低，会导致进程阻塞。InnoDB 支持行锁。]]></content>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python 中的列表去重]]></title>
+    <url>%2F2018%2F11%2F29%2Flist-deduplication-in-Python%2F</url>
+    <content type="text"><![CDATA[在 Python 中，普通列表可以使用 set() 来进行去重，这是使用了集合的唯一性，把列表转换为集合之后保证没有重复的元素，然后再使用 list() 把集合转换为列表。但这种方法并不保证元素之间的顺序，而且如果原列表之中含有不能被 hash 的元素（如字典、集合之类），原列表更无法转换为集合类型。 这种情况下应该保持列表的类型，使用 lambda 表达式进行去重： 1234import functools.reducelst = [2, 3, 3, 1]func = lambda x, y: x if y in x else x + [y]functools.reduce(func, [[], ] + lst) 这个时候列表 lst 就是 [2, 3, 1] 了。]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[为什么读写文件推荐使用 with 语句块？]]></title>
+    <url>%2F2018%2F11%2F29%2Fwhy-WITH-block-is-recommended-for-reading-and-writing-files%2F</url>
+    <content type="text"><![CDATA[12with open('file_name') as f: data = f.read() 能够使用 with 语句块的条件是 with 所求值的对象必须有一个 __enter__() 方法，一个 __exit__() 方法。 而紧跟在 with 关键字后面的语句被求值后，返回对象的 __enter__() 方法被调用，这个方法的返回值将被赋值给 as 后面的变量。当 with 语句块中的全部语句被执行完之后，将调用前面返回对象的 __exit__() 方法。 对于读写文件来说，使用 with 语句块一般较为保险。在读文件时，如果使用了 with 语句块，在代码块结束后，由于自动执行了 __exit__() 方法，因此不需要手动使用 close() 方法来关闭被读的文件；当写文件时，操作系统往往不会立刻把数据写入磁盘，而是放到内存中缓存起来，空闲的时候再进行写入，只有调用 close() 方法时，操作系统才保证把没有写入的数据全部写入磁盘，忘记调用 close() 的后果是数据可能只写了一部分到磁盘，剩下的丢失了，而使用 with语句块就有效避免了这个问题。]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python 的新式类和经典类]]></title>
+    <url>%2F2018%2F11%2F29%2Fnew-class-and-classic-class-in-Python%2F</url>
+    <content type="text"><![CDATA[在 Python 中声明一个类的时候，如果这个类继承 object 类，这个类就是新式类；如果这个类没有继承任何类，这个类就是经典类。 1234567# 声明一个新式类class new_class(object)： pass# 声明一个经典类class classic_class(object): pass Python 的新式类已经兼容经典类，而且新式类已经解决了经典类中关于多继承的缺陷，因此在 Python 中推荐使用新式类。 1234567891011121314151617class A: def foo(self): print('called A.foo()')class B(A): passclass C(A): def foo(self): print('called C.foo()')class D(B, C): passif __name__ == '__main__': d = D() d.foo() B、C 是 A 的子类，D 多继承了 B、C 两个类，其中 C 重写了 A 中的 foo() 方法。 如果 A 是经典类，当调用 D 的实例的 foo() 方法时，Python 会按照深度优先的方法去搜索 foo() ，路径是 B-A-C ，执行的是 A 中的 foo()； 如果 A 是新式类，当调用 D 的实例的 foo() 方法时，Python 会按照广度优先的方法去搜索 foo() ，路径是 B-C-A ，执行的是 C 中的 foo()。 因为 D 是直接继承 C 的，从逻辑上说，执行 C 中的 foo() 更加合理，因此新式类对多继承的处理更为合乎逻辑。 在 Python 3.x 中的新式类已经兼容了经典类，无论 A 是否继承 object 类， D 实例中的 foo() 都会执行 C 中的 foo()。但是在 Python 2.7 中这种差异仍然存在，因此还是推荐使用新式类，要继承 object 类。]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows 下 Python 字符编码异常解决方案]]></title>
+    <url>%2F2018%2F11%2F29%2Fhow-to-fix-Python-UnicodeEncodeError-on-Windows%2F</url>
+    <content type="text"><![CDATA[在中文 Windows 系统中，文件的默认字符编码为 GBK，如果将一段编码为 UTF-8 的数据流在 Windows 下写入文件，就可能会解析失败并抛出 UnicodeEncodeError 异常。 解决方案是在打开要写入的文件时在 encoding 参数中指定数据流的编码，这样就能在先从数据流的编码转换为目的编码，然后写入文件。 1f = open('something.txt', 'w', encoding='utf-8') 对于一些编码不规范的文件，在读取是可能会遇到 UnicodeDecodeError 异常，因为在文件中有可能夹杂了一些非法编码的字符。这种情况下 open() 可以接受一个 errors 参数，来指定如果遇到编码错误时应该如何处理。这个参数有两个枚举值，分别是 strict 和 ignore，前者在遇到异常的时候直接抛出异常并退出，后者为直接忽略。 1f = open('something.txt', 'w', encoding='utf-8', errors='ignore')]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>Windows</tag>
+        <tag>编码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL 5.6 无口令 dump]]></title>
+    <url>%2F2018%2F11%2F29%2Fhow-to-use-mysqldump-without-password%2F</url>
+    <content type="text"><![CDATA[为了提高安全性，MySQL 5.6 开始在 mysql 和 mysqldump 命令中明文输入口令时报 Warning: Using apassword on the command line interface can be insecure. 的警告。 在使用 shell 脚本来导出数据的时候，还是不要使用明文口令为妙。对于 MySQL 5.6+，可以在配置文件（CentOS 7 中为 /etc/my.cnf）中加入以下内容，再使用 mysqldump 就不需要使用口令了。 123[mysqldump]user=&#123;MySQL 用户名&#125;password=&#123;口令&#125;]]></content>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用 sshkey 实现免密码 ssh]]></title>
+    <url>%2F2018%2F11%2F29%2Fhow-to-SSH-with-sshekeys%2F</url>
+    <content type="text"><![CDATA[在使用公有云的时候，可能会受到大量的扫描，其中大部分都是对常用用户（例如 root）的口令暴力猜测。虽说使用由各种字母、数字、符号混杂的口令能够大大提高安全性，但登录后看到那几万个 failed logins 总是有点碍眼。把 ssh 的端口从 22 改成其它不常见的端口也算是一个方法，但始终是治标不治本，毕竟这只能防一防那些随意乱扫的人，对于指定要 hack 某一台主机的，总能找到开放的 ssh 端口。 从另一个角度来说，在自己反复连接远程主机的时候，每次都需要重新输入口令，也是一键比较烦的事情。 使用 sshkey 来免口令 ssh 就可以避免以上两个问题。即使把 ssh 端口保持在 22，只要 sshkey 不符合，直接就拒绝连接了。同时，在ssh key 符合的情况下，能够不需要输入口令秒连接。 首先在本地 ssh-keygen -t rsa 生成密钥，就会在 ~/.ssh 目录下生成 id_rsa 和 id_rsa.pub 两个文件，分别是私钥和公钥。私钥是自己本地保存的，而公钥是可以公开分发的，因此将公钥文件 id_rsa.pub 通过能想到的各种方法放置到远程主机的 ~/.ssh 下，并执行 cat id_rsa.pub &gt;&gt; authorized_keys 追加写入，这样就相当于让远程主机认识到本地主机，可以免口令登录了。 然后修改 ssh 服务的配置文件 /etc/ssh/sshd_config ，把 PasswordAuthentication 字段的值改为 no，并重启 ssh 服务，就把 ssh 口令登录禁用了。]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[为远程主机设置别名]]></title>
+    <url>%2F2018%2F11%2F29%2Fset-alias-for-remote-hosts%2F</url>
+    <content type="text"><![CDATA[在进行 ssh 或者 scp 的时候，为了减少输入量和降低输入错误的概率，可以为常用的远程主机设置别名。 方法是修改 ~/.ssh/config 文件（如果不存在这个文件则创建），指定以下几个字段值即可： 1234host &#123;自定义的主机别名&#125;hostname &#123;主机的 IP&#125;port &#123;连接主机的端口&#125;user &#123;连接主机的用户名&#125;]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在 WordPress 上在线安装插件的坑]]></title>
+    <url>%2F2018%2F11%2F29%2Fpitfalls-of-online-installing-plugin-in-WordPress%2F</url>
+    <content type="text"><![CDATA[通过 WordPress 在线安装插件，目前遇到过两个坑： 如果通过 WordPress 在线安装插件，可能会遇到“无法连接到文件系统，请确认您的凭据”的提示。这种情况下一般不是 FTP 账号密码错误，而是安装插件所需要的操作权限不够。需要把 wordpress/、wordpress/wp-content/、wordpress/wp-content/plugins/ 这三个目录的权限设置为 777，并且在配置文件 wp-config.php 中加入以下几行： 123define("FS_METHOD","direct");define("FS_CHMOD_DIR", 0777);define("FS_CHMOD_FILE", 0777); 开始安装后，可能会提示安装失败。这种情况下很可能是 DNS 被封的原因导致，把系统配置文件 /etc/resolv.conf 中的两个 nameserver 值改为 Google 的 8.8.8.8 和 8.8.4.4 后保存即可。]]></content>
+      <tags>
+        <tag>坑</tag>
+        <tag>PHP</tag>
+        <tag>WordPress</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python 中时间戳、格式化时间、时间数组、datetime 之间的转换]]></title>
+    <url>%2F2018%2F11%2F29%2Fthe-transformation-among-timestamp-formatted-time-datetime-and-time-tuple-in-Python%2F</url>
+    <content type="text"><![CDATA[1234567891011121314151617181920212223242526import timefrom datetime import datetime # 获得时间戳timestamp = time.time() # 时间戳转为时间数组time_array = time.localtime(timestamp) # 时间数组转为时间戳timestamp = time.mktime(time_array()) # 格式化时间转为时间数组time_array = time.strptime(format_time, '%Y-%m-%d %H:%M:%S') # 时间数组转为格式化时间format_time = time.strftime('%Y-%m-%d %H:%M:%S', time_array) # datetime 转为时间戳ts = dt.timestamp() # 时间戳转为 datetimedt = datetime.fromtimestamp(ts) # 直接输出当前的格式化时间time.strftime('%Y-%m-%d %H:%M:%S')]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何在 CentOS 7 上手动搭建 LAMP 环境]]></title>
+    <url>%2F2018%2F11%2F29%2Fhow-to-build-LAMP-environment-on-CentOS-7%2F</url>
+    <content type="text"><![CDATA[拿到一台新的服务器之后，如果要搭 WordPress 之类的服务，就需要搭建一个 LAMP 环境。 鉴于网上各种一键 LAMP 的质量稂莠不齐，自己搭一个还是比较妥当的做法，而且后续如果需要自定义配置的话更加方便，不至于发生太多关于包依赖的问题。 12345678910111213141516171819202122# 安装 Apacheyum -y install httpd# 启动服务systemctl start httpd.service# 设置开机自动启动systemctl enable httpd.service # 安装 MySQL（在 CentOS 7 上其实是 MariaDB，但兼容 MySQL）yum -y install mariadb mariadb-server# 启动服务systemctl start mariadb.service# 设置开机启动服务systemctl enable mariadb.service# 设置数据库管理员密码mysql_secure_installation # 安装 PHPyum -y install php# 安装各种 PHP 的组件yum -y install php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap curl curl-devel php-mysql# 重启一下systemctl restart httpd.service 这样基本就可以直接安装 WordPress 了。]]></content>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>Apache</tag>
+        <tag>LAMP</tag>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+</search>
