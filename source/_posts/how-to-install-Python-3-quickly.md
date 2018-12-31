@@ -1,6 +1,6 @@
 ---
 title: 在新机器上快速安装 Python 3
-date: 2018-11-29 13:55:31
+date: 2016-02-14 13:55:31
 tags:
   - Linux
   - Python

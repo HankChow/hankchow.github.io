@@ -1,6 +1,6 @@
 ---
 title: 在 WordPress 上在线安装插件的坑
-date: 2018-11-29 10:38:25
+date: 2015-02-13 10:38:25
 tags:
   - PHP
   - WordPress

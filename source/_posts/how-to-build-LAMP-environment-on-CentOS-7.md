@@ -1,6 +1,6 @@
 ---
 title: 如何在 CentOS 7 上手动搭建 LAMP 环境
-date: 2018-11-29 10:00:58
+date: 2014-11-29 10:00:58
 tags: 
   - Apache
   - LAMP

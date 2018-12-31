@@ -1,6 +1,6 @@
 ---
 title: 使用 pymysql 模块时查询返回字典的方法
-date: 2018-11-30 10:10:14
+date: 2016-12-01 10:10:14
 tags:
   - MySQL
   - Python

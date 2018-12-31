@@ -1,6 +1,6 @@
 ---
 title: Ansible Inventory 文件
-date: 2018-11-30 10:07:21
+date: 2016-07-18 10:07:21
 tags:
   - Ansible
 ---
