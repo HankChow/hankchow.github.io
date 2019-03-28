@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="LCTT 翻译,Android,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第九代 Android 带来了更令人满意的用户体验。   我们来谈论一下 Android。尽管 Android 只是一款内核经过修改的 Linux，但经过多年的发展，Android 开发者们（或许包括正在阅读这篇文章的你）已经为这个平台的演变做出了很多值得称道的贡献。当然，可能很多人都已经知道，但我们还是要说，Android 并不完全开源，当你使用 Google 服务的时候，就已经接触到闭源的部">
+<meta name="keywords" content="LCTT 翻译,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 9.0 概览">
+<meta property="og:url" content="http://github.hankchow.net/2018/11/29/An-Overview-of-Android-Pie/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:description" content="第九代 Android 带来了更令人满意的用户体验。   我们来谈论一下 Android。尽管 Android 只是一款内核经过修改的 Linux，但经过多年的发展，Android 开发者们（或许包括正在阅读这篇文章的你）已经为这个平台的演变做出了很多值得称道的贡献。当然，可能很多人都已经知道，但我们还是要说，Android 并不完全开源，当你使用 Google 服务的时候，就已经接触到闭源的部">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.linux.com/sites/lcom/files/styles/rendered_file/public/android-pie.jpg?itok=Sx4rbOWY">
+<meta property="og:image" content="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_1.png?itok=BsSe8kqS">
+<meta property="og:image" content="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_2.png?itok=cs2tqZut">
+<meta property="og:image" content="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_3.png?itok=F-NB1dqI">
+<meta property="og:image" content="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_4.png?itok=Ex-NzYSo">
+<meta property="og:image" content="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_5.png?itok=NMW2vIlL">
+<meta property="og:image" content="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_6.png?itok=7Ik8_4jC">
+<meta property="og:updated_time" content="2019-03-28T13:05:46.691Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 9.0 概览">
+<meta name="twitter:description" content="第九代 Android 带来了更令人满意的用户体验。   我们来谈论一下 Android。尽管 Android 只是一款内核经过修改的 Linux，但经过多年的发展，Android 开发者们（或许包括正在阅读这篇文章的你）已经为这个平台的演变做出了很多值得称道的贡献。当然，可能很多人都已经知道，但我们还是要说，Android 并不完全开源，当你使用 Google 服务的时候，就已经接触到闭源的部">
+<meta name="twitter:image" content="https://www.linux.com/sites/lcom/files/styles/rendered_file/public/android-pie.jpg?itok=Sx4rbOWY">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/2018/11/29/An-Overview-of-Android-Pie/">
+
+
+
+
+
+  <title>Android 9.0 概览 | HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/11/29/An-Overview-of-Android-Pie/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android 9.0 概览</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T14:51:51+00:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>第九代 Android 带来了更令人满意的用户体验。</p>
+</blockquote>
+<p><img src="https://www.linux.com/sites/lcom/files/styles/rendered_file/public/android-pie.jpg?itok=Sx4rbOWY" alt=""></p>
+<p>我们来谈论一下 Android。尽管 Android 只是一款内核经过修改的 Linux，但经过多年的发展，Android 开发者们（或许包括正在阅读这篇文章的你）已经为这个平台的演变做出了很多值得称道的贡献。当然，可能很多人都已经知道，但我们还是要说，Android 并不完全开源，当你使用 Google 服务的时候，就已经接触到闭源的部分了。Google Play 商店就是其中之一，它不是一个开放的服务。不过无论 Android 开源与否，这就是一个美味、营养、高效、省电的馅饼（LCTT 译注：Android 9.0 代号为 Pie）。</p>
+<p>我在我的 Essential PH-1 手机上运行了 Android 9.0（我真的很喜欢这款手机，也知道这家公司的境况并不好）。在我自己体验了一段时间之后，我认为它是会被大众接受的。那么 Android 9.0 到底好在哪里呢？下面我们就来深入探讨一下。我们的出发点是用户的角度，而不是开发人员的角度，因此我也不会深入探讨太底层的方面。</p>
+<h3 id="手势操作"><a href="#手势操作" class="headerlink" title="手势操作"></a>手势操作</h3><p>Android 系统在新的手势操作方面投入了很多，但实际体验却不算太好。这个功能确实引起了我的兴趣。在这个功能发布之初，大家都对它了解甚少，纷纷猜测它会不会让用户使用多点触控的手势来浏览 Android 界面？又或者会不会是一个完全颠覆人们认知的东西？</p>
+<p>实际上，手势操作比大多数人设想的要更加微妙而简单，因为很多功能都浓缩到了 Home 键上。打开手势操作功能之后，Recent 键的功能就合并到 Home 键上了。因此，如果需要查看最近打开的应用程序，就不能简单地通过 Recent 键来查看，而应该从 Home 键向上轻扫一下。（图 1）</p>
+<p><img src="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_1.png?itok=BsSe8kqS" alt="Android Pie" title="Android Pie"></p>
+<p><em>图 1：Android 9.0 中的”最近的应用程序“界面。</em></p>
+<p>另一个不同的地方是 App Drawer。类似于查看最近打开的应用，需要在 Home 键向上滑动才能打开 App Drawer。</p>
+<p>而后退按钮则没有去掉。在应用程序需要用到后退功能时，它就会出现在主屏幕的左下方。有时候即使应用程序自己带有后退按钮，Android 的后退按钮也会出现。</p>
+<p>当然，如果你不喜欢使用手势操作，也可以禁用这个功能。只需要按照下列步骤操作：</p>
+<ol>
+<li>打开”设置“</li>
+<li>向下滑动并进入“系统 &gt; 手势”</li>
+<li>从 Home 键向上滑动</li>
+<li>将 On/Off 滑块（图 2）滑动至 Off 位置</li>
+</ol>
+<p><img src="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_2.png?itok=cs2tqZut" alt=""></p>
+<p><em>图 2：关闭手势操作。</em></p>
+<h3 id="电池寿命"><a href="#电池寿命" class="headerlink" title="电池寿命"></a>电池寿命</h3><p>人工智能已经在 Android 得到了充分的使用。现在，Android 使用人工智能大大提供了电池的续航时间，这样的新技术称为自适应电池。自适应电池可以根据用户的个人使用习惯来决定各种应用和服务的耗电优先级。通过使用人工智能技术，Android 可以分析用户对每一个应用或服务的使用情况，并适当地关闭未使用的应用程序，以免长期驻留在内存中白白消耗电池电量。</p>
+<p>对于这个功能的唯一一个警告是，如果人工智能出现问题并导致电池电量过早耗尽，就只能通过恢复出厂设置来解决这个问题了。尽管有这样的缺陷，在电池续航时间方面，Android 9.0 也比 Android 8.0 有所改善。</p>
+<h3 id="分屏功能的变化"><a href="#分屏功能的变化" class="headerlink" title="分屏功能的变化"></a>分屏功能的变化</h3><p>分屏对于 Android 来说不是一个新功能，但在 Android 9.0 上，它的使用方式和以往相比略有不同，而且只对于手势操作有影响，不使用手势操作的用户不受影响。要在 Android 9.0 上使用分屏功能，需要按照下列步骤操作：</p>
+<ol>
+<li>从 Home 键向上滑动，打开“最近的应用程序”。</li>
+<li>找到需要放置在屏幕顶部的应用程序。</li>
+<li>长按应用程序顶部的图标以显示新的弹出菜单。（图 3）</li>
+<li>点击分屏，应用程序会在屏幕的上半部分打开。</li>
+<li>找到要打开的第二个应用程序，然后点击它添加到屏幕的下半部分。</li>
+</ol>
+<p><img src="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_3.png?itok=F-NB1dqI" alt="Adding an app" title="Adding an app"></p>
+<p><em>图 3：在 Android 9.0 上将应用添加到分屏模式中。</em></p>
+<p>使用分屏功能关闭应用程序的方法和原来保持一致。</p>
+<h3 id="应用操作"><a href="#应用操作" class="headerlink" title="应用操作"></a>应用操作</h3><p>这个功能在早前已经引入了，但直到 Android 9.0 发布，人们才开始对它产生明显的关注。应用操作功能可以让用户直接从应用启动器来执行应用里的某些操作。</p>
+<p>例如，长按 GMail 启动器，就可以执行回复最近的邮件、撰写新邮件等功能。在 Android 8.0 中，这个功能则以弹出动作列表的方式展现。在 Android 9.0 中，这个功能更契合 Google 的<ruby>材料设计<rt>Material Design</rt></ruby>风格（图 4）。</p>
+<p><img src="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_4.png?itok=Ex-NzYSo" alt="Actions" title="Actions"></p>
+<p><em>图 4：Android 应用操作。</em></p>
+<h3 id="声音控制"><a href="#声音控制" class="headerlink" title="声音控制"></a>声音控制</h3><p>在 Android 中，声音控制的方式经常发生变化。在 Android 8.0 对“请勿打扰”功能进行调整之后，声音控制已经做得相当不错了。而在 Android 9.0 当中，声音控制再次进行了优化。</p>
+<p>Android 9.0 这次优化针对的是设备上快速控制声音的按钮。如果用户按下音量增大或减小按钮，就会看到一个新的弹出菜单，可以让用户控制设备的静音和震动情况。点击这个弹出菜单顶部的图标（图 5），可以在完全静音、静音和正常声音几种状态之间切换。</p>
+<p><img src="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_5.png?itok=NMW2vIlL" alt="Sound control" title="Sound control"></p>
+<p><em>图 5：Android 9.0 上的声音控制。</em></p>
+<h3 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h3><p>由于我要撰写关于 Android 的文章，所以我会常常需要进行屏幕截图。而 Android 9.0 有一项我最喜欢的更新，就是分享屏幕截图。Android 9.0 可以在截取屏幕截图后，直接共享、编辑，或者删除不喜欢的截图，而不需要像以前一样打开 Google 相册、找到要共享的屏幕截图、打开图像然后共享图像。</p>
+<p>如果你想分享屏幕截图，只需要在截图后等待弹出菜单，点击分享（图 6），从标准的 Android 分享菜单中分享即可。</p>
+<p><img src="https://www.linux.com/sites/lcom/files/styles/floated_images/public/pie_6.png?itok=7Ik8_4jC" alt="Sharing " title="Sharing "></p>
+<p><em>图 6：共享屏幕截图变得更加容易。</em></p>
+<h3 id="更令人满意的-Android-体验"><a href="#更令人满意的-Android-体验" class="headerlink" title="更令人满意的 Android 体验"></a>更令人满意的 Android 体验</h3><p>Android 9.0 带来了更令人满意的用户体验。当然，以上说到的内容只是它的冰山一角。如果需要更多信息，可以查阅 Google 的官方 <a href="https://www.android.com/versions/pie-9-0/" target="_blank" rel="noopener">Android 9.0 网站</a>。如果你的设备还没有收到升级推送，请耐心等待，Android 9.0 值得等待。</p>
+<hr>
+<p>via: <a href="https://www.linux.com/learn/2018/10/overview-android-pie" target="_blank" rel="noopener">https://www.linux.com/learn/2018/10/overview-android-pie</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LCTT-翻译/" rel="tag"># LCTT 翻译</a>
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/28/What-you-need-to-know-about-the-GPL-Cooperation-Commitment/" rel="next" title="GPL 合作承诺的发展历程">
+                <i class="fa fa-chevron-left"></i> GPL 合作承诺的发展历程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/03/5-Easy-Tips-for-Linux-Web-Browser-Security/" rel="prev" title="提高 Linux 的网络浏览器安全性的 5 个建议">
+                提高 Linux 的网络浏览器安全性的 5 个建议 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#手势操作"><span class="nav-number">1.</span> <span class="nav-text">手势操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电池寿命"><span class="nav-number">2.</span> <span class="nav-text">电池寿命</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分屏功能的变化"><span class="nav-number">3.</span> <span class="nav-text">分屏功能的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用操作"><span class="nav-number">4.</span> <span class="nav-text">应用操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声音控制"><span class="nav-number">5.</span> <span class="nav-text">声音控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕截图"><span class="nav-number">6.</span> <span class="nav-text">屏幕截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更令人满意的-Android-体验"><span class="nav-number">7.</span> <span class="nav-text">更令人满意的 Android 体验</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">81.9k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

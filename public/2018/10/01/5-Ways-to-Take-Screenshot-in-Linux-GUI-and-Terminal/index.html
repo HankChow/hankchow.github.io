@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="LCTT 翻译,Linux,截屏,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="有几种获取屏幕截图并对其进行添加文字、箭头等编辑的方法，这里提及的的屏幕截图工具在 Ubuntu 和其它主流 Linux 发行版中都能够使用。   当我的主力操作系统从 Windows 转换到 Ubuntu 的时候，首要考虑的就是屏幕截图工具的可用性。尽管使用默认的键盘快捷键也可以获取屏幕截图，但如果使用屏幕截图工具，可以更方便地对屏幕截图进行编辑。 本文将会介绍在不适用第三方工具的情况下，如何">
+<meta name="keywords" content="LCTT 翻译,Linux,截屏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Linux 下截屏并编辑的最佳工具">
+<meta property="og:url" content="http://github.hankchow.net/2018/10/01/5-Ways-to-Take-Screenshot-in-Linux-GUI-and-Terminal/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:description" content="有几种获取屏幕截图并对其进行添加文字、箭头等编辑的方法，这里提及的的屏幕截图工具在 Ubuntu 和其它主流 Linux 发行版中都能够使用。   当我的主力操作系统从 Windows 转换到 Ubuntu 的时候，首要考虑的就是屏幕截图工具的可用性。尽管使用默认的键盘快捷键也可以获取屏幕截图，但如果使用屏幕截图工具，可以更方便地对屏幕截图进行编辑。 本文将会介绍在不适用第三方工具的情况下，如何">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/Taking-Screenshots-in-Linux.png">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/08/flameshot-pic.png">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/08/flameshot-config-default.png">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/08/shutter-screenshot.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/08/gimp-screenshot.jpg">
+<meta property="og:updated_time" content="2019-03-28T11:02:44.983Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Linux 下截屏并编辑的最佳工具">
+<meta name="twitter:description" content="有几种获取屏幕截图并对其进行添加文字、箭头等编辑的方法，这里提及的的屏幕截图工具在 Ubuntu 和其它主流 Linux 发行版中都能够使用。   当我的主力操作系统从 Windows 转换到 Ubuntu 的时候，首要考虑的就是屏幕截图工具的可用性。尽管使用默认的键盘快捷键也可以获取屏幕截图，但如果使用屏幕截图工具，可以更方便地对屏幕截图进行编辑。 本文将会介绍在不适用第三方工具的情况下，如何">
+<meta name="twitter:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/Taking-Screenshots-in-Linux.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/2018/10/01/5-Ways-to-Take-Screenshot-in-Linux-GUI-and-Terminal/">
+
+
+
+
+
+  <title>在 Linux 下截屏并编辑的最佳工具 | HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/10/01/5-Ways-to-Take-Screenshot-in-Linux-GUI-and-Terminal/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在 Linux 下截屏并编辑的最佳工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-01T13:15:54+00:00">
+                2018-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>有几种获取屏幕截图并对其进行添加文字、箭头等编辑的方法，这里提及的的屏幕截图工具在 Ubuntu 和其它主流 Linux 发行版中都能够使用。</p>
+</blockquote>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/Taking-Screenshots-in-Linux.png" alt="在 Ubuntu Linux 中如何获取屏幕截图"></p>
+<p>当我的主力操作系统从 Windows 转换到 Ubuntu 的时候，首要考虑的就是屏幕截图工具的可用性。尽管使用默认的键盘快捷键也可以获取屏幕截图，但如果使用屏幕截图工具，可以更方便地对屏幕截图进行编辑。</p>
+<p>本文将会介绍在不适用第三方工具的情况下，如何通过系统自带的方法和工具获取屏幕截图，另外还会介绍一些可用于 Linux 的最佳截图工具。</p>
+<h3 id="方法-1：在-Linux-中截图的默认方式"><a href="#方法-1：在-Linux-中截图的默认方式" class="headerlink" title="方法 1：在 Linux 中截图的默认方式"></a>方法 1：在 Linux 中截图的默认方式</h3><p>你想要截取整个屏幕？屏幕中的某个区域？某个特定的窗口？</p>
+<p>如果只需要获取一张屏幕截图，不对其进行编辑的话，那么键盘的默认快捷键就可以满足要求了。而且不仅仅是 Ubuntu ，绝大部分的 Linux 发行版和桌面环境都支持以下这些快捷键：</p>
+<ul>
+<li><code>PrtSc</code> – 获取整个屏幕的截图并保存到 Pictures 目录。</li>
+<li><code>Shift + PrtSc</code> – 获取屏幕的某个区域截图并保存到 Pictures 目录。</li>
+<li><code>Alt + PrtSc</code> –获取当前窗口的截图并保存到 Pictures 目录。</li>
+<li><code>Ctrl + PrtSc</code> – 获取整个屏幕的截图并存放到剪贴板。</li>
+<li><code>Shift + Ctrl + PrtSc</code> – 获取屏幕的某个区域截图并存放到剪贴板。</li>
+<li><code>Ctrl + Alt + PrtSc</code> – 获取当前窗口的 截图并存放到剪贴板。</li>
+</ul>
+<p>如上所述，在 Linux 中使用默认的快捷键获取屏幕截图是相当简单的。但如果要在不把屏幕截图导入到其它应用程序的情况下对屏幕截图进行编辑，还是使用屏幕截图工具比较方便。</p>
+<h3 id="方法-2：在-Linux-中使用-Flameshot-获取屏幕截图并编辑"><a href="#方法-2：在-Linux-中使用-Flameshot-获取屏幕截图并编辑" class="headerlink" title="方法 2：在 Linux 中使用 Flameshot 获取屏幕截图并编辑"></a>方法 2：在 Linux 中使用 Flameshot 获取屏幕截图并编辑</h3><p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/08/flameshot-pic.png" alt="flameshot"></p>
+<p>功能概述：</p>
+<ul>
+<li>注释 (高亮、标示、添加文本、框选)</li>
+<li>图片模糊</li>
+<li>图片裁剪</li>
+<li>上传到 Imgur</li>
+<li>用另一个应用打开截图</li>
+</ul>
+<p>Flameshot 在去年发布到 <a href="https://github.com/lupoDharkael/flameshot" target="_blank" rel="noopener">GitHub</a>，并成为一个引人注目的工具。</p>
+<p>如果你需要的是一个能够用于标注、模糊、上传到 imgur 的新式截图工具，那么 Flameshot 是一个好的选择。</p>
+<p>下面将会介绍如何安装 Flameshot 并根据你的偏好进行配置。</p>
+<p>如果你用的是 Ubuntu，那么只需要在 Ubuntu 软件中心上搜索，就可以找到 Flameshot 进而完成安装了。要是你想使用终端来安装，可以执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install flameshot</span><br></pre></td></tr></table></figure>
+<p>如果你在安装过程中遇到问题，可以按照<a href="https://github.com/lupoDharkael/flameshot#installation" target="_blank" rel="noopener">官方的安装说明</a>进行操作。安装完成后，你还需要进行配置。尽管可以通过搜索来随时启动 Flameshot，但如果想使用 <code>PrtSc</code> 键触发启动，则需要指定对应的键盘快捷键。以下是相关配置步骤：</p>
+<ul>
+<li>进入系统设置中的“键盘设置”</li>
+<li>页面中会列出所有现有的键盘快捷键，拉到底部就会看见一个 “+” 按钮</li>
+<li>点击 “+” 按钮添加自定义快捷键并输入以下两个字段：<ul>
+<li>“名称”： 任意名称均可。</li>
+<li>“命令”： <code>/usr/bin/flameshot gui</code></li>
+</ul>
+</li>
+<li>最后将这个快捷操作绑定到  <code>PrtSc</code> 键上，可能会提示与系统的截图功能相冲突，但可以忽略掉这个警告。</li>
+</ul>
+<p>配置之后，你的自定义快捷键页面大概会是以下这样：</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/08/flameshot-config-default.png" alt=""></p>
+<p><em>将键盘快捷键映射到 Flameshot</em></p>
+<h3 id="方法-3：在-Linux-中使用-Shutter-获取屏幕截图并编辑"><a href="#方法-3：在-Linux-中使用-Shutter-获取屏幕截图并编辑" class="headerlink" title="方法 3：在 Linux 中使用 Shutter 获取屏幕截图并编辑"></a>方法 3：在 Linux 中使用 Shutter 获取屏幕截图并编辑</h3><p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/08/shutter-screenshot.jpg" alt=""></p>
+<p>功能概述：</p>
+<ul>
+<li>注释 (高亮、标示、添加文本、框选)</li>
+<li>图片模糊</li>
+<li>图片裁剪</li>
+<li>上传到图片网站</li>
+</ul>
+<p><a href="http://shutter-project.org/" target="_blank" rel="noopener">Shutter</a> 是一个对所有主流 Linux 发行版都适用的屏幕截图工具。尽管最近已经不太更新了，但仍然是操作屏幕截图的一个优秀工具。</p>
+<p>在使用过程中可能会遇到这个工具的一些缺陷。Shutter 在任何一款最新的 Linux 发行版上最常见的问题就是由于缺少了任务栏上的程序图标，导致默认禁用了编辑屏幕截图的功能。 对于这个缺陷，还是有解决方案的。你只需要跟随我们的教程<a href="https://itsfoss.com/shutter-edit-button-disabled/" target="_blank" rel="noopener">在 Shutter 中修复这个禁止编辑选项并将程序图标在任务栏上显示出来</a>。问题修复后，就可以使用 Shutter 来快速编辑屏幕截图了。</p>
+<p>同样地，在软件中心搜索也可以找到进而安装 Shutter，也可以在基于 Ubuntu 的发行版中执行以下命令使用命令行安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install shutter</span><br></pre></td></tr></table></figure>
+<p>类似 Flameshot，你可以通过搜索 Shutter 手动启动它，也可以按照相似的方式设置自定义快捷方式以 <code>PrtSc</code> 键唤起 Shutter。</p>
+<p>如果要指定自定义键盘快捷键，只需要执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutter -f</span><br></pre></td></tr></table></figure>
+<h3 id="方法-4：在-Linux-中使用-GIMP-获取屏幕截图"><a href="#方法-4：在-Linux-中使用-GIMP-获取屏幕截图" class="headerlink" title="方法 4：在 Linux 中使用 GIMP 获取屏幕截图"></a>方法 4：在 Linux 中使用 GIMP 获取屏幕截图</h3><p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/08/gimp-screenshot.jpg" alt=""></p>
+<p>功能概述：</p>
+<ul>
+<li>高级图像编辑功能（缩放、添加滤镜、颜色校正、添加图层、裁剪等）</li>
+<li>截取某一区域的屏幕截图</li>
+</ul>
+<p>如果需要对屏幕截图进行一些预先编辑，GIMP 是一个不错的选择。</p>
+<p>通过软件中心可以安装 GIMP。如果在安装时遇到问题，可以参考其<a href="https://www.gimp.org/downloads/" target="_blank" rel="noopener">官方网站的安装说明</a>。</p>
+<p>要使用 GIMP 获取屏幕截图，需要先启动程序，然后通过 “File-&gt; Create-&gt; Screenshot” 导航。</p>
+<p>打开 Screenshot 选项后，会看到几个控制点来控制屏幕截图范围。点击 “Snap” 截取屏幕截图，图像将自动显示在 GIMP 中可供编辑。</p>
+<h3 id="方法-5：在-Linux-中使用命令行工具获取屏幕截图"><a href="#方法-5：在-Linux-中使用命令行工具获取屏幕截图" class="headerlink" title="方法 5：在 Linux 中使用命令行工具获取屏幕截图"></a>方法 5：在 Linux 中使用命令行工具获取屏幕截图</h3><p>这一节内容仅适用于终端爱好者。如果你也喜欢使用终端，可以使用 “GNOME 截图工具”或 “ImageMagick” 或 “Deepin Scrot”，大部分流行的 Linux 发行版中都自带这些工具。</p>
+<p>要立即获取屏幕截图，可以执行以下命令：</p>
+<h4 id="GNOME-截图工具（可用于-GNOME-桌面）"><a href="#GNOME-截图工具（可用于-GNOME-桌面）" class="headerlink" title="GNOME 截图工具（可用于 GNOME 桌面）"></a>GNOME 截图工具（可用于 GNOME 桌面）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnome-screenshot</span><br></pre></td></tr></table></figure>
+<p>GNOME 截图工具是使用 GNOME 桌面的 Linux 发行版中都自带的一个默认工具。如果需要延时获取屏幕截图，可以执行以下命令（这里的 <code>5</code> 是需要延迟的秒数）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnome-screenshot -d -5</span><br></pre></td></tr></table></figure>
+<h4 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a>ImageMagick</h4><p>如果你的操作系统是 Ubuntu、Mint 或其它流行的 Linux 发行版，一般会自带 <a href="https://www.imagemagick.org/script/index.php" target="_blank" rel="noopener">ImageMagick</a> 这个工具。如果没有这个工具，也可以按照<a href="https://www.imagemagick.org/script/install-source.php" target="_blank" rel="noopener">官方安装说明</a>使用安装源来安装。你也可以在终端中执行这个命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install imagemagick</span><br></pre></td></tr></table></figure>
+<p>安装完成后，执行下面的命令就可以获取到屏幕截图（截取整个屏幕）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import -window root image.png</span><br></pre></td></tr></table></figure>
+<p>这里的 “image.png” 就是屏幕截图文件保存的名称。</p>
+<p>要获取屏幕一个区域的截图，可以执行以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import image.png</span><br></pre></td></tr></table></figure>
+<h4 id="Deepin-Scrot"><a href="#Deepin-Scrot" class="headerlink" title="Deepin Scrot"></a>Deepin Scrot</h4><p>Deepin Scrot 是基于终端的一个较新的截图工具。和前面两个工具类似，一般自带于 Linux 发行版中。如果需要自行安装，可以执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install scrot</span><br></pre></td></tr></table></figure>
+<p>安装完成后，使用下面这些命令可以获取屏幕截图。</p>
+<p>获取整个屏幕的截图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrot myimage.png</span><br></pre></td></tr></table></figure>
+<p>获取屏幕某一区域的截图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrot -s myimage.png</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上是一些在 Linux 上的优秀截图工具。当然还有很多截图工具没有提及（例如用于 KDE 发行版的 <a href="https://www.kde.org/applications/graphics/spectacle/" target="_blank" rel="noopener">Spectacle</a>），但相比起来还是上面几个工具更为好用。</p>
+<p>如果你有比文章中提到的更好的截图工具，欢迎讨论！</p>
+<hr>
+<p>via: <a href="https://itsfoss.com/take-screenshot-linux/" target="_blank" rel="noopener">https://itsfoss.com/take-screenshot-linux/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LCTT-翻译/" rel="tag"># LCTT 翻译</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/截屏/" rel="tag"># 截屏</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/30/Make-The-Output-Of-Ping-Command-Prettier-And-Easier-To-Read/" rel="next" title="如何让 Ping 的输出更简单易读">
+                <i class="fa fa-chevron-left"></i> 如何让 Ping 的输出更简单易读
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/02/How-To-Find-Out-Which-Port-Number-A-Process-Is-Using-In-Linux/" rel="prev" title="如何在 Linux 中查看进程占用的端口号">
+                如何在 Linux 中查看进程占用的端口号 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-1：在-Linux-中截图的默认方式"><span class="nav-number">1.</span> <span class="nav-text">方法 1：在 Linux 中截图的默认方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-2：在-Linux-中使用-Flameshot-获取屏幕截图并编辑"><span class="nav-number">2.</span> <span class="nav-text">方法 2：在 Linux 中使用 Flameshot 获取屏幕截图并编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-3：在-Linux-中使用-Shutter-获取屏幕截图并编辑"><span class="nav-number">3.</span> <span class="nav-text">方法 3：在 Linux 中使用 Shutter 获取屏幕截图并编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-4：在-Linux-中使用-GIMP-获取屏幕截图"><span class="nav-number">4.</span> <span class="nav-text">方法 4：在 Linux 中使用 GIMP 获取屏幕截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-5：在-Linux-中使用命令行工具获取屏幕截图"><span class="nav-number">5.</span> <span class="nav-text">方法 5：在 Linux 中使用命令行工具获取屏幕截图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GNOME-截图工具（可用于-GNOME-桌面）"><span class="nav-number">5.1.</span> <span class="nav-text">GNOME 截图工具（可用于 GNOME 桌面）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ImageMagick"><span class="nav-number">5.2.</span> <span class="nav-text">ImageMagick</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deepin-Scrot"><span class="nav-number">5.3.</span> <span class="nav-text">Deepin Scrot</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">81.9k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

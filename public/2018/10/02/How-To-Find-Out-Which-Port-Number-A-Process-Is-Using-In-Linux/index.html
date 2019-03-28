@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="LCTT 翻译,Linux,端口,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="对于 Linux 系统管理员来说，清楚某个服务是否正确地绑定或监听某个端口，是至关重要的。如果你需要处理端口相关的问题，这篇文章可能会对你有用。 端口是 Linux 系统上特定进程之间逻辑连接的标识，包括物理端口和软件端口。由于 Linux 操作系统是一个软件，因此本文只讨论软件端口。软件端口始终与主机的 IP 地址和相关的通信协议相关联，因此端口常用于区分应用程序。大部分涉及到网络的服务都必须打">
+<meta name="keywords" content="LCTT 翻译,Linux,端口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在 Linux 中查看进程占用的端口号">
+<meta property="og:url" content="http://github.hankchow.net/2018/10/02/How-To-Find-Out-Which-Port-Number-A-Process-Is-Using-In-Linux/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:description" content="对于 Linux 系统管理员来说，清楚某个服务是否正确地绑定或监听某个端口，是至关重要的。如果你需要处理端口相关的问题，这篇文章可能会对你有用。 端口是 Linux 系统上特定进程之间逻辑连接的标识，包括物理端口和软件端口。由于 Linux 操作系统是一个软件，因此本文只讨论软件端口。软件端口始终与主机的 IP 地址和相关的通信协议相关联，因此端口常用于区分应用程序。大部分涉及到网络的服务都必须打">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-28T11:05:20.341Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何在 Linux 中查看进程占用的端口号">
+<meta name="twitter:description" content="对于 Linux 系统管理员来说，清楚某个服务是否正确地绑定或监听某个端口，是至关重要的。如果你需要处理端口相关的问题，这篇文章可能会对你有用。 端口是 Linux 系统上特定进程之间逻辑连接的标识，包括物理端口和软件端口。由于 Linux 操作系统是一个软件，因此本文只讨论软件端口。软件端口始终与主机的 IP 地址和相关的通信协议相关联，因此端口常用于区分应用程序。大部分涉及到网络的服务都必须打">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/2018/10/02/How-To-Find-Out-Which-Port-Number-A-Process-Is-Using-In-Linux/">
+
+
+
+
+
+  <title>如何在 Linux 中查看进程占用的端口号 | HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/10/02/How-To-Find-Out-Which-Port-Number-A-Process-Is-Using-In-Linux/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何在 Linux 中查看进程占用的端口号</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T04:38:26+00:00">
+                2018-10-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对于 Linux 系统管理员来说，清楚某个服务是否正确地绑定或监听某个端口，是至关重要的。如果你需要处理端口相关的问题，这篇文章可能会对你有用。</p>
+<p>端口是 Linux 系统上特定进程之间逻辑连接的标识，包括物理端口和软件端口。由于 Linux 操作系统是一个软件，因此本文只讨论软件端口。软件端口始终与主机的 IP 地址和相关的通信协议相关联，因此端口常用于区分应用程序。大部分涉及到网络的服务都必须打开一个套接字来监听传入的网络请求，而每个服务都使用一个独立的套接字。</p>
+<p><strong>推荐阅读：</strong></p>
+<ul>
+<li><a href="https://www.2daygeek.com/how-to-check-find-the-process-id-pid-ppid-of-a-running-program-in-linux/" target="_blank" rel="noopener">在 Linux 上查看进程 ID 的 4 种方法</a></li>
+<li><a href="https://www.2daygeek.com/kill-terminate-a-process-in-linux-using-kill-pkill-killall-command/" target="_blank" rel="noopener">在 Linux 上终止进程的 3 种方法</a></li>
+</ul>
+<p>套接字是和 IP 地址、软件端口和协议结合起来使用的，而端口号对传输控制协议（TCP）和用户数据报协议（UDP）协议都适用，TCP 和 UDP 都可以使用 0 到 65535 之间的端口号进行通信。</p>
+<p>以下是端口分配类别：</p>
+<ul>
+<li>0 - 1023： 常用端口和系统端口</li>
+<li>1024 - 49151： 软件的注册端口</li>
+<li>49152 - 65535： 动态端口或私有端口</li>
+</ul>
+<p>在 Linux 上的 <code>/etc/services</code> 文件可以查看到更多关于保留端口的信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"># less /etc/services</span><br><span class="line"># /etc/services:</span><br><span class="line"># $Id: services,v 1.55 2013/04/14 ovasik Exp $</span><br><span class="line">#</span><br><span class="line"># Network services, Internet style</span><br><span class="line"># IANA services version: last updated 2013-04-10</span><br><span class="line">#</span><br><span class="line"># Note that it is presently the policy of IANA to assign a single well-known</span><br><span class="line"># port number for both TCP and UDP; hence, most entries here have two entries</span><br><span class="line"># even if the protocol doesn&apos;t support UDP operations.</span><br><span class="line"># Updated from RFC 1700, ``Assigned Numbers&apos;&apos; (October 1994). Not all ports</span><br><span class="line"># are included, only the more common ones.</span><br><span class="line">#</span><br><span class="line"># The latest IANA port assignments can be gotten from</span><br><span class="line"># http://www.iana.org/assignments/port-numbers</span><br><span class="line"># The Well Known Ports are those from 0 through 1023.</span><br><span class="line"># The Registered Ports are those from 1024 through 49151</span><br><span class="line"># The Dynamic and/or Private Ports are those from 49152 through 65535</span><br><span class="line">#</span><br><span class="line"># Each line describes one service, and is of the form:</span><br><span class="line">#</span><br><span class="line"># service-name port/protocol [aliases ...] [# comment]</span><br><span class="line"></span><br><span class="line">tcpmux 1/tcp # TCP port service multiplexer</span><br><span class="line">tcpmux 1/udp # TCP port service multiplexer</span><br><span class="line">rje 5/tcp # Remote Job Entry</span><br><span class="line">rje 5/udp # Remote Job Entry</span><br><span class="line">echo 7/tcp</span><br><span class="line">echo 7/udp</span><br><span class="line">discard 9/tcp sink null</span><br><span class="line">discard 9/udp sink null</span><br><span class="line">systat 11/tcp users</span><br><span class="line">systat 11/udp users</span><br><span class="line">daytime 13/tcp</span><br><span class="line">daytime 13/udp</span><br><span class="line">qotd 17/tcp quote</span><br><span class="line">qotd 17/udp quote</span><br><span class="line">msp 18/tcp # message send protocol (historic)</span><br><span class="line">msp 18/udp # message send protocol (historic)</span><br><span class="line">chargen 19/tcp ttytst source</span><br><span class="line">chargen 19/udp ttytst source</span><br><span class="line">ftp-data 20/tcp</span><br><span class="line">ftp-data 20/udp</span><br><span class="line"># 21 is registered to ftp, but also used by fsp</span><br><span class="line">ftp 21/tcp</span><br><span class="line">ftp 21/udp fsp fspd</span><br><span class="line">ssh 22/tcp # The Secure Shell (SSH) Protocol</span><br><span class="line">ssh 22/udp # The Secure Shell (SSH) Protocol</span><br><span class="line">telnet 23/tcp</span><br><span class="line">telnet 23/udp</span><br><span class="line"># 24 - private mail system</span><br><span class="line">lmtp 24/tcp # LMTP Mail Delivery</span><br><span class="line">lmtp 24/udp # LMTP Mail Delivery</span><br></pre></td></tr></table></figure>
+<p>可以使用以下六种方法查看端口信息。</p>
+<ul>
+<li><code>ss</code>：可以用于转储套接字统计信息。</li>
+<li><code>netstat</code>：可以显示打开的套接字列表。</li>
+<li><code>lsof</code>：可以列出打开的文件。</li>
+<li><code>fuser</code>：可以列出那些打开了文件的进程的进程 ID。</li>
+<li><code>nmap</code>：是网络检测工具和端口扫描程序。</li>
+<li><code>systemctl</code>：是 systemd 系统的控制管理器和服务管理器。</li>
+</ul>
+<p>以下我们将找出 <code>sshd</code> 守护进程所使用的端口号。</p>
+<h3 id="方法-1：使用-ss-命令"><a href="#方法-1：使用-ss-命令" class="headerlink" title="方法 1：使用 ss 命令"></a>方法 1：使用 ss 命令</h3><p><code>ss</code> 一般用于转储套接字统计信息。它能够输出类似于 <code>netstat</code> 输出的信息，但它可以比其它工具显示更多的 TCP 信息和状态信息。</p>
+<p>它还可以显示所有类型的套接字统计信息，包括 PACKET、TCP、UDP、DCCP、RAW、Unix 域等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># ss -tnlp | grep ssh</span><br><span class="line">LISTEN 0 128 *:22 *:* users:((&quot;sshd&quot;,pid=997,fd=3))</span><br><span class="line">LISTEN 0 128 :::22 :::* users:((&quot;sshd&quot;,pid=997,fd=4))</span><br></pre></td></tr></table></figure>
+<p>也可以使用端口号来检查。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># ss -tnlp | grep &quot;:22&quot;</span><br><span class="line">LISTEN 0 128 *:22 *:* users:((&quot;sshd&quot;,pid=997,fd=3))</span><br><span class="line">LISTEN 0 128 :::22 :::* users:((&quot;sshd&quot;,pid=997,fd=4))</span><br></pre></td></tr></table></figure>
+<h3 id="方法-2：使用-netstat-命令"><a href="#方法-2：使用-netstat-命令" class="headerlink" title="方法 2：使用 netstat 命令"></a>方法 2：使用 netstat 命令</h3><p><code>netstat</code> 能够显示网络连接、路由表、接口统计信息、伪装连接以及多播成员。</p>
+<p>默认情况下，<code>netstat</code> 会列出打开的套接字。如果不指定任何地址族，则会显示所有已配置地址族的活动套接字。但 <code>netstat</code> 已经过时了，一般会使用 <code>ss</code> 来替代。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># netstat -tnlp | grep ssh</span><br><span class="line">tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 997/sshd</span><br><span class="line">tcp6 0 0 :::22 :::* LISTEN 997/sshd</span><br></pre></td></tr></table></figure>
+<p>也可以使用端口号来检查。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># netstat -tnlp | grep &quot;:22&quot;</span><br><span class="line">tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1208/sshd</span><br><span class="line">tcp6 0 0 :::22 :::* LISTEN 1208/sshd</span><br></pre></td></tr></table></figure>
+<h3 id="方法-3：使用-lsof-命令"><a href="#方法-3：使用-lsof-命令" class="headerlink" title="方法 3：使用 lsof 命令"></a>方法 3：使用 lsof 命令</h3><p><code>lsof</code> 能够列出打开的文件，并列出系统上被进程打开的文件的相关信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># lsof -i -P | grep ssh</span><br><span class="line">COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">sshd 11584 root 3u IPv4 27625 0t0 TCP *:22 (LISTEN)</span><br><span class="line">sshd 11584 root 4u IPv6 27627 0t0 TCP *:22 (LISTEN)</span><br><span class="line">sshd 11592 root 3u IPv4 27744 0t0 TCP vps.2daygeek.com:ssh-&gt;103.5.134.167:49902 (ESTABLISHED)</span><br></pre></td></tr></table></figure>
+<p>也可以使用端口号来检查。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># lsof -i tcp:22</span><br><span class="line">COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">sshd 1208 root 3u IPv4 20919 0t0 TCP *:ssh (LISTEN)</span><br><span class="line">sshd 1208 root 4u IPv6 20921 0t0 TCP *:ssh (LISTEN)</span><br><span class="line">sshd 11592 root 3u IPv4 27744 0t0 TCP vps.2daygeek.com:ssh-&gt;103.5.134.167:49902 (ESTABLISHED)</span><br></pre></td></tr></table></figure>
+<h3 id="方法-4：使用-fuser-命令"><a href="#方法-4：使用-fuser-命令" class="headerlink" title="方法 4：使用 fuser 命令"></a>方法 4：使用 fuser 命令</h3><p><code>fuser</code> 工具会将本地系统上打开了文件的进程的进程 ID 显示在标准输出中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># fuser -v 22/tcp</span><br><span class="line"> USER PID ACCESS COMMAND</span><br><span class="line">22/tcp: root 1208 F.... sshd</span><br><span class="line"> root 12388 F.... sshd</span><br><span class="line"> root 49339 F.... sshd</span><br></pre></td></tr></table></figure>
+<h3 id="方法-5：使用-nmap-命令"><a href="#方法-5：使用-nmap-命令" class="headerlink" title="方法 5：使用 nmap 命令"></a>方法 5：使用 nmap 命令</h3><p><code>nmap</code>（“Network Mapper”）是一款用于网络检测和安全审计的开源工具。它最初用于对大型网络进行快速扫描，但它对于单个主机的扫描也有很好的表现。</p>
+<p><code>nmap</code> 使用原始 IP 数据包来确定网络上可用的主机，这些主机的服务（包括应用程序名称和版本）、主机运行的操作系统（包括操作系统版本等信息）、正在使用的数据包过滤器或防火墙的类型，以及很多其它信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># nmap -sV -p 22 localhost</span><br><span class="line"></span><br><span class="line">Starting Nmap 6.40 ( http://nmap.org ) at 2018-09-23 12:36 IST</span><br><span class="line">Nmap scan report for localhost (127.0.0.1)</span><br><span class="line">Host is up (0.000089s latency).</span><br><span class="line">Other addresses for localhost (not scanned): 127.0.0.1</span><br><span class="line">PORT STATE SERVICE VERSION</span><br><span class="line">22/tcp open ssh OpenSSH 7.4 (protocol 2.0)</span><br><span class="line"></span><br><span class="line">Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .</span><br><span class="line">Nmap done: 1 IP address (1 host up) scanned in 0.44 seconds</span><br></pre></td></tr></table></figure>
+<h3 id="方法-6：使用-systemctl-命令"><a href="#方法-6：使用-systemctl-命令" class="headerlink" title="方法 6：使用 systemctl 命令"></a>方法 6：使用 systemctl 命令</h3><p><code>systemctl</code> 是 systemd 系统的控制管理器和服务管理器。它取代了旧的 SysV 初始化系统管理，目前大多数现代 Linux 操作系统都采用了 systemd。</p>
+<p><strong>推荐阅读：</strong></p>
+<ul>
+<li><a href="https://www.2daygeek.com/chkservice-a-tool-for-managing-systemd-units-from-linux-terminal/" target="_blank" rel="noopener">chkservice – Linux 终端上的 systemd 单元管理工具</a></li>
+<li><a href="https://www.2daygeek.com/how-to-check-all-running-services-in-linux/" target="_blank" rel="noopener">如何查看 Linux 系统上正在运行的服务</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># systemctl status sshd</span><br><span class="line">● sshd.service - OpenSSH server daemon</span><br><span class="line"> Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: enabled)</span><br><span class="line"> Active: active (running) since Sun 2018-09-23 02:08:56 EDT; 6h 11min ago</span><br><span class="line"> Docs: man:sshd(8)</span><br><span class="line"> man:sshd_config(5)</span><br><span class="line"> Main PID: 11584 (sshd)</span><br><span class="line"> CGroup: /system.slice/sshd.service</span><br><span class="line"> └─11584 /usr/sbin/sshd -D</span><br><span class="line"></span><br><span class="line">Sep 23 02:08:56 vps.2daygeek.com systemd[1]: Starting OpenSSH server daemon...</span><br><span class="line">Sep 23 02:08:56 vps.2daygeek.com sshd[11584]: Server listening on 0.0.0.0 port 22.</span><br><span class="line">Sep 23 02:08:56 vps.2daygeek.com sshd[11584]: Server listening on :: port 22.</span><br><span class="line">Sep 23 02:08:56 vps.2daygeek.com systemd[1]: Started OpenSSH server daemon.</span><br><span class="line">Sep 23 02:09:15 vps.2daygeek.com sshd[11589]: Connection closed by 103.5.134.167 port 49899 [preauth]</span><br><span class="line">Sep 23 02:09:41 vps.2daygeek.com sshd[11592]: Accepted password for root from 103.5.134.167 port 49902 ssh2</span><br></pre></td></tr></table></figure>
+<p>以上输出的内容显示了最近一次启动 <code>sshd</code> 服务时 <code>ssh</code> 服务的监听端口。但它不会将最新日志更新到输出中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># systemctl status sshd</span><br><span class="line">● sshd.service - OpenSSH server daemon</span><br><span class="line"> Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: enabled)</span><br><span class="line"> Active: active (running) since Thu 2018-09-06 07:40:59 IST; 2 weeks 3 days ago</span><br><span class="line"> Docs: man:sshd(8)</span><br><span class="line"> man:sshd_config(5)</span><br><span class="line"> Main PID: 1208 (sshd)</span><br><span class="line"> CGroup: /system.slice/sshd.service</span><br><span class="line"> ├─ 1208 /usr/sbin/sshd -D</span><br><span class="line"> ├─23951 sshd: [accepted]</span><br><span class="line"> └─23952 sshd: [net]</span><br><span class="line"></span><br><span class="line">Sep 23 12:50:36 vps.2daygeek.com sshd[23909]: Invalid user pi from 95.210.113.142 port 51666</span><br><span class="line">Sep 23 12:50:36 vps.2daygeek.com sshd[23909]: input_userauth_request: invalid user pi [preauth]</span><br><span class="line">Sep 23 12:50:37 vps.2daygeek.com sshd[23911]: pam_unix(sshd:auth): check pass; user unknown</span><br><span class="line">Sep 23 12:50:37 vps.2daygeek.com sshd[23911]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=95.210.113.142</span><br><span class="line">Sep 23 12:50:37 vps.2daygeek.com sshd[23909]: pam_unix(sshd:auth): check pass; user unknown</span><br><span class="line">Sep 23 12:50:37 vps.2daygeek.com sshd[23909]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=95.210.113.142</span><br><span class="line">Sep 23 12:50:39 vps.2daygeek.com sshd[23911]: Failed password for invalid user pi from 95.210.113.142 port 51670 ssh2</span><br><span class="line">Sep 23 12:50:39 vps.2daygeek.com sshd[23909]: Failed password for invalid user pi from 95.210.113.142 port 51666 ssh2</span><br><span class="line">Sep 23 12:50:40 vps.2daygeek.com sshd[23911]: Connection closed by 95.210.113.142 port 51670 [preauth]</span><br><span class="line">Sep 23 12:50:40 vps.2daygeek.com sshd[23909]: Connection closed by 95.210.113.142 port 51666 [preauth]</span><br></pre></td></tr></table></figure>
+<p>大部分情况下，以上的输出不会显示进程的实际端口号。这时更建议使用以下这个 <code>journalctl</code> 命令检查日志文件中的详细信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># journalctl | grep -i &quot;openssh\|sshd&quot;</span><br><span class="line">Sep 23 02:08:56 vps138235.vps.ovh.ca sshd[997]: Received signal 15; terminating.</span><br><span class="line">Sep 23 02:08:56 vps138235.vps.ovh.ca systemd[1]: Stopping OpenSSH server daemon...</span><br><span class="line">Sep 23 02:08:56 vps138235.vps.ovh.ca systemd[1]: Starting OpenSSH server daemon...</span><br><span class="line">Sep 23 02:08:56 vps138235.vps.ovh.ca sshd[11584]: Server listening on 0.0.0.0 port 22.</span><br><span class="line">Sep 23 02:08:56 vps138235.vps.ovh.ca sshd[11584]: Server listening on :: port 22.</span><br><span class="line">Sep 23 02:08:56 vps138235.vps.ovh.ca systemd[1]: Started OpenSSH server daemon.</span><br></pre></td></tr></table></figure>
+<hr>
+<p>via: <a href="https://www.2daygeek.com/how-to-find-out-which-port-number-a-process-is-using-in-linux/" target="_blank" rel="noopener">https://www.2daygeek.com/how-to-find-out-which-port-number-a-process-is-using-in-linux/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LCTT-翻译/" rel="tag"># LCTT 翻译</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/端口/" rel="tag"># 端口</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/01/5-Ways-to-Take-Screenshot-in-Linux-GUI-and-Terminal/" rel="next" title="在 Linux 下截屏并编辑的最佳工具">
+                <i class="fa fa-chevron-left"></i> 在 Linux 下截屏并编辑的最佳工具
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/03/How-To-Easily-And-Safely-Manage-Cron-Jobs-In-Linux/" rel="prev" title="在 Linux 中安全且轻松地管理 Cron 定时任务">
+                在 Linux 中安全且轻松地管理 Cron 定时任务 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-1：使用-ss-命令"><span class="nav-number">1.</span> <span class="nav-text">方法 1：使用 ss 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-2：使用-netstat-命令"><span class="nav-number">2.</span> <span class="nav-text">方法 2：使用 netstat 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-3：使用-lsof-命令"><span class="nav-number">3.</span> <span class="nav-text">方法 3：使用 lsof 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-4：使用-fuser-命令"><span class="nav-number">4.</span> <span class="nav-text">方法 4：使用 fuser 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-5：使用-nmap-命令"><span class="nav-number">5.</span> <span class="nav-text">方法 5：使用 nmap 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-6：使用-systemctl-命令"><span class="nav-number">6.</span> <span class="nav-text">方法 6：使用 systemctl 命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">81.9k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
