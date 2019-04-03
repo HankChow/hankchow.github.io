@@ -95,7 +95,7 @@ menu:
   home: / || home
   archives: /archives/ || archive
   about: /about/ || user
-  #tags: /tags/ || tags
+  tags: /tags/ || tags
   #categories: /categories/ || th
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
