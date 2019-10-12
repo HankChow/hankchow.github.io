@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="HankChow's Blog">
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="HankChow&#39;s Blog">
+<meta property="og:url" content="http://github.hankchow.net/page/7/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HankChow&#39;s Blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/page/7/">
+
+
+
+
+
+  <title>HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/11/11/5-alerting-and-visualization-tools-for-sysadmins/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/11/5-alerting-and-visualization-tools-for-sysadmins/" itemprop="url">5 个适合系统管理员使用的告警可视化工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-11T17:41:56+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>这些开源的工具能够通过输出帮助用户了解系统的运行状况，并对可能发生的潜在问题作出告警。</p>
+</blockquote>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/metrics_data_dashboard_system_computer_analytics.png?itok=oxAeIEI-" alt=""></p>
+<p>你大概已经知道（或猜到）<ruby>告警可视化<rt>alerting and visualization</rt></ruby>工具是用来做什么的了。下面我们就要来说一下，为什么要讨论这样的工具，甚至某些系统专门将可视化作为特有的功能。</p>
+<p><ruby>可观察性<rt>Observability</rt></ruby>的概念来自<ruby>控制理论<rt>control theory</rt></ruby>，这个概念描述了我们通过对系统的输入和输出来了解其的能力。本文将重点介绍具有可观察性的输出组件。</p>
+<p>告警可视化工具可以对其它系统的输出进行分析，进而对输出的信息进行结构化表示。告警实际上是对系统异常状态的描述，而可视化则是让用户能够直观理解的结构化表示。</p>
+<h3 id="常见的可视化告警"><a href="#常见的可视化告警" class="headerlink" title="常见的可视化告警"></a>常见的可视化告警</h3><h4 id="告警"><a href="#告警" class="headerlink" title="告警"></a>告警</h4><p>首先要明确一下<ruby>告警<rt>alert</rt></ruby>的含义。在人员无法响应告警内容情况下，不应该发送告警 —— 包括那些发给多个人但只有其中少数人可以响应的告警，以及系统中的每个异常都触发的告警。因为这样会产生告警疲劳，告警接收者也往往会对这些过多的告警采取忽视的态度 —— 直到系统恶化到以少见的方式告警。</p>
+<p>例如，如果管理员每天都会收到告警系统发来的数百封告警邮件，他就很容易会忽略告警系统的所有邮件。除非他真的看到问题发生，或者受到了客户或上级的询问时，管理员才会重新重视告警信息。在这种情况下，告警已经失去了原有的意义和用途。</p>
+<p>告警不是一个持续的信息流或者状态更新。告警的目的在于暴露系统无法自动恢复的问题，而且告警应该只发送给最有可能解决问题的人员。超出这个定义的内容都不应该作为告警，否则将会对实际工作造成不良的影响。</p>
+<p>不同的告警体系都会有各自的告警类型，因此不能用优先级（P1-P5）或者诸如“信息”、“警告”、“严重”之类的字眼来一概而论，下面我会介绍一些新兴的复杂系统的事件响应中出现的通用分类方式。</p>
+<p>刚才我提到了一个“信息”这个告警类型，但实际上告警不应该是一个信息，尽管有些人可能会不这样认为。但我觉得如果一个告警没有发送给任何一个人，它就不应该是警报，而只是一些在许多系统中被视为警报的数据点，代表了一些应该知晓但不需要响应的事件。它更应该作为告警可视化工具的一部分，而不是会导致触发告警的事件。《<a href="https://www.practicalmonitoring.com/" target="_blank" rel="noopener">实用监控</a>》是这个领域的必读书籍，其作者 Mike Julian 在书中就介绍了他自己关于告警的看法。</p>
+<p>而非信息警报则代表告警需要被响应以及需要相关的操作。我将这些告警大致分为内部故障和外部故障两种类型，而对于大多数公司来说，通常会有两个以上的级别来确定响应告警的优先级。系统性能下降就是一种故障，因为其对用户的影响通常都是未知的。</p>
+<p>内部故障比外部故障的优先级低，但也需要快速响应。内部故障通常包括公司员工使用的内部系统或仅对公司员工可见的应用故障。</p>
+<p>外部故障则包括任何马上会产生业务影响的系统故障，但不包括影响系统更新的故障。外部故障一般包括客户所面临的应用故障、数据库故障和导致系统可用性或一致性失效的网络故障，这些都会影响用户的正常使用。对于不直接影响用户的依赖组件故障也属于外部故障，随着应用程序的不断运行，一旦依赖组件发生故障，系统的性能也会受到波及。这种情况对于使用某些外部服务或数据源的系统来说很常见，尽管这些外部服务或数据源对于可能不涉及到系统的主要功能，但是当系统在处理相关依赖组件的错误时可能会出现较明显的延迟。</p>
+<h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><p>可视化的种类有很多，我就不一一赘述了。这是一个有趣的研究领域，在我这些年的数据分析经历当中，学习和应用可视化方面的知识可以说是相当有挑战性。我们需要将复杂的系统输出通过直观的方式来向他人展示，才能有效地把信息传播出去。<a href="https://developers.google.com/chart/interactive/docs/gallery" target="_blank" rel="noopener">Google Charts</a> 和 <a href="https://libguides.libraries.claremont.edu/c.php?g=474417&amp;p=3286401" target="_blank" rel="noopener">Tableau</a> 都提供了很多可视化方面的工具。下面将会介绍一些最常见的可视化创新解决方案。</p>
+<h4 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h4><p>折线图可能是最常见的可视化方式了，它可以让用户很直观地按照时间维度了解系统的情况。系统中每个单一或聚合的指标都会以一条折线在图表中体现。但当同一个图表中同时存在多条折线时，就可能会对阅读有所影响（如下图所示），所以大多数情况下都可以选择仅查看其中的少数几条折线，而不是让所有折线同时显示。如果某个指标的数值产生了大于正常范围的波动，就会很容易发现。例如下图中异常的紫线、黄线、浅蓝线。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/monitoring_guide_line_chart.png" alt=""></p>
+<p>折线图的另一个用法是可以将多条折线堆叠起来以显示它们之间的关系。例如对于通过折线图反映服务器的请求数量，可以单独看到每台服务器上的请求，也可以聚合在一起看。这就可以在同一个图表中灵活查看整个系统以及每个实例的情况了。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/monitoring_guide_line_chart_aggregate.png" alt=""></p>
+<h4 id="热力图"><a href="#热力图" class="headerlink" title="热力图"></a>热力图</h4><p>另一种常见的可视化方式是热力图。热力图与条形图比较类似，还可以在条形图的基础上显示某部分在整体中占比的变化情况。例如在查看网络请求延时的时候，就可以使用热力图快速查看到所有网络请求的总体趋势和分布情况，另外，它可以使用不同颜色来表示不同部分的数值。</p>
+<p>在以下这个热力图中，通过竖直方向上每个时间段的色块数量分布，可以清楚地看到大部分数据集中在整个范围的中心位置。我们还可以发现，大多数时间段的色块分布都是比较宽松的，而 14:00 到 15:00 这一段则分布得很密集，这样的分布有可能意味着一种不健康的状态。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/monitoring_guide_histogram.png" alt=""></p>
+<h4 id="仪表图"><a href="#仪表图" class="headerlink" title="仪表图"></a>仪表图</h4><p>还有一种常见的可视化方式是仪表图，用户可以通过仪表图快速了解单个指标。仪表一般用于单个指标的显示，例如车速表代表汽车的行驶速度、油量表代表油箱中的汽油量等等。大多数的仪表图都有一个共通点，就是会划分出所示指标的对应状态。如下图所示，绿色表示正常的状态，橙色表示不良的状态，而红色则表示极差的状态。下图中间一行模拟了真实仪表的显示情况。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/monitoring_guide_gauges.png" alt=""></p>
+<p>上面图表中，除了常规仪表样式的显示方式之外，还有较为直接的数据显示方式，配合相同的配色方案，一眼就可以看出各个指标所处的状态，这一点与和仪表的特点类似。所以，最下面一行可能是仪表图的最佳显示方式，用户不需要仔细阅读，就可以大致了解各个指标的不同状态。这种类型的可视化是我最常用的类型，在数秒钟之间，我就可以全面地总览系统各方面地运行情况。</p>
+<h4 id="火焰图"><a href="#火焰图" class="headerlink" title="火焰图"></a>火焰图</h4><p>由 <a href="http://www.brendangregg.com/flamegraphs.html" target="_blank" rel="noopener">Netflix 的 Brendan Gregg</a> 在 2011 年开始使用的火焰图是一种较为少见地可视化方式。它不像仪表图那样可以从图表中快速得到关键信息，通常只会在需要解决某个应用的问题的时候才会用到这种图表。火焰图主要用于 CPU、内存和相关帧方面的表示，X 轴按字母顺序将帧一一列出，而 Y 轴则表示堆栈的深度。图中每个矩形都是一个标明了调用的函数的堆栈帧。矩形越宽，就表示它在堆栈中出现越频繁。在分析系统性能问题的时候，火焰图能够起到很大的作用，大家不妨尝试一下。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/monitoring_guide_flame_graph_0.png" alt=""></p>
+<h3 id="工具的选择"><a href="#工具的选择" class="headerlink" title="工具的选择"></a>工具的选择</h3><p>在告警工具方面，有几个商用的工具相当不错。但由于这是一篇介绍开源技术的文章，我只会介绍那些已经被广泛使用的免费工具。希望你也能够为这些工具贡献你自己的代码，让它们更加完善。</p>
+<h3 id="告警工具"><a href="#告警工具" class="headerlink" title="告警工具"></a>告警工具</h3><h4 id="Bosun"><a href="#Bosun" class="headerlink" title="Bosun"></a>Bosun</h4><p>如果你的电脑出现问题，得多亏 Stack Exchange 你才能在网上查到解决办法。Stack Exchange 以众包问答的模式运营着很多不同类型的网站。其中就有广受开发者欢迎的 <a href="https://stackoverflow.com/" target="_blank" rel="noopener">Stack Overflow</a>，以及运维方面有名的 <a href="https://superuser.com/" target="_blank" rel="noopener">Super User</a>。除此以外，从育儿经验到科幻小说、从哲学讨论到单车论坛，Stack Exchange 都有涉猎。</p>
+<p>Stack Exchange 开源了它的告警管理系统 <a href="http://bosun.org/" target="_blank" rel="noopener">Bosun</a>，同时也发布了 Prometheus 及其 <a href="https://prometheus.io/docs/alerting/alertmanager/" target="_blank" rel="noopener">AlertManager</a> 系统。这两个系统有共通点。Bosun 和 Prometheus 一样使用 Golang 开发，但 Bosun 比 Prometheus 更为强大，因为它可以使用<ruby>指标聚合<rt>metrics aggregation</rt></ruby>以外的方式与系统交互。Bosun 还可以从日志和事件收集系统中提取数据，并且支持 Graphite、InfluxDB、OpenTSDB 和 Elasticsearch。</p>
+<p>Bosun 的架构包括一个单一的服务器的二进制文件，一个诸如 OpenTSDB 的后端、Redis 以及 <a href="https://bosun.org/scollector/" target="_blank" rel="noopener">scollector 代理</a>。 scollector 代理会自动检测主机上正在运行的服务，并反馈这些进程和其它的系统资源的情况。这些数据将发送到后端。随后 Bosun 的二进制服务文件会向后端发起查询，确定是否需要触发告警。也可以通过 <a href="https://grafana.com/" target="_blank" rel="noopener">Grafana</a> 这些工具通过一个通用接口查询 Bosun 的底层后端。而 Redis 则用于存储 Bosun 的状态信息和元数据。</p>
+<p>Bosun 有一个非常巧妙的功能，就是可以根据历史数据来测试告警。这是我几年前在使用 Prometheus 的时候就非常需要的功能，当时我有一个异常的数据需要产生告警，但没有一个可以用于测试的简便方法。为了确保告警能够正常触发，我不得不造出对应的数据来进行测试。而 Bosun 让这个步骤的耗时大大缩短。</p>
+<p>Bosun 更是涵盖了所有常用过的功能，包括简单的图形化表示和告警的创建。它还带有强大的用于编写告警规则的表达式语言。但 Bosun 默认只带有电子邮件通知配置和 HTTP 通知配置，因此如果需要连接到 Slack 或其它工具，就需要对配置作出更大程度的定制化（<a href="https://bosun.org/notifications" target="_blank" rel="noopener">其文档中有</a>）。类似于 Prometheus，Bosun 还可以使用模板通知，你可以使用 HTML 和 CSS 来创建你所需要的电子邮件通知。</p>
+<h4 id="Cabot"><a href="#Cabot" class="headerlink" title="Cabot"></a>Cabot</h4><p><a href="https://cabotapp.com/" target="_blank" rel="noopener">Cabot</a> 由 <a href="https://www.arachnys.com/" target="_blank" rel="noopener">Arachnys</a> 公司开发。你或许对 Arachnys 公司并不了解，但它很有影响力：Arachnys 公司构建了一个基于云的先进解决方案，用于防范金融犯罪。在之前的公司时，我也曾经参与过类似“<a href="https://en.wikipedia.org/wiki/Know_your_customer" target="_blank" rel="noopener">了解你的客户</a>（KYC）”的工作。大多数公司都认为与恐怖组织产生联系会造成相当不好的影响，因为恐怖组织可能会利用自己的系统来筹集资金。而这些解决方案将有助于防范欺诈类犯罪，尽管这类犯罪情节相对较轻，但仍然也会对机构产生风险。</p>
+<p>Arachnys 公司为什么要开发 Cabot 呢？其实只是因为 Arachnys 的开发人员对 <a href="https://www.nagios.org/" target="_blank" rel="noopener">Nagios</a> 不太熟悉。Cabot 的出现对很多人来说都是一个好消息，它基于 Django 和 Bootstrap 开发，因此如果想对这个项目做出自己的贡献，门槛并不高。（另外值得一提的是，Cabot 这个名字来源于开发者的狗。）</p>
+<p>与 Bosun 类似，Cabot 也不对数据进行收集，而是使用监控对象的 API 提供的数据。因此，Cabot 告警的模式是拉取而不是推送。它通过访问每个监控对象的 API，根据特定的指标检索所需的数据，然后将告警数据使用 Redis 缓存，进而持久化存储到 Postgres 数据库。</p>
+<p>Cabot 的一个较为少见的特点是，它原生支持 <a href="https://graphiteapp.org/" target="_blank" rel="noopener">Graphite</a>，同时也支持 <a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins</a>。Jenkins 在这里被视为一个集中式的定时任务，它会以对待故障的方式去对待构建失败的状况。构建失败当然没有系统故障那么紧急，但一旦出现构建失败，还是需要团队采取措施去处理，毕竟并不是每个人在收到构建失败的电子邮件时都会亲自去检查 Jenkins。</p>
+<p>Cabot 另一个有趣的功能是它可以接入 Google 日历安排值班人员，这个称为 Rota 的功能用处很大，希望其它告警系统也能加入类似的功能。Cabot 目前仅支持安排主备联系人，但还有继续改进的空间。它自己的文档也提到，如果需要全面的功能，更应该考虑付费的解决方案。</p>
+<h4 id="StatsAgg"><a href="#StatsAgg" class="headerlink" title="StatsAgg"></a>StatsAgg</h4><p><a href="https://www.pearson.com/us/" target="_blank" rel="noopener">Pearson</a> 作为一家开发了 <a href="https://github.com/PearsonEducation/StatsAgg" target="_blank" rel="noopener">StatsAgg</a> 告警平台的出版公司，这是极为罕见的，当然也很值得敬佩。除此以外，Pearson 还运营着另外几个网站以及和 <a href="https://www.oreilly.com/" target="_blank" rel="noopener">O’Reilly Media</a> 合资的企业。但我仍然会将它视为出版教学书籍的公司。</p>
+<p>StatsAgg 除了是一个告警平台，还是一个指标聚合平台，甚至也有点类似其它系统的代理。StatsAgg 支持通过 Graphite、StatsD、InfluxDB 和 OpenTSDB 输入数据，也支持将其转发到各种平台。但随着中心服务的负载不断增加，风险也不断增大。尽管如此，如果 StatsAgg 的基础架构足够强壮，即使后端存储平台出现故障，也不会对它产生告警的过程造成影响。</p>
+<p>StatsAgg 是用 Java 开发的，为了尽可能降低复杂性，它仅包括主服务和一个 UI。StatsAgg 支持基于正则表达式匹配来发送告警，而且它更注重于服务方面的告警，而不是服务器基础告警。我认为它填补了开源监控工具方面的空白，而这正式它自己的目标。</p>
+<h3 id="可视化工具"><a href="#可视化工具" class="headerlink" title="可视化工具"></a>可视化工具</h3><h4 id="Grafana"><a href="#Grafana" class="headerlink" title="Grafana"></a>Grafana</h4><p><a href="https://grafana.com/" target="_blank" rel="noopener">Grafana</a> 的知名度很高，它也被广泛采用。每当我需要用到数据面板的时候，我总是会想到它，因为它比我使用过的任何一款类似的产品都要好。Grafana 由 Torkel Ödegaard 开发的，像 Cabot 一样，也是在圣诞节期间开发的，并在 2014 年 1 月发布。在短短几年之间，它已经有了长足的发展。Grafana 基于 Kibana 开发，Torkel 开启了新的分支并将其命名为 Grafana。</p>
+<p>Grafana 着重体现了实用性以及数据呈现的美观性。它天生就可以从 Graphite、Elasticsearch、OpenTSDB、Prometheus 和 InfluxDB 收集数据。此外有一个 Grafana 商用版插件可以从更多数据源获取数据，但是其他数据源插件也并非没有开源版本，Grafana 的插件生态系统已经提供了各种数据源。</p>
+<p>Grafana 能做什么呢？Grafana 提供了一个中心化的了解系统的方式。它通过 web 来展示数据，任何人都有机会访问到相关信息，当然也可以使用身份验证来对访问进行限制。Grafana 使用各种可视化方式来提供对系统一目了然的了解。Grafana 还支持不同类型的可视化方式，包括集成告警可视化的功能。</p>
+<p>现在你可以更直观地设置告警了。通过 Grafana，可以查看图表，还可以查看由于系统性能下降而触发告警的位置，单击要触发报警的位置，并告诉 Grafana 将告警发送何处。这是一个对告警平台非常强大的补充。告警平台不一定会因此而被取代，但告警系统一定会由此得到更多启发和发展。</p>
+<p>Grafana 还引入了很多团队协作的功能。不同用户之间能够共享数据面板，你不再需要为 <a href="https://opensource.com/resources/what-is-kubernetes" target="_blank" rel="noopener">Kubernetes</a> 集群创建独立的数据面板，因为由 Kubernetes 开发者和 Grafana 开发者共同维护的一些数据面板已经可用了。</p>
+<p>团队协作过程中一个重要的功能是注释。注释功能允许用户将上下文添加到图表当中，其他用户就可以通过上下文更直观地理解图表。当团队成员在处理某个事件，并且需要沟通和理解时，这个功能就十分重要了。将所有相关信息都放在需要的位置，可以让整个团队中快速达成共识。在团队需要调查故障原因和定位事件责任时，这个功能就可以发挥作用了。</p>
+<h4 id="Vizceral"><a href="#Vizceral" class="headerlink" title="Vizceral"></a>Vizceral</h4><p><a href="https://github.com/Netflix/vizceral" target="_blank" rel="noopener">Vizceral</a> 由 Netflix 开发，用于在故障发生时更有效地了解流量的情况。Grafana 是一种通用性更强的工具，而 Vizceral 则专用于某些领域。 尽管 Netflix 表示已经不再在内部使用 Vizceral，也不再主动对其展开维护，但 Vizceral 仍然会定期更新。我在这里介绍这个工具，主要是为了介绍它的的可视化机制，以及如何利用它来协助解决问题。你可以在样例环境中用它来更好地掌握这一类系统的特性。</p>
+<hr>
+<p>via: <a href="https://opensource.com/article/18/10/alerting-and-visualization-tools-sysadmins" target="_blank" rel="noopener">https://opensource.com/article/18/10/alerting-and-visualization-tools-sysadmins</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/11/08/Ultimate-Plumber-Writing-Linux-Pipes-With-Instant-Live-Preview/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/08/Ultimate-Plumber-Writing-Linux-Pipes-With-Instant-Live-Preview/" itemprop="url">使用 Ultimate Plumber 即时预览管道命令结果</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T21:27:19+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  994
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://www.ostechnix.com/wp-content/uploads/2018/10/Ultimate-Plumber-720x340.jpg" alt=""></p>
+<p>管道命令的作用是将一个命令/程序/进程的输出发送给另一个命令/程序/进程，以便将输出结果进行进一步的处理。我们可以通过使用管道命令把多个命令组合起来，使一个命令的标准输入或输出重定向到另一个命令。两个或多个 Linux 命令之间的竖线字符（<code>|</code>）表示在命令之间使用管道命令。管道命令的一般语法如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Command-1 | Command-2 | Command-3 | …| Command-N</span><br></pre></td></tr></table></figure>
+<p>Ultimate Plumber（简称 UP）是一个命令行工具，它可以用于即时预览管道命令结果。如果你在使用 Linux 时经常会用到管道命令，就可以通过它更好地运用管道命令了。它可以预先显示执行管道命令后的结果，而且是即时滚动地显示，让你可以轻松构建复杂的管道。</p>
+<p>下文将会介绍如何安装 UP 并用它将复杂管道命令的编写变得简单。</p>
+<p><strong>重要警告：</strong></p>
+<p>在生产环境中请谨慎使用 UP！在使用它的过程中，有可能会在无意中删除重要数据，尤其是搭配 <code>rm</code> 或 <code>dd</code> 命令时需要更加小心。勿谓言之不预。</p>
+<h3 id="使用-Ultimate-Plumber-即时预览管道命令"><a href="#使用-Ultimate-Plumber-即时预览管道命令" class="headerlink" title="使用 Ultimate Plumber 即时预览管道命令"></a>使用 Ultimate Plumber 即时预览管道命令</h3><p>下面给出一个简单的例子介绍 <code>up</code> 的使用方法。如果需要将 <code>lshw</code> 命令的输出传递给 <code>up</code>，只需要在终端中输入以下命令，然后回车：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lshw |&amp; up</span><br></pre></td></tr></table></figure>
+<p>你会在屏幕顶部看到一个输入框，如下图所示。</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/10/Ultimate-Plumber.png" alt=""></p>
+<p>在输入命令的过程中，输入管道符号并回车，就可以立即执行已经输入了的命令。Ultimate Plumber 会在下方的可滚动窗口中即时显示管道命令的输出。在这种状态下，你可以通过 <code>PgUp</code>/<code>PgDn</code> 键或 <code>ctrl + ←</code>/<code>ctrl + →</code> 组合键来查看结果。</p>
+<p>当你满意执行结果之后，可以使用 <code>ctrl + x</code> 组合键退出 <code>UP</code>。而退出前编写的管道命令则会保存在当前工作目录的文件中，并命名为 <code>up1.sh</code>。如果这个文件名已经被占用，就会命名为 <code>up2.sh</code>、<code>up3.sh</code> 等等以此类推，直到第 1000 个文件。如果你不需要将管道命令保存输出，只需要使用 <code>ctrl + c</code> 组合键退出即可。</p>
+<p>通过 <code>cat</code> 命令可以查看 <code>upX.sh</code> 文件的内容。例如以下是我的 <code>up2.sh</code> 文件的输出内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat up2.sh</span><br><span class="line">#!/bin/bash</span><br><span class="line">grep network -A5 | grep : | cut -d: -f2- | paste - -</span><br></pre></td></tr></table></figure>
+<p>如果通过管道发送到 <code>up</code> 的命令运行时间太长，终端窗口的左上角会显示一个波浪号（~）字符，这就表示 <code>up</code> 在等待前一个命令的输出结果作为输入。在这种情况下，你可能需要使用 <code>ctrl + s</code> 组合键暂时冻结 <code>up</code> 的输入缓冲区大小。在需要解冻的时候，使用 <code>ctrl + q</code> 组合键即可。Ultimate Plumber 的输入缓冲区大小一般为 40 MB，到达这个限制之后，屏幕的左上角会显示一个加号。</p>
+<p>以下是 <code>up</code> 命令的一个简单演示：</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/10/up.gif" alt=""></p>
+<h3 id="安装-Ultimate-Plumber"><a href="#安装-Ultimate-Plumber" class="headerlink" title="安装 Ultimate Plumber"></a>安装 Ultimate Plumber</h3><p>喜欢这个工具的话，你可以在你的 Linux 系统上安装使用。安装过程也相当简单，只需要在终端里执行以下两个命令就可以安装 <code>up</code> 了。</p>
+<p>首先从 Ultimate Plumber 的<a href="https://github.com/akavel/up/releases" target="_blank" rel="noopener">发布页面</a>下载最新的二进制文件，并将放在你系统的某个路径下，例如 <code>/usr/local/bin/</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo wget -O /usr/local/bin/up wget https://github.com/akavel/up/releases/download/v0.2.1/up</span><br></pre></td></tr></table></figure>
+<p>然后向 <code>up</code> 二进制文件赋予可执行权限：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chmod a+x /usr/local/bin/up</span><br></pre></td></tr></table></figure>
+<p>至此，你已经完成了 <code>up</code> 的安装，可以开始编写你的管道命令了。</p>
+<hr>
+<p>via: <a href="https://www.ostechnix.com/ultimate-plumber-writing-linux-pipes-with-instant-live-preview/" target="_blank" rel="noopener">https://www.ostechnix.com/ultimate-plumber-writing-linux-pipes-with-instant-live-preview/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/11/08/Machine-learning-with-Python-Essential-hacks-and-tricks/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/08/Machine-learning-with-Python-Essential-hacks-and-tricks/" itemprop="url">Python 机器学习的必备技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T09:57:16+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>尝试使用 Python 掌握机器学习、人工智能和深度学习。</p>
+</blockquote>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/programming-code-keyboard-laptop.png?itok=pGfEfu2S" alt=""></p>
+<p>想要入门机器学习并不难。除了<ruby>大规模网络公开课<rt>Massive Open Online Courses</rt></ruby>（MOOC）之外，还有很多其它优秀的免费资源。下面我分享一些我觉得比较有用的方法。</p>
+<ol>
+<li>从一些 YouTube 上的好视频开始，阅览一些关于这方面的文章或者书籍，例如 《<a href="https://www.goodreads.com/book/show/24612233-the-master-algorithm" target="_blank" rel="noopener">主算法：终极学习机器的探索将如何重塑我们的世界</a>》，而且我觉得你肯定会喜欢这些<a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/" target="_blank" rel="noopener">关于机器学习的很酷的互动页面</a>。</li>
+<li>对于“<ruby>机器学习<rt>machine learning</rt></ruby>”、“<ruby>人工智能<rt>artificial intelligence</rt></ruby>”、“<ruby>深度学习<rt>deep learning</rt></ruby>”、“<ruby>数据科学<rt>data science</rt></ruby>”、“<ruby>计算机视觉<rt>computer vision</rt></ruby>”和“<ruby>机器人技术<rt>robotics</rt></ruby>”这一堆新名词，你需要知道它们之间的区别。你可以阅览或聆听这些领域的专家们的演讲，例如这位有影响力的<a href="https://www.youtube.com/watch?v=tKa0zDDDaQk" target="_blank" rel="noopener">数据科学家 Brandon Rohrer 的精彩视频</a>。或者这个讲述了数据科学相关的<a href="https://www.youtube.com/watch?v=Ura_ioOcpQI" target="_blank" rel="noopener">各种角色之间的区别</a>的视频。</li>
+<li>明确你自己的学习目标，并选择合适的 <a href="https://www.coursera.org/learn/machine-learning" target="_blank" rel="noopener">Coursera 课程</a>，或者参加高校的网络公开课，例如<a href="https://www.coursera.org/specializations/machine-learning" target="_blank" rel="noopener">华盛顿大学的课程</a>就很不错。</li>
+<li>关注优秀的博客：例如 <a href="https://www.kdnuggets.com/" target="_blank" rel="noopener">KDnuggets</a> 的博客、<a href="http://www.markmeloon.com/" target="_blank" rel="noopener">Mark Meloon</a> 的博客、<a href="https://brohrer.github.io/blog.html" target="_blank" rel="noopener">Brandon Rohrer</a> 的博客、<a href="https://blog.openai.com/" target="_blank" rel="noopener">Open AI</a> 的研究博客，这些都值得推荐。</li>
+<li>如果你热衷于在线课程，后文中会有如何<a href="https://towardsdatascience.com/how-to-choose-effective-moocs-for-machine-learning-and-data-science-8681700ed83f" target="_blank" rel="noopener">正确选择 MOOC 课程</a>的指导。</li>
+<li>最重要的是，培养自己对这些技术的兴趣。加入一些优秀的社交论坛，不要被那些耸人听闻的头条和新闻所吸引，专注于阅读和了解，将这些技术的背景知识和发展方向理解透彻，并积极思考在日常生活和工作中如何应用机器学习或数据科学的原理。例如建立一个简单的回归模型来预测下一次午餐的成本，又或者是从电力公司的网站上下载历史电费数据，在 Excel 中进行简单的时序分析以发现某种规律。在你对这些技术产生了浓厚兴趣之后，可以观看以下这个视频。</li>
+</ol>
+<p><a href="https://www.youtube.com/embed/IpGxLWOIZy4" target="_blank" rel="noopener">https://www.youtube.com/embed/IpGxLWOIZy4</a></p>
+<h3 id="Python-是机器学习和人工智能方面的最佳语言吗？"><a href="#Python-是机器学习和人工智能方面的最佳语言吗？" class="headerlink" title="Python 是机器学习和人工智能方面的最佳语言吗？"></a>Python 是机器学习和人工智能方面的最佳语言吗？</h3><p>除非你是一名专业的研究一些复杂算法纯理论证明的研究人员，否则，对于一个机器学习的入门者来说，需要熟悉至少一种高级编程语言。因为大多数情况下都是需要考虑如何将现有的机器学习算法应用于解决实际问题，而这需要有一定的编程能力作为基础。</p>
+<p>哪一种语言是数据科学的最佳语言？这个讨论一直没有停息过。对于这方面，你可以提起精神来看一下 FreeCodeCamp 上这一篇关于<a href="https://medium.freecodecamp.org/which-languages-should-you-learn-for-data-science-e806ba55a81f" target="_blank" rel="noopener">数据科学语言</a>的文章，又或者是 KDnuggets 关于 <a href="https://www.kdnuggets.com/2017/09/python-vs-r-data-science-machine-learning.html" target="_blank" rel="noopener">Python 和 R 之争</a>的深入探讨。</p>
+<p>目前人们普遍认为 Python 在开发、部署、维护各方面的效率都是比较高的。与 Java、C 和 C++ 这些较为传统的语言相比，Python 的语法更为简单和高级。而且 Python 拥有活跃的社区群体、广泛的开源文化、数百个专用于机器学习的优质代码库，以及来自业界巨头（包括 Google、Dropbox、Airbnb 等）的强大技术支持。</p>
+<h3 id="基础-Python-库"><a href="#基础-Python-库" class="headerlink" title="基础 Python 库"></a>基础 Python 库</h3><p>如果你打算使用 Python 实施机器学习，你必须掌握一些 Python 包和库的使用方法。</p>
+<h4 id="NumPy"><a href="#NumPy" class="headerlink" title="NumPy"></a>NumPy</h4><p>NumPy 的完整名称是 <a href="http://numpy.org/" target="_blank" rel="noopener">Numerical Python</a>，它是 Python 生态里高性能科学计算和数据分析都需要用到的基础包，几乎所有高级工具（例如 <a href="https://pandas.pydata.org/" target="_blank" rel="noopener">Pandas</a> 和 <a href="http://scikit-learn.org/" target="_blank" rel="noopener">scikit-learn</a>）都依赖于它。<a href="https://www.tensorflow.org/" target="_blank" rel="noopener">TensorFlow</a> 使用了 NumPy 数组作为基础构建块以支持 Tensor 对象和深度学习的图形流。很多 NumPy 操作的速度都非常快，因为它们都是通过 C 实现的。高性能对于数据科学和现代机器学习来说是一个非常宝贵的优势。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/machine-learning-python_numpy-cheat-sheet.jpeg" alt=""></p>
+<h4 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h4><p>Pandas 是 Python 生态中用于进行通用数据分析的最受欢迎的库。Pandas 基于 NumPy 数组构建，在保证了可观的执行速度的同时，还提供了许多数据工程方面的功能，包括：</p>
+<ul>
+<li>对多种不同数据格式的读写操作</li>
+<li>选择数据子集</li>
+<li>跨行列计算</li>
+<li>查找并补充缺失的数据</li>
+<li>将操作应用于数据中的独立分组</li>
+<li>按照多种格式转换数据</li>
+<li>组合多个数据集</li>
+<li>高级时间序列功能</li>
+<li>通过 Matplotlib 和 Seaborn 进行可视化</li>
+</ul>
+<p><img src="https://opensource.com/sites/default/files/uploads/pandas_cheat_sheet_github.png" alt=""></p>
+<h4 id="Matplotlib-和-Seaborn"><a href="#Matplotlib-和-Seaborn" class="headerlink" title="Matplotlib 和 Seaborn"></a>Matplotlib 和 Seaborn</h4><p>数据可视化和数据分析是数据科学家的必备技能，毕竟仅凭一堆枯燥的数据是无法有效地将背后蕴含的信息向受众传达的。这两项技能对于机器学习来说同样重要，因为首先要对数据集进行一个探索性分析，才能更准确地选择合适的机器学习算法。</p>
+<p><a href="https://matplotlib.org/" target="_blank" rel="noopener">Matplotlib</a> 是应用最广泛的 2D Python 可视化库。它包含海量的命令和接口，可以让你根据数据生成高质量的图表。要学习使用 Matplotlib，可以参考这篇详尽的<a href="https://realpython.com/python-matplotlib-guide/" target="_blank" rel="noopener">文章</a>。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/matplotlib_gallery_-1.png" alt=""></p>
+<p><a href="https://seaborn.pydata.org/" target="_blank" rel="noopener">Seaborn</a> 也是一个强大的用于统计和绘图的可视化库。它在 Matplotlib 的基础上提供样式灵活的 API、用于统计和绘图的常见高级函数，还可以和 Pandas 提供的功能相结合。要学习使用 Seaborn，可以参考这篇优秀的<a href="https://www.datacamp.com/community/tutorials/seaborn-python-tutorial" target="_blank" rel="noopener">教程</a>。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/machine-learning-python_seaborn.png" alt=""></p>
+<h4 id="Scikit-learn"><a href="#Scikit-learn" class="headerlink" title="Scikit-learn"></a>Scikit-learn</h4><p>Scikit-learn 是机器学习方面通用的重要 Python 包。它实现了多种<a href="https://en.wikipedia.org/wiki/Statistical_classification" target="_blank" rel="noopener">分类</a>、<a href="https://en.wikipedia.org/wiki/Regression_analysis" target="_blank" rel="noopener">回归</a>和<a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank" rel="noopener">聚类</a>算法，包括<a href="https://en.wikipedia.org/wiki/Support_vector_machine" target="_blank" rel="noopener">支持向量机</a>、<a href="https://en.wikipedia.org/wiki/Random_forests" target="_blank" rel="noopener">随机森林</a>、<a href="https://en.wikipedia.org/wiki/Gradient_boosting" target="_blank" rel="noopener">梯度增强</a>、<a href="https://en.wikipedia.org/wiki/K-means_clustering" target="_blank" rel="noopener">k-means 算法</a>和 <a href="https://en.wikipedia.org/wiki/DBSCAN" target="_blank" rel="noopener">DBSCAN 算法</a>，可以与 Python 的数值库 NumPy 和科学计算库 <a href="https://en.wikipedia.org/wiki/SciPy" target="_blank" rel="noopener">SciPy</a> 结合使用。它通过兼容的接口提供了有监督和无监督的学习算法。Scikit-learn 的强壮性让它可以稳定运行在生产环境中，同时它在易用性、代码质量、团队协作、文档和性能等各个方面都有良好的表现。可以参考<a href="http://scikit-learn.org/stable/tutorial/basic/tutorial.html" target="_blank" rel="noopener">这篇基于 Scikit-learn 的机器学习入门</a>，或者<a href="https://towardsdatascience.com/machine-learning-with-python-easy-and-robust-method-to-fit-nonlinear-data-19e8a1ddbd49" target="_blank" rel="noopener">这篇基于 Scikit-learn 的简单机器学习用例演示</a>。</p>
+<p>本文使用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> 许可，在 <a href="https://heartbeat.fritz.ai/some-essential-hacks-and-tricks-for-machine-learning-with-python-5478bc6593f2" target="_blank" rel="noopener">Heartbeat</a> 上首发。</p>
+<hr>
+<p>via: <a href="https://opensource.com/article/18/10/machine-learning-python-essential-hacks-and-tricks" target="_blank" rel="noopener">https://opensource.com/article/18/10/machine-learning-python-essential-hacks-and-tricks</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/11/05/3-areas-to-drive-DevOps-change/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/05/3-areas-to-drive-DevOps-change/" itemprop="url">推动 DevOps 变革的三个方面</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-05T10:22:17+08:00">
+                2018-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>推动大规模的组织变革是一个痛苦的过程。对于 DevOps 来说，尽管也有阵痛，但变革带来的价值则相当可观。</p>
+</blockquote>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/diversity-inclusion-transformation-change_20180927.png?itok=2E-g10hJ" alt=""></p>
+<p>避免痛苦是一种强大的动力。一些研究表明，<a href="https://link.springer.com/article/10.1007%2Fs00442-014-2995-6" target="_blank" rel="noopener">植物也会通过遭受疼痛的过程</a>以采取措施来保护自己。我们人类有时也会刻意让自己受苦——在剧烈运动之后，身体可能会发生酸痛，但我们仍然坚持运动。那是因为当人认为整个过程利大于弊时，几乎可以忍受任何事情。</p>
+<p>推动大规模的组织变革的过程确实是痛苦的。有人可能会因难以改变价值观和行为而感到痛苦，有人可能会因难以带领团队而感到痛苦，也有人可能会因难以开展工作而感到痛苦。但就 DevOps 而言，我可以说这些痛苦都是值得的。</p>
+<p>我也曾经关注过一个团队耗费大量时间优化技术流程的过程，在这个过程中，团队逐渐将流程进行自动化改造，并最终获得了成功。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/devops-delays.png" alt="Improvements after DevOps transformation" title="Improvements after DevOps transformation"></p>
+<p>图片来源：Lee Eason. CC BY-SA 4.0</p>
+<p>这张图表充分表明了变革的价值。一家公司在我主导实行了 DevOps 转型之后，60 多个团队每月提交了超过 900 个发布请求。这些工作量的原耗时高达每个月 350 人/天，而这么多的工作量对于任何公司来说都是不可忽视的。除此以外，他们每月的部署次数从 100 次增加到了 9000 次，高危 bug 减少了 24%，工程师们更轻松了，<ruby>净推荐值<rt>Net Promoter Score</rt></ruby>（NPS）也提高了，而 NPS 提高反过来也让团队的 DevOps 转型更加顺利。正如 <a href="https://puppet.com/resources/whitepaper/state-of-devops-report" target="_blank" rel="noopener">Puppet 发布的 DevOps 报告</a>所预测的，用在技术流程改进上的投入可以在业务成果上明显地体现出来。</p>
+<p>而 DevOps 主导者在推动变革时必须关注这三个方面：团队管理，团队文化和团队活力。</p>
+<h3 id="团队管理"><a href="#团队管理" class="headerlink" title="团队管理"></a>团队管理</h3><p>最重要的是，改进对技术流程的投入可以转化为更好的业务成果。</p>
+<p>组织架构越大，业务领导与一线员工之间的距离就会越大，当然发生误解的可能性也会越大。而且各种技术工具和实际应用都在以日新月异的速度变化，这就导致业务领导几乎不可能对 DevOps 或敏捷开发的转型方向有一个亲身的了解。</p>
+<p>DevOps 主导者必须和管理层密切合作，在进行决策的时候给出相关的意见，以帮助他们做出正确的决策。</p>
+<p>公司的管理层只是知道 DevOps 会对产品部署的方式进行改进，而并不了解其中的具体过程。假设你正在帮助一个软件开发团队实现自动化部署，当管理层得知某次部署失败时（这种情况是有的），就会想要了解这件事情的细节。如果管理层了解到进行部署的是软件团队而不是专门的发布管理团队，就可能会坚持使用传统的变更流程来保证业务的正常运作。你可能会失去团队的信任，团队也可能不愿意做出进一步的改变。</p>
+<p>如果没有和管理层做好心理上的预期，一旦发生意外的生产事件，重建管理层的信任并得到他们的支持比事先对他们进行教育需要更长的时间。所以，最好事先和管理层在各方面协调好，这会让你在后续的工作中避免很多麻烦。</p>
+<p>对于和管理层之间的协调，这里有两条建议：</p>
+<ul>
+<li>一是<strong>重视所有规章制度</strong>。如果管理层对合同、安全等各方面有任何疑问，你都可以向法务或安全负责人咨询，这样做可以避免犯下后果严重的错误。</li>
+<li>二是<strong>将管理层重点关注的方面输出为量化指标</strong>。举个例子，如果公司的目标是减少客户流失，而你调查得出计划外的服务宕机是造成客户流失的主要原因，那么就可以让团队对故障的<ruby>平均排查时间<rt>Mean Time To Detection</rt></ruby>（MTTD）和<ruby>平均解决时间<rt>Mean Time To Resolution</rt></ruby>（MTTR）实行重点优化。你可以使用这些关键指标来量化团队的工作成果，而管理层对此也可以有一个直观的了解。</li>
+</ul>
+<h3 id="团队文化"><a href="#团队文化" class="headerlink" title="团队文化"></a>团队文化</h3><p>DevOps 是一种专注于持续改进代码、构建、部署和操作流程的文化，而团队文化代表了团队的价值观和行为。从本质上说，团队文化是要塑造团队成员的行为方式，而这并不是一件容易的事。</p>
+<p>我推荐一本叫做《<a href="https://www.gartner.com/en/publications/wolf-cio" target="_blank" rel="noopener">披着狼皮的 CIO</a>》的书。另外，研究心理学、阅读《<a href="https://en.wikipedia.org/wiki/Drive:_The_Surprising_Truth_About_What_Motivates_Us" target="_blank" rel="noopener">Drive</a>》、观看 Daniel Pink 的 <a href="https://www.ted.com/talks/dan_pink_on_motivation?language=en#t-2094" target="_blank" rel="noopener">TED 演讲</a>、阅读《<a href="https://www.ted.com/talks/dan_pink_on_motivation?language=en#t-2094" target="_blank" rel="noopener">千面英雄</a>》、了解每个人的心路历程，以上这些都是你推动公司技术变革所应该尝试去做的事情。如果这些你都没兴趣，说明你不是那个推动公司变革的人。如果你想成为那个人，那就开始学习吧！</p>
+<p>从本质上说，改变一个人真不是件容易的事。</p>
+<p>理性的人大多都按照自己的价值观工作，然而团队通常没有让每个人都能达成共识的明确价值观。因此，你需要明确团队目前的价值观，包括价值观的形成过程和价值观的目标导向。但不能将这些价值观强加到团队成员身上，只需要让团队成员在现有条件下力所能及地做到最好就可以了。</p>
+<p>同时需要向团队成员阐明，公司正在发生组织和团队目标的变化，团队的价值观也随之改变，最好也厘清整个过程中将会作出什么变化。例如，公司以往或许是由于资金有限，一直将节约成本的原则放在首位，在研发新产品的时候，基础架构团队不得不共享数据库集群或服务器，从而导致了服务之间的紧密耦合。然而随着时间的推移，这种做法会产生难以维护的混乱，即使是一个小小的变化也可能造成无法预料的后果。这就导致交付团队难以执行变更控制流程，进而令变更停滞不前。</p>
+<p>如果这种状况持续几年，最终的结果将会是毫无创新、技术老旧、问题繁多以及产品品质低下，公司的发展到达了瓶颈，原本的价值观已经不再适用。所以，工作效率的优先级必须高于节约成本。如果一个选择能让团队运作更好，另一个选择只是短期来看成本便宜，那你应该选择前者。</p>
+<p>你必须反复强调团队的价值观。每当团队取得了一定的工作进展（即使探索创新时出现一些小的失误），都应该对团队作出激励。在团队部署出现失败时，鼓励他们承担风险、吸取教训，同时指导团队如何改进他们的工作并表示支持。长此下来，团队成员就会对你产生信任，不再顾虑为切合团队的价值观而做出改变。</p>
+<h3 id="团队活力"><a href="#团队活力" class="headerlink" title="团队活力"></a>团队活力</h3><p>你有没有在会议上听过类似这样的话？“在张三度假回来之前，我们无法对这件事情做出评估。他是唯一一个了解代码的人”，或者是“我们完成不了这项任务，它在网络上需要跨团队合作，而防火墙管理员刚好请病假了”，又或者是“张三最清楚这个系统，他说是怎么样，通常就是怎么样”。那么如果团队在处理工作时，谁才是主力？就是张三。而且也一直会是他。</p>
+<p>我们一直都认为这就是软件开发的自带属性。但是如果我们不作出改变，这种循环就会一直持续下去。</p>
+<p>熵的存在会让团队自发地变得混乱和缺乏活力，团队的成员和主导者的都有责任控制这个熵并保持团队的活力。DevOps、敏捷开发、上云、代码重构这些行为都会令熵加速增长，这是因为转型让团队需要学习更多新技能和专业知识以开展新工作。</p>
+<p>我们来看一个产品团队重构历史代码的例子。像往常一样，他们在 AWS 上构建新的服务。而传统的系统则在数据中心部署，并由 IT 部门进行监控和备份。IT 部门会确保在基础架构的层面上满足应用的安全需求、进行灾难恢复测试、系统补丁、安装配置了入侵检测和防病毒代理，而且 IT 部门还保留了年度审计流程所需的变更控制记录。</p>
+<p>产品团队经常会犯一个致命的错误，就是认为 IT 是消耗资源的部门，是需要突破的瓶颈。他们希望脱离已有的 IT 部门并使用公有云，但实际上是他们忽视了 IT 部门提供的关键服务。迁移到云上只是以不同的方式实现这些关键服务，因为 AWS 也是一个数据中心，团队即使使用 AWS 也需要完成 IT 运维任务。</p>
+<p>实际上，产品团队在向云迁移的时候也必须学习如何使用这些 IT 服务。因此，当产品团队开始重构历史代码并部署到云上时，也需要学习大量的技能才能正常运作。这些技能不会无师自通，必须自行学习或者聘用相关的人员，团队的主导者也必须积极进行管理。</p>
+<p>在带领团队时，我找不到任何适合我的工具，因此我建立了 <a href="https://tekata.io/" target="_blank" rel="noopener">Tekita.io</a> 这个项目。Tekata 免费而且容易使用。但相比起来，把注意力集中在人员和流程上更为重要，你需要不断学习，持续关注团队的短板，因为它们会影响团队的交付能力，而弥补这些短板往往需要学习大量的新知识，这就需要团队成员之间有一个很好的协作。因此 76％ 的年轻人都认为个人发展机会是公司文化<a href="https://www.execu-search.com/~/media/Resources/pdf/2017_Hiring_Outlook_eBook" target="_blank" rel="noopener">最重要的的一环</a>。</p>
+<h3 id="效果就是最好的证明"><a href="#效果就是最好的证明" class="headerlink" title="效果就是最好的证明"></a>效果就是最好的证明</h3><p>DevOps 转型会改变团队的工作方式和文化，这需要得到管理层的支持和理解。同时，工作方式的改变意味着新技术的引入，所以在管理上也必须谨慎。但转型的最终结果是团队变得更高效、成员变得更积极、产品变得更优质，客户也变得更满意。</p>
+<p>Lee Eason 将于 10 月 21-23 日在北卡罗来纳州 Raleigh 举行的 <a href="https://allthingsopen.org/" target="_blank" rel="noopener">All Things Open</a> 上讲述 <a href="https://allthingsopen.org/talk/tales-from-a-devops-transformation/" target="_blank" rel="noopener">DevOps 转型的故事</a>。</p>
+<p>免责声明：本文中的内容仅为 Lee Eason 的个人立场，不代表 Ipreo 或 IHS Markit。</p>
+<hr>
+<p>via: <a href="https://opensource.com/article/18/10/tales-devops-transformation" target="_blank" rel="noopener">https://opensource.com/article/18/10/tales-devops-transformation</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/11/04/Browsing-the-web-with-Min-a-minimalist-open-source-web-browser/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/04/Browsing-the-web-with-Min-a-minimalist-open-source-web-browser/" itemprop="url">使用极简浏览器 Min 浏览网页</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T23:11:25+08:00">
+                2018-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>并非所有 web 浏览器都要做到无所不能，Min 就是一个极简主义风格的浏览器。</p>
+</blockquote>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/openweb-osdc-lead.png?itok=yjU4KliG" alt=""></p>
+<p>现在还有开发新的 Web 浏览器的需要吗？即使现在浏览器领域已经成为了寡头市场，但仍然不断涌现出各种前所未有的浏览器产品。</p>
+<p><a href="https://minbrowser.github.io/min/" target="_blank" rel="noopener">Min</a> 就是其中一个。顾名思义，Min 是一个小的浏览器，也是一个极简主义的浏览器。但它麻雀虽小五脏俱全，而且还是一个开源的浏览器，它的 Apache 2.0 许可证引起了我的注意。</p>
+<p>让我们来看看 Min 有什么值得关注的方面。</p>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>Min 基于 <a href="http://electron.atom.io/apps/" target="_blank" rel="noopener">Electron</a> 框架开发，值得一提的是，<a href="https://opensource.com/article/17/5/atom-text-editor-packages-writers" target="_blank" rel="noopener">Atom 文本编辑器</a>也是基于这个框架开发的。它提供 Linux、MacOS 和 Windows 的<a href="https://github.com/minbrowser/min/releases/" target="_blank" rel="noopener">安装程序</a>，当然也可以<a href="https://github.com/minbrowser/min" target="_blank" rel="noopener">从 GitHub 获取它的源代码</a>自行编译安装。</p>
+<p>我使用的 Linux 发行版是 Manjaro，但没有完全匹配这个发行版的安装程序。还好，我通过 Manjaro 的包管理器也能安装 Min。</p>
+<p>安装完成后，在终端就可以直接启动 Min。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/min-main.png" alt=""></p>
+<p>Min 号称是更智能、更快速的浏览器。经过尝试以后，我觉得它比我在其它电脑上使用过的 Firefox 和 Chrome 浏览器启动得更快。</p>
+<p>而使用 Min 浏览网页的过程则和 Firefox 或 Chrome 一样，只要再地址栏输入 URL，回车，就好了。</p>
+<h3 id="Min-的功能"><a href="#Min-的功能" class="headerlink" title="Min 的功能"></a>Min 的功能</h3><p>尽管 Min 不可能带有 Firefox 或 Chrome 等浏览器得所有功能，但它也有可取之处。</p>
+<p>Min 和其它浏览器一样，支持页面选项卡。它还有一个称为 Tasks 的功能，可以对打开的选项卡进行分组。</p>
+<p><a href="http://duckduckgo.com" target="_blank" rel="noopener">DuckDuckGo</a> 是我最喜欢的搜索引擎，而 Min 的默认搜索引擎恰好就是它，这正合我意。当然，如果你喜欢另一个搜索引擎，也可以在 Min 的偏好设置中配置你喜欢的搜索引擎作为默认搜索引擎。</p>
+<p>Min 没有使用类似 AdBlock 这样的插件来过滤你不想看到的内容，而是使用了一个名为 <a href="https://easylist.to/" target="_blank" rel="noopener">EasyList</a> 的内置的广告拦截器，你可以使用它来屏蔽脚本和图片。另外 Min 还带有一个内置的防跟踪软件。</p>
+<p>类似 Firefox，Min 有一个名为叫做 Reading List 的阅读模式。只需点击地址栏中的对应图标，就可以去除页面中的大部分无关内容，让你专注于正在阅读的内容。网页在阅读列表中可以保留 30 天。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/min-reading-list.png" alt=""></p>
+<p>Min 还有一个专注模式，可以隐藏其它选项卡并阻止你打开新的选项卡。在专注模式下，如果一个 web 页面中进行工作，需要多点击好几次才能打开一个新页面。</p>
+<p>Min 也有很多快捷键让你快速使用某个功能。你可以<a href="https://github.com/minbrowser/min/wiki" target="_blank" rel="noopener">在 GitHub 上</a>找到这些这些快捷键的参考文档，也可以在 Min 的偏好设置中进行更改。</p>
+<p>我发现 Min 可以在 YouTube、Vimeo、Dailymotion 等视频网站上播放视频，还可以在音乐网站 7Digital 上播放音乐。但由于我没有账号，所以没法测试是否能在 Spotify 或 Last.fm 等这些网站上播放音乐。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/min-video.png" alt=""></p>
+<h3 id="Min-的弱点"><a href="#Min-的弱点" class="headerlink" title="Min 的弱点"></a>Min 的弱点</h3><p>Min 确实也有自己的缺点，例如它无法将网站添加为书签。替代方案要么是查看 Min 的搜索历史来找回你需要的链接，要么是使用一个第三方的书签服务。</p>
+<p>最大的缺点是 Min 不支持插件。这对我来说不是一件坏事，因为浏览器启动速度和运行速度快的主要原因就在于此。当然也有一些人非常喜欢使用浏览器插件，Min 就不是他们的选择。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Min 算是一个中规中矩的浏览器，它可以凭借轻量、快速的优点吸引很多极简主义的用户。但是对于追求多功能的用户来说，Min 就显得相当捉襟见肘了。</p>
+<p>所以，如果你想摆脱当今多功能浏览器的束缚，我觉得可以试用一下 Min。</p>
+<hr>
+<p>via: <a href="https://opensource.com/article/18/10/min-web-browser" target="_blank" rel="noopener">https://opensource.com/article/18/10/min-web-browser</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">111.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="HankChow's Blog">
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="HankChow&#39;s Blog">
+<meta property="og:url" content="http://github.hankchow.net/page/8/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HankChow&#39;s Blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/page/8/">
+
+
+
+
+
+  <title>HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/11/01/5-tips-for-choosing-the-right-open-source-database/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/01/5-tips-for-choosing-the-right-open-source-database/" itemprop="url">正确选择开源数据库的 5 个技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-01T23:21:16+08:00">
+                2018-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>对关键应用的选择不容许丝毫错误。</p>
+</blockquote>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/server_data_system_admin.png?itok=q6HCfNQ8" alt=""></p>
+<p>你或许会遇到需要选择合适的开源数据库的情况。但这无论对于开源方面的老手或是新手，都是一项艰巨的任务。</p>
+<p>在过去的几年中，采用开源技术的企业越来越多。面对这样的趋势，众多开源应用公司都纷纷承诺自己提供的解决方案能够各种问题、适应各种负载。但这些承诺不能轻信，在开源应用上的选择是重要而艰难的，尤其是数据库这种关键的应用。</p>
+<p>凭借我在 <a href="https://www.percona.com/" target="_blank" rel="noopener">Percona</a> 和其它公司担任 IT 专家的经验，我很幸运能够指导其他人在开源技术的选择上做出正确的决策，因为需要考虑的重要因素太多了。希望通过这篇文章能够向大家分享这方面的一些技巧。</p>
+<h3 id="有一个明确的目标"><a href="#有一个明确的目标" class="headerlink" title="有一个明确的目标"></a>有一个明确的目标</h3><p>这一点看似简单，但在和很多人聊过 MySQL、MongoDB、PostgreSQL 之后，我觉得这一点才是最重要的。</p>
+<p>面对繁杂的开源数据库，更需要明确自己的目标。无论这个数据库是作为开发用的标准化数据库后端，抑或是用于替换遗留代码中的原有数据库，这都是一个明确的目标。</p>
+<p>目标一旦确定，就可以集中精力与开源软件的提供方商讨更多细节了。</p>
+<h3 id="了解你的工作负载"><a href="#了解你的工作负载" class="headerlink" title="了解你的工作负载"></a>了解你的工作负载</h3><p>尽管开源数据库技术的功能越来越丰富，但这些新加入的功能都不太具有普适性。譬如 MongoDB 新增了事务的支持、MySQL 新增了 JSON 存储的功能等等。目前开源数据库的普遍趋势是不断加入新的功能，但很多人的误区却在于没有选择最适合的工具来完成自己的工作 —— 这样的人或许是一个自大的开发者，又或许是一个视野狭窄的主管 —— 最终导致公司业务上的损失。最致命的是，在业务初期，使用了不适合的工具往往也可以顺利地完成任务，但随着业务的增长，很快就会到达瓶颈，尽管这个时候还可以替换更合适的工具，但成本就比较高了。</p>
+<p>例如，如果你需要的是数据分析仓库，关系数据库可能不是一个适合的选择；如果你处理事务的应用要求严格的数据完整性和一致性，就不要考虑 NoSQL 了。</p>
+<h3 id="不要重新发明轮子"><a href="#不要重新发明轮子" class="headerlink" title="不要重新发明轮子"></a>不要重新发明轮子</h3><p>在过去的数十年，开源数据库技术迅速发展壮大。开源数据库从新生，到受到质疑，再到受到认可，现在已经成为很多企业生产环境的数据库。企业不再需要担心选择开源数据库技术会产生风险，因为开源数据库通常都有活跃的社区，可以为越来越多的初创公司、中型企业甚至 500 强公司提供开源数据库领域的支持和第三方工具。</p>
+<p>Battery Ventures 是一家专注于技术的投资公司，最近推出了一个用于跟踪最受欢迎开源项目的 <a href="https://techcrunch.com/2017/04/07/tracking-the-explosive-growth-of-open-source-software/" target="_blank" rel="noopener">BOSS 指数</a> 。它提供了对一些被广泛采用的开源项目和活跃的开源项目的详细情况。其中，数据库技术毫无悬念地占据了榜单的主导地位，在前十位之中占了一半。这个 BOSS 指数对于刚接触开源数据库领域的人来说，这是一个很好的切入点。当然，开源技术的提供者也会针对很多常见的典型问题给出对应的解决方案。</p>
+<p>我认为，你想要做的事情很可能已经有人解决过了。即使这些先行者的解决方案不一定完全契合你的需求，但也可以从他们成功或失败的案例中根据你自己的需求修改得出合适的解决方案。</p>
+<p>如果你采用了一个最前沿的技术，这就是你探索的好机会了。如果你的工作负载刚好适合新的开源数据库技术，放胆去尝试吧。第一个吃螃蟹的人总是会得到意外的挑战和收获。</p>
+<h3 id="先从简单开始"><a href="#先从简单开始" class="headerlink" title="先从简单开始"></a>先从简单开始</h3><p>你的数据库实际上需要达到多少个 <a href="https://en.wikipedia.org/wiki/Five_nines" target="_blank" rel="noopener">9</a> 的可用性？对许多公司来说，“实现高可用性”仅仅只是一个模糊的目标。当然，最常见的答案都会是“它是关键应用，我们无论多短的停机时间都是无法忍受的”。</p>
+<p>数据库环境越复杂，管理的难度就越大，成本也会越高。理论上你总可以将数据库的可用性提得更高，但代价将会是大大增加的管理难度和性能下降。所以，先从简单开始，直到有需要时再逐步扩展。</p>
+<p>例如，Booking.com 是一个有名的旅游预订网站。但少有人知的是，它使用 MySQL 作为数据库后端。 Booking.com 高级系统架构师 Nicolai Plum 曾经发表过一次<a href="https://www.percona.com/live/mysql-conference-2015/sessions/bookingcom-evolution-mysql-system-design" target="_blank" rel="noopener">演讲</a>，讲述了他们公司使用 MySQL 数据库的历程。其中一个重点就是，在初始阶段数据库可以被配置得很简单，然后逐渐变得复杂。对于早期的数据库需求，一个简单的主从架构就足够了，但随着工作负载和数据量的增加，数据库引入了负载均衡、多个读取副本，还使用 Hadoop 进行分析。尽管如此，早期的架构仍然是非常简单的。</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/internet_app_barrett_chambers.png" alt=""></p>
+<h3 id="有疑问，找专家"><a href="#有疑问，找专家" class="headerlink" title="有疑问，找专家"></a>有疑问，找专家</h3><p>如果你仍然不确定数据库选择的是否合适，可以在论坛、网站或者与软件的提供者处商讨。研究各种开源数据库是否满足自己的需求是一件很有意义的事，因为总会发现你从不知道的技术。而开源社区就是分享这些信息的地方。</p>
+<p>当你接触到开源软件和软件提供者时，有一件重要的事情需要注意。很多公司都有开放的核心业务模式，鼓励采用他们的数据库软件。你可以只接受他们的部分建议和指导，然后用你自己的能力去研究和探索替代方案。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>选择正确的开源数据库是一个重要的过程。很多时候，人们都会在真正理解需求之前就做出决定，这是本末倒置的。</p>
+<hr>
+<p>via: <a href="https://opensource.com/article/18/10/tips-choosing-right-open-source-database" target="_blank" rel="noopener">https://opensource.com/article/18/10/tips-choosing-right-open-source-database</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/10/27/Why-is-Python-so-slow/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/27/Why-is-Python-so-slow/" itemprop="url">为什么 Python 这么慢？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-27T11:41:48+08:00">
+                2018-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Python 现在越来越火，已经迅速扩张到包括 DevOps、数据科学、Web 开发、信息安全等各个领域当中。</p>
+<p>然而，相比起 Python 扩张的速度，Python 代码的运行速度就显得有点逊色了。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1200/0*M2qZQsVnDS-4i5zc.jpg" alt=""></p>
+<blockquote>
+<p>在代码运行速度方面，Java、C、C++、C# 和 Python 要如何进行比较呢？并没有一个放之四海而皆准的标准，因为具体结果很大程度上取决于运行的程序类型，而<ruby>语言基准测试<rt>Computer Language Benchmarks Games</rt></ruby>可以作为<a href="http://algs4.cs.princeton.edu/faq/" target="_blank" rel="noopener">衡量的一个方面</a>。</p>
+</blockquote>
+<p>根据我这些年来进行语言基准测试的经验来看，Python 比很多语言运行起来都要慢。无论是使用 <a href="https://en.wikipedia.org/wiki/Just-in-time_compilation" target="_blank" rel="noopener">JIT</a> 编译器的 C＃、Java，还是使用 <a href="https://en.wikipedia.org/wiki/Ahead-of-time_compilation" target="_blank" rel="noopener">AOT</a> 编译器的 C、C++，又或者是 JavaScript 这些解释型语言，Python 都<a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/python.html" target="_blank" rel="noopener">比它们运行得慢</a>。</p>
+<p>注意：对于文中的 “Python” ，一般指 CPython 这个官方的实现。当然我也会在本文中提到其它语言的 Python 实现。</p>
+<blockquote>
+<p>我要回答的是这个问题：对于一个类似的程序，Python 要比其它语言慢 2 到 10 倍不等，这其中的原因是什么？又有没有改善的方法呢？</p>
+</blockquote>
+<p>主流的说法有这些：</p>
+<ul>
+<li>“是<ruby>全局解释器锁<rt>Global Interpreter Lock</rt></ruby>（GIL）的原因”</li>
+<li>“是因为 Python 是解释型语言而不是编译型语言”</li>
+<li>“是因为 Python 是一种动态类型的语言”</li>
+</ul>
+<p>哪一个才是是影响 Python 运行效率的主要原因呢？</p>
+<h3 id="是全局解释器锁的原因吗？"><a href="#是全局解释器锁的原因吗？" class="headerlink" title="是全局解释器锁的原因吗？"></a>是全局解释器锁的原因吗？</h3><p>现在很多计算机都配备了具有多个核的 CPU ，有时甚至还会有多个处理器。为了更充分利用它们的处理能力，操作系统定义了一个称为线程的低级结构。某一个进程（例如 Chrome 浏览器）可以建立多个线程，在系统内执行不同的操作。在这种情况下，CPU 密集型进程就可以跨核心分担负载了，这样的做法可以大大提高应用程序的运行效率。</p>
+<p>例如在我写这篇文章时，我的 Chrome 浏览器打开了 44 个线程。需要提及的是，基于 POSIX 的操作系统（例如 Mac OS、Linux）和 Windows 操作系统的线程结构、API 都是不同的，因此操作系统还负责对各个线程的调度。</p>
+<p>如果你还没有写过多线程执行的代码，你就需要了解一下线程锁的概念了。多线程进程比单线程进程更为复杂，是因为需要使用线程锁来确保同一个内存地址中的数据不会被多个线程同时访问或更改。</p>
+<p>CPython 解释器在创建变量时，首先会分配内存，然后对该变量的引用进行计数，这称为<ruby>引用计数<rt>reference counting</rt></ruby>。如果变量的引用数变为 0，这个变量就会从内存中释放掉。这就是在 for 循环代码块内创建临时变量不会增加内存消耗的原因。</p>
+<p>而当多个线程内共享一个变量时，CPython 锁定引用计数的关键就在于使用了 GIL，它会谨慎地控制线程的执行情况，无论同时存在多少个线程，解释器每次只允许一个线程进行操作。</p>
+<h4 id="这会对-Python-程序的性能有什么影响？"><a href="#这会对-Python-程序的性能有什么影响？" class="headerlink" title="这会对 Python 程序的性能有什么影响？"></a>这会对 Python 程序的性能有什么影响？</h4><p>如果你的程序只有单线程、单进程，代码的速度和性能不会受到全局解释器锁的影响。</p>
+<p>但如果你通过在单进程中使用多线程实现并发，并且是 IO 密集型（例如网络 IO 或磁盘 IO）的线程，GIL 竞争的效果就很明显了。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*S_iSksY5oM5H1Qf_.png" alt=""></p>
+<p><em>由 David Beazley 提供的 GIL 竞争情况图<a href="http://dabeaz.blogspot.com/2010/01/python-gil-visualized.html" target="_blank" rel="noopener">http://dabeaz.blogspot.com/2010/01/python-gil-visualized.html</a></em></p>
+<p>对于一个 web 应用（例如 Django），同时还使用了 WSGI，那么对这个 web 应用的每一个请求都运行一个<strong>单独</strong>的 Python 解释器，而且每个请求只有一个锁。同时因为 Python 解释器的启动比较慢，某些 WSGI 实现还具有“守护进程模式”，<a href="https://www.slideshare.net/GrahamDumpleton/secrets-of-a-wsgi-master" target="_blank" rel="noopener">可以使 Python 进程一直就绪</a>。</p>
+<h4 id="其它的-Python-解释器表现如何？"><a href="#其它的-Python-解释器表现如何？" class="headerlink" title="其它的 Python 解释器表现如何？"></a>其它的 Python 解释器表现如何？</h4><p><a href="http://doc.pypy.org/en/latest/faq.html#does-pypy-have-a-gil-why" target="_blank" rel="noopener">PyPy 也是一种带有 GIL 的解释器</a>，但通常比 CPython 要快 3 倍以上。</p>
+<p><a href="http://www.jython.org/jythonbook/en/1.0/Concurrency.html#no-global-interpreter-lock" target="_blank" rel="noopener">Jython 则是一种没有 GIL 的解释器</a>，这是因为 Jython 中的 Python 线程使用 Java 线程来实现，并且由 JVM 内存管理系统来进行管理。</p>
+<h4 id="JavaScript-在这方面又是怎样做的呢？"><a href="#JavaScript-在这方面又是怎样做的呢？" class="headerlink" title="JavaScript 在这方面又是怎样做的呢？"></a>JavaScript 在这方面又是怎样做的呢？</h4><p>所有的 Javascript 引擎使用的都是 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management" target="_blank" rel="noopener">mark-and-sweep 垃圾收集算法</a>，而 GIL 使用的则是 CPython 的内存管理算法。</p>
+<p>JavaScript 没有 GIL，而且它是单线程的，也不需要用到 GIL， JavaScript 的事件循环和 Promise/Callback 模式实现了以异步编程的方式代替并发。在 Python 当中也有一个类似的 asyncio 事件循环。</p>
+<h3 id="是因为-Python-是解释型语言吗？"><a href="#是因为-Python-是解释型语言吗？" class="headerlink" title="是因为 Python 是解释型语言吗？"></a>是因为 Python 是解释型语言吗？</h3><p>我经常会听到这个说法，但是这过于粗陋地简化了 Python 所实际做的工作了。其实当终端上执行 <code>python myscript.py</code> 之后，CPython 会对代码进行一系列的读取、语法分析、解析、编译、解释和执行的操作。</p>
+<p>如果你对这一系列过程感兴趣，也可以阅读一下我之前的文章：<a href="https://hackernoon.com/modifying-the-python-language-in-7-minutes-b94b0a99ce14" target="_blank" rel="noopener">在 6 分钟内修改 Python 语言</a> 。 </p>
+<p><code>.pyc</code> 文件的创建是这个过程的重点。在代码编译阶段，Python 3 会将字节码序列写入 <code>__pycache__/</code> 下的文件中，而 Python 2 则会将字节码序列写入当前目录的 <code>.pyc</code> 文件中。对于你编写的脚本、导入的所有代码以及第三方模块都是如此。</p>
+<p>因此，绝大多数情况下（除非你的代码是一次性的……），Python 都会解释字节码并本地执行。与 Java、C#.NET 相比：</p>
+<blockquote>
+<p>Java 代码会被编译为“中间语言”，由 Java 虚拟机读取字节码，并将其即时编译为机器码。.NET CIL 也是如此，.NET CLR（Common-Language-Runtime）将字节码即时编译为机器码。</p>
+</blockquote>
+<p>既然 Python 像 Java 和 C# 那样都使用虚拟机或某种字节码，为什么 Python 在基准测试中仍然比 Java 和 C# 慢得多呢？首要原因是，.NET 和 Java 都是 JIT 编译的。</p>
+<p><ruby>即时<rt>Just-in-time</rt></ruby>（JIT）编译需要一种中间语言，以便将代码拆分为多个块（或多个帧）。而<ruby>提前<rt>ahead of time</rt></ruby>（AOT）编译器则需要确保 CPU 在任何交互发生之前理解每一行代码。</p>
+<p>JIT 本身不会使执行速度加快，因为它执行的仍然是同样的字节码序列。但是 JIT 会允许在运行时进行优化。一个优秀的 JIT 优化器会分析出程序的哪些部分会被多次执行，这就是程序中的“热点”，然后优化器会将这些代码替换为更有效率的版本以实现优化。</p>
+<p>这就意味着如果你的程序是多次重复相同的操作时，有可能会被优化器优化得更快。而且，Java 和 C# 是强类型语言，因此优化器对代码的判断可以更为准确。</p>
+<p>PyPy 使用了明显快于 CPython 的 JIT。更详细的结果可以在这篇性能基准测试文章中看到：<a href="https://hackernoon.com/which-is-the-fastest-version-of-python-2ae7c61a6b2b" target="_blank" rel="noopener">哪一个 Python 版本最快?</a>。</p>
+<h4 id="那为什么-CPython-不使用-JIT-呢？"><a href="#那为什么-CPython-不使用-JIT-呢？" class="headerlink" title="那为什么 CPython 不使用 JIT 呢？"></a>那为什么 CPython 不使用 JIT 呢？</h4><p>JIT 也不是完美的，它的一个显著缺点就在于启动时间。 CPython 的启动时间已经相对比较慢，而 PyPy 比 CPython 启动还要慢 2 到 3 倍。Java 虚拟机启动速度也是出了名的慢。.NET CLR 则通过在系统启动时启动来优化体验，而 CLR 的开发者也是在 CLR 上开发该操作系统。</p>
+<p>因此如果你有个长时间运行的单一 Python 进程，JIT 就比较有意义了，因为代码里有“热点”可以优化。</p>
+<p>不过，CPython 是个通用的实现。设想如果使用 Python 开发命令行程序，但每次调用 CLI 时都必须等待 JIT 缓慢启动，这种体验就相当不好了。</p>
+<p>CPython 试图用于各种使用情况。有可能实现<a href="https://www.slideshare.net/AnthonyShaw5/pyjion-a-jit-extension-system-for-cpython" target="_blank" rel="noopener">将 JIT 插入到 CPython 中</a>，但这个改进工作的进度基本处于停滞不前的状态。</p>
+<blockquote>
+<p>如果你想充分发挥 JIT 的优势，请使用 PyPy。</p>
+</blockquote>
+<h3 id="是因为-Python-是一种动态类型的语言吗？"><a href="#是因为-Python-是一种动态类型的语言吗？" class="headerlink" title="是因为 Python 是一种动态类型的语言吗？"></a>是因为 Python 是一种动态类型的语言吗？</h3><p>在 C、C++、Java、C#、Go 这些静态类型语言中，必须在声明变量时指定变量的类型。而在动态类型语言中，虽然也有类型的概念，但变量的类型是可改变的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = 1</span><br><span class="line">a = &quot;foo&quot;</span><br></pre></td></tr></table></figure>
+<p>在上面这个示例里，Python 将变量 <code>a</code> 一开始存储整数类型变量的内存空间释放了，并创建了一个新的存储字符串类型的内存空间，并且和原来的变量同名。</p>
+<p>静态类型语言这样的设计并不是为了为难你，而是为了方便 CPU 运行而这样设计的。因为最终都需要将所有操作都对应为简单的二进制操作，因此必须将对象、类型这些高级的数据结构转换为低级数据结构。</p>
+<p>Python 也实现了这样的转换，但用户看不到这些转换，也不需要关心这些转换。</p>
+<p>不用必须声明类型并不是为了使 Python 运行慢，Python 的设计是让用户可以让各种东西变得动态：可以在运行时更改对象上的方法，也可以在运行时动态添加底层系统调用到值的声明上，几乎可以做到任何事。</p>
+<p>但也正是这种设计使得 Python 的优化异常的难。</p>
+<p>为了证明我的观点，我使用了一个 Mac OS 上的系统调用跟踪工具  DTrace。CPython 发布版本中没有内置 DTrace，因此必须重新对 CPython 进行编译。以下以 Python 3.6.6 为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/python/cpython/archive/v3.6.6.zip</span><br><span class="line">unzip v3.6.6.zip</span><br><span class="line">cd v3.6.6</span><br><span class="line">./configure --with-dtrace</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>这样 <code>python.exe</code> 将使用 DTrace 追踪所有代码。<a href="https://github.com/paulross/dtrace-py#the-lightning-talk" target="_blank" rel="noopener">Paul Ross 也作过关于 DTrace 的闪电演讲</a>。你可以下载 Python 的 DTrace 启动文件来查看函数调用、执行时间、CPU 时间、系统调用，以及各种其它的内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dtrace -s toolkit/&lt;tracer&gt;.d -c ‘../cpython/python.exe script.py’</span><br></pre></td></tr></table></figure>
+<p><code>py_callflow</code> 追踪器<a href="https://cdn-images-1.medium.com/max/1600/1*Lz4UdUi4EwknJ0IcpSJ52g.gif" target="_blank" rel="noopener">显示</a>了程序里调用的所有函数。</p>
+<p>那么，Python 的动态类型会让它变慢吗？</p>
+<ul>
+<li>类型比较和类型转换消耗的资源是比较多的，每次读取、写入或引用变量时都会检查变量的类型</li>
+<li>Python 的动态程度让它难以被优化，因此很多 Python 的替代品能够如此快都是为了提升速度而在灵活性方面作出了妥协</li>
+<li>而 <a href="http://cython.org/" target="_blank" rel="noopener">Cython</a> 结合了 C 的静态类型和 Python 来优化已知类型的代码，它<a href="http://notes-on-cython.readthedocs.io/en/latest/std_dev.html" target="_blank" rel="noopener">可以将</a>性能提升 <strong>84 倍</strong>。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>由于 Python 是一种动态、多功能的语言，因此运行起来会相对缓慢。对于不同的实际需求，可以使用各种不同的优化或替代方案。</p>
+</blockquote>
+<p>例如可以使用异步，引入分析工具或使用多种解释器来优化 Python 程序。</p>
+<p>对于不要求启动时间且代码可以充分利用 JIT 的程序，可以考虑使用 PyPy。</p>
+<p>而对于看重性能并且静态类型变量较多的程序，不妨使用 <a href="http://cython.org/" target="_blank" rel="noopener">Cython</a>。</p>
+<h4 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h4><p>Jake VDP 的优秀文章（略微过时） <a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/" target="_blank" rel="noopener">https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/</a></p>
+<p>Dave Beazley 关于 GIL 的演讲 <a href="http://www.dabeaz.com/python/GIL.pdf" target="_blank" rel="noopener">http://www.dabeaz.com/python/GIL.pdf</a></p>
+<p>JIT 编译器的那些事 <a href="https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/" target="_blank" rel="noopener">https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/</a></p>
+<hr>
+<p>via: <a href="https://hackernoon.com/why-is-python-so-slow-e5074b6fe55b" target="_blank" rel="noopener">https://hackernoon.com/why-is-python-so-slow-e5074b6fe55b</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/10/21/How-to-Replace-one-Linux-Distro-With-Another-in-Dual-Boot-Guide/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/21/How-to-Replace-one-Linux-Distro-With-Another-in-Dual-Boot-Guide/" itemprop="url">如何在双系统引导下替换 Linux 发行版</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-21T00:22:05+08:00">
+                2018-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>在双系统引导的状态下，你可以将已安装的 Linux 发行版替换为另一个发行版，同时还可以保留原本的个人数据。</p>
+</blockquote>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/Replace-Linux-Distro-from-dual-boot.png" alt="How to Replace One Linux Distribution With Another From Dual Boot"></p>
+<p>假设你的电脑上已经<a href="https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/" target="_blank" rel="noopener">以双系统的形式安装了 Ubuntu 和 Windows</a>，但经过<a href="https://itsfoss.com/linux-mint-vs-ubuntu/" target="_blank" rel="noopener">将 Linux Mint 与 Ubuntu 比较</a>之后，你又觉得 <a href="https://www.linuxmint.com/" target="_blank" rel="noopener">Linux Mint</a> 会更适合自己的时候，你会怎样做？又该如何在<a href="https://itsfoss.com/uninstall-ubuntu-linux-windows-dual-boot/" target="_blank" rel="noopener">删除 Ubuntu</a> 的同时<a href="https://itsfoss.com/guide-install-linux-mint-16-dual-boot-windows/" target="_blank" rel="noopener">在双系统中安装 Mint</a> 呢？</p>
+<p>你或许觉得应该首先从在双系统中卸载 <a href="https://www.ubuntu.com/" target="_blank" rel="noopener">Ubuntu</a>，然后使用 Linux Mint 重新安装成双系统。但实际上并不需要这么麻烦。</p>
+<p>如果你已经在双系统引导中安装了一种 Linux 发行版，就可以轻松替换成另一个发行版了，而且也不必卸载已有的 Linux 发行版，只需要删除其所在的分区，然后在腾出的磁盘空间上安装另一个 Linux 发行版就可以了。</p>
+<p>与此同时，更换 Linux 发行版后，仍然会保留原本 home 目录中包含所有文件。</p>
+<p>下面就来详细介绍一下。</p>
+<h3 id="在双系统引导中替换-Linux-发行版"><a href="#在双系统引导中替换-Linux-发行版" class="headerlink" title="在双系统引导中替换 Linux 发行版"></a>在双系统引导中替换 Linux 发行版</h3><p><a href="https://youtu.be/ptF2RUehbKs" target="_blank" rel="noopener">https://youtu.be/ptF2RUehbKs</a></p>
+<p>这是我的演示范例。我使用双系统引导同时安装了 Windows 10 和 Linux Mint 19，然后我会把 Linux Mint 19 替换成 Elementary OS 5，同时在替换后保留我的个人文件（包括音乐、图片、视频和 home 目录中的文件）。</p>
+<p>你需要做好以下这些准备：</p>
+<ul>
+<li>使用 Linux 和 Windows 双系统引导</li>
+<li>需要安装的 Linux 发行版的 USB live 版</li>
+<li>在外部磁盘备份 Windows 和 Linux 中的重要文件（并非必要，但建议备份一下）</li>
+</ul>
+<h4 id="在替换-Linux-发行版时要记住保留你的-home-目录"><a href="#在替换-Linux-发行版时要记住保留你的-home-目录" class="headerlink" title="在替换 Linux 发行版时要记住保留你的 home 目录"></a>在替换 Linux 发行版时要记住保留你的 home 目录</h4><p>如果想让个人文件在安装新 Linux 系统的过程中不受影响，原有的 Linux 系统必须具有单独的 root 目录和 home 目录。你可能会发现我的<a href="https://itsfoss.com/guide-install-elementary-os-luna/" target="_blank" rel="noopener">双系统引导教程</a>在安装过程中不选择“与 Windows 共存”选项，而选择“其它”选项，然后手动创建 root 和 home 分区。所以，手动创建单独的 home 分区也算是一个磨刀不误砍柴工的操作。因为如果要在不丢失文件的情况下，将现有的 Linux 发行版替换为另一个发行版，需要将 home 目录存放在一个单独的分区上。</p>
+<p>不过，你必须记住现有 Linux 系统的用户名和密码才能使用与新系统中相同的 home 目录。</p>
+<p>如果你没有单独的 home 分区，也可以后续再进行创建。但这并不是推荐做法，因为这个过程会比较复杂，有可能会把你的系统搞乱。</p>
+<p>下面来看看如何替换到另一个 Linux 发行版。</p>
+<h4 id="步骤-1：为新的-Linux-发行版创建一个-USB-live-版"><a href="#步骤-1：为新的-Linux-发行版创建一个-USB-live-版" class="headerlink" title="步骤 1：为新的 Linux 发行版创建一个 USB live 版"></a>步骤 1：为新的 Linux 发行版创建一个 USB live 版</h4><p>尽管上文中已经提到了它，但我还是要重复一次以免忽略。</p>
+<p>你可以使用 Windows 或 Linux 中的启动盘创建器（例如 <a href="https://etcher.io/" target="_blank" rel="noopener">Etcher</a>）来创建 USB live 版，这个过程比较简单，这里不再详细叙述。</p>
+<h4 id="步骤-2：启动-USB-live-版并安装-Linux"><a href="#步骤-2：启动-USB-live-版并安装-Linux" class="headerlink" title="步骤 2：启动 USB live 版并安装 Linux"></a>步骤 2：启动 USB live 版并安装 Linux</h4><p>你应该已经使用过双系统启动，对这个过程不会陌生。使用 USB live 版重新启动系统，在启动时反复按 F10 或 F12 进入 BIOS 设置。选择从 USB 启动，就可以看到进入 live 环境或立即安装的选项。</p>
+<p>在安装过程中，进入“安装类型”界面时，选择“其它”选项。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-1.jpg" alt="Replacing one Linux with another from dual boot"></p>
+<p><em>在这里选择“其它”选项</em></p>
+<h4 id="步骤-3：准备分区操作"><a href="#步骤-3：准备分区操作" class="headerlink" title="步骤 3：准备分区操作"></a>步骤 3：准备分区操作</h4><p>下图是分区界面。你会看到使用 Ext4 文件系统类型来安装 Linux。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-2.jpg" alt="Identifying Linux partition in dual boot"></p>
+<p><em>确定 Linux 的安装位置</em></p>
+<p>在上图中，标记为 Linux Mint 19 的 Ext4 分区是 root 分区，大小为 82691 MB 的第二个 Ext4 分区是 home 分区。在这里我这里没有使用<a href="https://itsfoss.com/swap-size/" target="_blank" rel="noopener">交换空间</a>。</p>
+<p>如果你只有一个 Ext4 分区，就意味着你的 home 目录与 root 目录位于同一分区。在这种情况下，你就无法保留 home 目录中的文件了，这个时候我建议将重要文件复制到外部磁盘，否则这些文件将不会保留。</p>
+<p>然后是删除 root 分区。选择 root 分区，然后点击 <code>-</code> 号，这个操作释放了一些磁盘空间。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-3.jpg" alt="Delete root partition of your existing Linux install"></p>
+<p><em>删除 root 分区</em></p>
+<p>磁盘空间释放出来后，点击 <code>+</code> 号。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-4.jpg" alt="Create root partition for the new Linux"></p>
+<p><em>创建新的 root 分区</em></p>
+<p>现在已经在可用空间中创建一个新分区。如果你之前的 Linux 系统中只有一个 root 分区，就应该在这里创建 root 分区和 home 分区。如果需要，还可以创建交换分区。</p>
+<p>如果你之前已经有 root 分区和 home 分区，那么只需要从已删除的 root 分区创建 root 分区就可以了。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-5.jpg" alt="Create root partition for the new Linux"></p>
+<p><em>创建 root 分区</em></p>
+<p>你可能有疑问，为什么要经过“删除”和“添加”两个过程，而不使用“更改”选项。这是因为以前使用“更改”选项好像没有效果，所以我更喜欢用 <code>-</code> 和 <code>+</code>。这是迷信吗？也许是吧。</p>
+<p>这里有一个重要的步骤，对新创建的 root 分区进行格式化。在没有更改分区大小的情况下，默认是不会对分区进行格式化的。如果分区没有被格式化，之后可能会出现问题。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-6.jpg" alt=""></p>
+<p><em>格式化 root 分区很重要</em></p>
+<p>如果你在新的 Linux 系统上已经划分了单独的 home 分区，选中它并点击更改。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-7.jpg" alt="Recreate home partition"></p>
+<p><em>修改已有的 home 分区</em></p>
+<p>然后指定将其作为 home 分区挂载即可。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-8.jpg" alt="Specify the home mount point"></p>
+<p><em>指定 home 分区的挂载点</em></p>
+<p>如果你还有交换分区，可以重复与 home 分区相同的步骤，唯一不同的是要指定将空间用作交换空间。</p>
+<p>现在的状态应该是有一个 root 分区（将被格式化）和一个 home 分区（如果需要，还可以使用交换分区）。点击“立即安装”可以开始安装。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-9.jpg" alt="Verify partitions while replacing one Linux with another"></p>
+<p><em>检查分区情况</em></p>
+<p>接下来的几个界面就很熟悉了，要重点注意的是创建用户和密码的步骤。如果你之前有一个单独的 home 分区，并且还想使用相同的 home 目录，那你必须使用和之前相同的用户名和密码，至于设备名称则可以任意指定。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-10.jpg" alt="To keep the home partition intact, use the previous user and password"></p>
+<p><em>要保持 home 分区不变，请使用之前的用户名和密码</em></p>
+<p>接下来只要静待安装完成，不需执行任何操作。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-11.jpg" alt="Wait for installation to finish"></p>
+<p><em>等待安装完成</em></p>
+<p>安装完成后重新启动系统，你就能使用新的 Linux 发行版。</p>
+<p>在以上的例子中，我可以在新的 Linux Mint 19 中使用原有的 Elementary OS 中的整个 home 目录，并且其中所有视频和图片都原封不动。岂不美哉？</p>
+<hr>
+<p>via: <a href="https://itsfoss.com/replace-linux-from-dual-boot/" target="_blank" rel="noopener">https://itsfoss.com/replace-linux-from-dual-boot/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/10/20/the-parameter-ensure-ascii-in-json-dumps/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/20/the-parameter-ensure-ascii-in-json-dumps/" itemprop="url">json.dumps() 中的 ensure_ascii 参数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-20T10:08:37+08:00">
+                2018-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  64
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在使用 <code>json.dumps()</code> 的时候，如果数据中包含中文，需要指定一个参数 <code>ensure_ascii</code> 的值为 <code>False</code>。</p>
+<p>这是因为 <code>json.dumps()</code> 在序列化时，对中文默认使用 ASCII 编码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">print(json.dumps(<span class="string">"中"</span>))</span><br><span class="line"><span class="comment"># "\u4e2d"</span></span><br><span class="line"></span><br><span class="line">print(json.dumps(<span class="string">"中"</span>, ensure_ascii=<span class="keyword">False</span>))</span><br><span class="line"><span class="comment"># "中"</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/10/18/Python-at-the-pump-A-script-for-filling-your-gas-tank/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/18/Python-at-the-pump-A-script-for-filling-your-gas-tank/" itemprop="url">使用 Python 为你的油箱加油</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T00:37:29+08:00">
+                2018-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>我来介绍一下我是如何使用 Python 来节省成本的。</p>
+</blockquote>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/bulb-light-energy-power-idea.png?itok=zTEEmTZB" alt=""></p>
+<p>我最近在开一辆烧 93 号汽油的车子。根据汽车制造商的说法，它只需要加 91 号汽油就可以了。然而，在美国只能买到 87 号、89 号、93 号汽油。而我家附近的汽油的物价水平是每增加一号，每加仑就要多付 30 美分，因此如果加 93 号汽油，每加仑就要多花 60 美分。为什么不能节省一些钱呢？</p>
+<p>一开始很简单，只需要先加满 93 号汽油，然后在油量表显示油箱半满的时候，用 89 号汽油加满，就得到一整箱 91 号汽油了。但接下来就麻烦了，剩下半箱 91 号汽油加上半箱 93 号汽油，只会变成一箱 92 号汽油，再接下来呢？如果继续算下去，只会越来越混乱。这个时候 Python 就派上用场了。</p>
+<p>我的方案是，可以根据汽油的实时状态，不断向油箱中加入 93 号汽油或者 89 号汽油，而最终目标是使油箱内汽油的号数不低于 91。我需要做的是只是通过一些算法来判断新旧汽油混合之后的号数。使用多项式方程或许也可以解决这个问题，但如果使用 Python，好像只需要进行循环就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># octane.py</span><br><span class="line"></span><br><span class="line">o = 93.0</span><br><span class="line">newgas = 93.0   # 这个变量记录上一次加入的汽油号数</span><br><span class="line">i = 1</span><br><span class="line">while i &lt; 21:                   # 20 次迭代 (加油次数)</span><br><span class="line">    if newgas == 89.0:          # 如果上一次加的是 89 号汽油，改加 93 号汽油</span><br><span class="line">        newgas = 93.0</span><br><span class="line">        o = newgas/2 + o/2      # 当油箱半满的时候就加油</span><br><span class="line">    else:                       # 如果上一次加的是 93 号汽油，则改加 89 号汽油</span><br><span class="line">        newgas = 89.0</span><br><span class="line">        o = newgas/2 + o/2      # 当油箱半满的时候就加油</span><br><span class="line">    print str(i) + &apos;: &apos;+ str(o)</span><br><span class="line">    i += 1</span><br></pre></td></tr></table></figure>
+<p>在代码中，我首先将变量 <code>o</code>（油箱中的当前混合汽油号数）和变量 <code>newgas</code>（上一次加入的汽油号数）的初始值都设为 93，然后循环 20 次，也就是分别加入 89 号汽油和 93 号汽油一共 20 次，以保持混合汽油号数稳定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1: 91.0</span><br><span class="line">2: 92.0</span><br><span class="line">3: 90.5</span><br><span class="line">4: 91.75</span><br><span class="line">5: 90.375</span><br><span class="line">6: 91.6875</span><br><span class="line">7: 90.34375</span><br><span class="line">8: 91.671875</span><br><span class="line">9: 90.3359375</span><br><span class="line">10: 91.66796875</span><br><span class="line">11: 90.333984375</span><br><span class="line">12: 91.6669921875</span><br><span class="line">13: 90.3334960938</span><br><span class="line">14: 91.6667480469</span><br><span class="line">15: 90.3333740234</span><br><span class="line">16: 91.6666870117</span><br><span class="line">17: 90.3333435059</span><br><span class="line">18: 91.6666717529</span><br><span class="line">19: 90.3333358765</span><br><span class="line">20: 91.6666679382</span><br></pre></td></tr></table></figure>
+<p>从以上数据来看，只需要 10 到 15 次循环，汽油号数就比较稳定了，也相当接近 91 号汽油的目标。这种交替混合直到稳定的现象看起来很有趣，每次交替加入同等量的不同号数汽油，都会趋于稳定。实际上，即使加入的 89 号汽油和 93 号汽油的量不同，也会趋于稳定。</p>
+<p>因此，我尝试了不同的比例，我认为加入的 93 号汽油需要比 89 号汽油更多一点。在尽量少补充新汽油的情况下，我最终计算到的结果是 89 号汽油要在油箱大约 7/12 满的时候加进去，而 93 号汽油则要在油箱 1/4 满的时候才加进去。</p>
+<p>我的循环将会更改成这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if newgas == 89.0:            </span><br><span class="line">                             </span><br><span class="line">    newgas = 93.0</span><br><span class="line">    o = 3*newgas/4 + o/4      </span><br><span class="line">else:                        </span><br><span class="line">    newgas = 89.0</span><br><span class="line">    o = 5*newgas/12 + 7*o/12</span><br></pre></td></tr></table></figure>
+<p>以下是从第十次加油开始的混合汽油号数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">10: 92.5122272978</span><br><span class="line">11: 91.0487992571</span><br><span class="line">12: 92.5121998143</span><br><span class="line">13: 91.048783225</span><br><span class="line">14: 92.5121958062</span><br><span class="line">15: 91.048780887</span><br></pre></td></tr></table></figure>
+<p>如你所见，这个调整会令混合汽油号数始终略高于 91。当然，我的油量表并没有 1/12 的刻度，但是 7/12 略小于 5/8，我可以近似地计算。</p>
+<p>一个更简单地方案是每次都首先加满 93 号汽油，然后在油箱半满时加入 89 号汽油直到耗尽，这可能会是我的常规方案。就我个人而言，这种方法并不太好，有时甚至会产生一些麻烦。但对于长途旅行来说，这种方案会相对简便一些。有时我也会因为油价突然下跌而购买一些汽油，所以，这个方案是我可以考虑的一系列选项之一。</p>
+<p>当然最重要的是：开车不写码，写码不开车！</p>
+<hr>
+<p>via: <a href="https://opensource.com/article/18/10/python-gas-pump" target="_blank" rel="noopener">https://opensource.com/article/18/10/python-gas-pump</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">111.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

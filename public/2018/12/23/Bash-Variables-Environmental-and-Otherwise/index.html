@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="LCTT 翻译,Bash,环境变量,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="初学者可以在此教程中了解环境变量。   bash 变量，尤其是讨厌的环境变量，已经是一个老生常谈的话题了。我们也更应该对它有一个详细的了解，让它为我们所用。 下面就打开终端，开始吧。 环境变量HOME （LCTT 译注：双关语）除了是你脱下帽子惬意休息的地方，同时也是 Linux 中的一个变量，它是当前用户主目录的路径： 1echo $HOME 以上这个命令会显示当前用户的主目录路径，通常都在">
+<meta name="keywords" content="LCTT 翻译,Bash,环境变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bash 环境变量的那些事">
+<meta property="og:url" content="http://github.hankchow.net/2018/12/23/Bash-Variables-Environmental-and-Otherwise/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:description" content="初学者可以在此教程中了解环境变量。   bash 变量，尤其是讨厌的环境变量，已经是一个老生常谈的话题了。我们也更应该对它有一个详细的了解，让它为我们所用。 下面就打开终端，开始吧。 环境变量HOME （LCTT 译注：双关语）除了是你脱下帽子惬意休息的地方，同时也是 Linux 中的一个变量，它是当前用户主目录的路径： 1echo $HOME 以上这个命令会显示当前用户的主目录路径，通常都在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.linux.com/sites/lcom/files/styles/rendered_file/public/wynand-van-poortvliet-40467-unsplash.jpg?itok=tr6Eb4N0">
+<meta property="og:updated_time" content="2019-10-12T08:11:41.438Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bash 环境变量的那些事">
+<meta name="twitter:description" content="初学者可以在此教程中了解环境变量。   bash 变量，尤其是讨厌的环境变量，已经是一个老生常谈的话题了。我们也更应该对它有一个详细的了解，让它为我们所用。 下面就打开终端，开始吧。 环境变量HOME （LCTT 译注：双关语）除了是你脱下帽子惬意休息的地方，同时也是 Linux 中的一个变量，它是当前用户主目录的路径： 1echo $HOME 以上这个命令会显示当前用户的主目录路径，通常都在">
+<meta name="twitter:image" content="https://www.linux.com/sites/lcom/files/styles/rendered_file/public/wynand-van-poortvliet-40467-unsplash.jpg?itok=tr6Eb4N0">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/2018/12/23/Bash-Variables-Environmental-and-Otherwise/">
+
+
+
+
+
+  <title>Bash 环境变量的那些事 | HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/12/23/Bash-Variables-Environmental-and-Otherwise/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Bash 环境变量的那些事</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-23T15:12:40+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>初学者可以在此教程中了解环境变量。</p>
+</blockquote>
+<p><img src="https://www.linux.com/sites/lcom/files/styles/rendered_file/public/wynand-van-poortvliet-40467-unsplash.jpg?itok=tr6Eb4N0" alt=""></p>
+<p>bash 变量，尤其是讨厌的<em>环境变量</em>，已经是一个老生常谈的话题了。我们也更应该对它有一个详细的了解，让它为我们所用。</p>
+<p>下面就打开终端，开始吧。</p>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p><code>HOME</code> （LCTT 译注：双关语）除了是你脱下帽子惬意休息的地方，同时也是 Linux 中的一个变量，它是当前用户主目录的路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $HOME</span><br></pre></td></tr></table></figure>
+<p>以上这个命令会显示当前用户的主目录路径，通常都在 <code>/home/&lt;your username&gt;</code> 下。</p>
+<p>顾名思义，变量的值是可以根据上下文变化的。实际上，Linux 系统中每一个用户的 <code>HOME</code> 变量都是不一样的，当然你也可以这样自行更改 <code>HOME</code> 变量的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOME=/home/&lt;your username&gt;/Documents</span><br></pre></td></tr></table></figure>
+<p>以上这个命令将会把 <code>HOME</code> 变量设置为你的 <code>Documents</code> 目录。</p>
+<p>其中有三点需要留意：</p>
+<ol>
+<li><code>=</code> 符号和其两侧的内容之间不加空格。空格在 shell 中有专门的意义，不能随意地在任何地方添加空格。</li>
+<li>如果你需要对变量进行赋值，只需要使用变量名称就可以了。但如果需要读取或者使用变量的值，需要在变量前面加上一个 <code>$</code> 号。</li>
+<li>更改 <code>HOME</code> 变量具有一定的风险。有很多程序是依赖于 <code>HOME</code> 变量的，更改 <code>HOME</code> 变量可能会导致一些不可预见的结果。例如，如果按照上面的方式更改了 <code>HOME</code> 变量，然后执行不带有任何参数的 <code>cd</code> 命令，在通常情况下，会跳转到用户的主目录下，但在这个时候，会跳转到 <code>HOME</code> 变量指定的目录下。</li>
+</ol>
+<p>上面第 3 点中环境变量的更改并不是持久有效的，在终端关闭后重新打开终端，又或者是新建一个终端，执行 <code>echo $HOME</code> 命令输出的仍然会是初始的值，而不是重新自定义的值。</p>
+<p>在讨论如何持久地更改一个环境变量之前，我们先来看一下另一个比较重要的环境变量。</p>
+<h3 id="PATH-变量"><a href="#PATH-变量" class="headerlink" title="PATH 变量"></a>PATH 变量</h3><p>在 <code>PATH</code> 变量中存放了一系列目录，而且是放置了可执行程序的目录。正是由于 <code>PATH</code> 变量的存在，让你不需要知道应用程序具体安装到了什么目录，而 shell 却可以正确地找到这些应用程序。</p>
+<p>如果你查看 <code>PATH</code> 变量的值，大概会是以下这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin</span><br></pre></td></tr></table></figure>
+<p>每两个目录之间使用冒号 <code>:</code> 分隔。如果某个应用程序的所在目录不在 <code>PATH</code> 变量中，那么运行的时候就需要声明应用程序的目录让 shell 能够找到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/&lt;user name&gt;/bin/my_program.sh</span><br></pre></td></tr></table></figure>
+<p>例如以上命令就会执行当前用户 <code>bin/</code> 目录下的 <code>my_program.sh</code> 文件。</p>
+<p>有一个常见的问题：如果你不希望弄乱系统的 <code>bin/</code> 目录，同时也不希望你自己的文件被其它人运行，还不想每次运行的时候都要输入完整的路径，那么，你可以在你的主目录中创建一个独立的 <code>bin/</code> 目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir $HOME/bin</span><br></pre></td></tr></table></figure>
+<p>然后将这个目录添加到 <code>PATH</code> 变量中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH=$PATH:$HOME/bin</span><br></pre></td></tr></table></figure>
+<p>然后 <code>/home/&lt;user name&gt;/bin/</code> 目录就会出现在 <code>PATH</code> 变量中了。但正如之前所说，这个变更只会在当前的 shell 生效，当前的 shell 一旦关闭，环境变量的值就又恢复原状了。</p>
+<p>如果要让变更对当前用户持续生效，就不能在 shell 中直接执行对应的变更，而是应该将这些变更操作写在每次启动 shell 时都会运行的文件当中。这个文件就是当前用户主目录中的 <code>.bashrc</code> 文件。文件名前面的点号表明这是一个隐藏文件，执行普通的 <code>ls</code> 命令是不会将这个文件显示出来的，但只要在 <code>ls</code> 命令中加入 <code>-a</code> 参数就可以看到这个文件了。</p>
+<p>你可以使用诸如 <a href="https://www.kde.org/applications/utilities/kate/" target="_blank" rel="noopener">kate</a>、<a href="https://help.gnome.org/users/gedit/stable/" target="_blank" rel="noopener">gedit</a>、<a href="https://www.nano-editor.org/" target="_blank" rel="noopener">nano</a> 或者 <a href="https://www.vim.org/" target="_blank" rel="noopener">vim</a> 这些文本编辑器来打开 <code>.bashrc</code> 文件（但不要用 LibreOffice Writer，它是一个文字处理软件，跟前面几个文字编辑器完全不同）。打开 <code>.bashrc</code> 文件之后，你会看见里面放置了一些 shell 命令，是用于为当前用户设置环境的。</p>
+<p>在文件的末尾添加新行并输入以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:$HOME/bin</span><br></pre></td></tr></table></figure>
+<p>保存并关闭 <code>.bashrc</code> 文件，接下来你就会看到 <code>export</code> 语句的效果。执行以下的命令让刚才的修改立即生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .bashrc</span><br></pre></td></tr></table></figure>
+<p>刚才执行的 <code>source</code> 命令让 <code>.bashrc</code> 文件在当前的 shell 立即生效，并且对于之后打开的 shell 都会有效。因此另一个等效的方法是退出并重新进入 shell，但这样也太麻烦了。</p>
+<p>现在，你的 shell 就能自动寻找到 <code>/home/&lt;user name&gt;/bin/</code> 下的程序了，执行这个目录下的程序也不需要完整地写出程序的路径。</p>
+<h3 id="自定义变量"><a href="#自定义变量" class="headerlink" title="自定义变量"></a>自定义变量</h3><p>当然，你也可以定义自己的变量。刚才我们看到的变量名称都是全大写的，实际上<a href="https://bash.cyberciti.biz/guide/Rules_for_Naming_variable_name" target="_blank" rel="noopener">变量名称的定义还是比较灵活的</a>。</p>
+<p>定义新变量的过程非常直观，直接对它赋值就可以了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new_variable=&quot;Hello&quot;</span><br></pre></td></tr></table></figure>
+<p>然后可以用以下的方式读取到已定义变量的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $new_variable</span><br></pre></td></tr></table></figure>
+<p>程序的正常工作离不开各种变量，例如要将某个选项设置为打开，又或者让程序找到所需的代码库，都需要使用变量。在 bash 中运行程序的时候会生成一个子 shell，这个子 shell 和执行原程序的父 shell 并不是完全一样的，只是继承了父 shell 的部分内容，而且默认是不继承父 shell 中的变量的。因为变量默认情况下是局部变量，出于安全原因，一个 shell 中的局部变量不会被另一个 shell 读取到，即使是子 shell 也不可以。</p>
+<p>下面举一个例子。首先定义一个变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">robots=&quot;R2D2 &amp; C3PO&quot;</span><br></pre></td></tr></table></figure>
+<p>然后执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br></pre></td></tr></table></figure>
+<p>现在是在 bash shell 中创建了一个子 shell。</p>
+<p>执行这个命令看看还能不能读取到刚才定义的变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $robots</span><br></pre></td></tr></table></figure>
+<p>你会发现读取不到。</p>
+<p>还是在这个子 shell 中，为 <code>robots</code> 变量赋一个不同的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">robots=&quot;These aren&apos;t the ones you are looking for&quot;</span><br></pre></td></tr></table></figure>
+<p>再读取一次：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ echo $robots</span><br><span class="line">These aren&apos;t the ones you are looking for</span><br></pre></td></tr></table></figure>
+<p>退出这个子 shell：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
+<p>然后再看一下现在 <code>robots</code>  变量的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ echo $robots</span><br><span class="line">R2D2 &amp; C3P0</span><br></pre></td></tr></table></figure>
+<p>这一个特性可以有效避免配置过程中产生混乱，同时也会导致一个问题：如果程序中需要设置变量，但却由于子 shell 的原因无法正常访问到这个变量，该如何解决呢？这个时候就需要用到 <code>export</code> 了。</p>
+<p>重复一次刚才的过程，但这一次不是通过 <code>robots=&quot;R2D2 &amp; C3PO&quot;</code> 方式来设置变量，而是使用 <code>export</code> 命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export robots=&quot;R2D2 &amp; C3PO&quot;</span><br></pre></td></tr></table></figure>
+<p>现在你会发现，在进入子 shell 之后，<code>robots</code> 变量的值仍然是最初赋予的值。</p>
+<p>要注意的是，尽管子 shell 会继承通过 <code>export</code> 导出的变量，但如果在子 shell 中对这个变量重新赋值，是不会影响到父 shell 中对应变量的。</p>
+<p>如果要查看所有通过 <code>export</code> 导出的变量，可以执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export -p</span><br></pre></td></tr></table></figure>
+<p>自定义的变量会显示在这个列表的末尾。这个列表中还有一些常见的变量：例如 <code>USER</code> 的值是当前用户的用户名，<code>PWD</code> 的值是当前用户当前所在的目录，而 <code>OLDPWD</code> 的值则是当前用户上一个访问过的目录。因此如果执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd -</span><br></pre></td></tr></table></figure>
+<p>就会切换到上一个访问过的目录，那是因为 <code>cd</code> 命令读取到了 <code>OLDPWD</code> 变量的值。</p>
+<p>你也可以使用 <code>env</code> 命令查看所有环境变量。</p>
+<p>如果要取消导出一个变量，可以加上 <code>-n</code> 参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export -n robots</span><br></pre></td></tr></table></figure>
+<h3 id="接下来"><a href="#接下来" class="headerlink" title="接下来"></a>接下来</h3><p>了解过环境变量的知识之后，你已经到达了可能对自己和他人造成危险的水平，接下来就需要了解如何通过使用别名来让环境变得更安全、更友好以保护自己了。</p>
+<hr>
+<p>via: <a href="https://www.linux.com/blog/learn/2018/12/bash-variables-environmental-and-otherwise" target="_blank" rel="noopener">https://www.linux.com/blog/learn/2018/12/bash-variables-environmental-and-otherwise</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LCTT-翻译/" rel="tag"># LCTT 翻译</a>
+          
+            <a href="/tags/Bash/" rel="tag"># Bash</a>
+          
+            <a href="/tags/环境变量/" rel="tag"># 环境变量</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/11/3-implications-of-serverless/" rel="next" title="无服务器架构的三个意义">
+                <i class="fa fa-chevron-left"></i> 无服务器架构的三个意义
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/24/Aliases-DIY-Shell-Commands/" rel="prev" title="命令别名：定义自己的命令">
+                命令别名：定义自己的命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量"><span class="nav-number">1.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PATH-变量"><span class="nav-number">2.</span> <span class="nav-text">PATH 变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义变量"><span class="nav-number">3.</span> <span class="nav-text">自定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来"><span class="nav-number">4.</span> <span class="nav-text">接下来</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">111.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

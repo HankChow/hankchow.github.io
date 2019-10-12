@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="LCTT 翻译,Linux,cron,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在 Linux 中遇到计划任务的时候，你首先会想到的大概就是 Cron 定时任务了。Cron 定时任务能帮助你在类 Unix 操作系统中计划性地执行命令或者任务。也可以参考一下我们之前的一篇《关于 Cron 定时任务的新手指导》。对于有一定 Linux 经验的人来说，设置 Cron 定时任务不是什么难事，但对于新手来说就不一定了，他们在编辑 crontab 文件的时候不知不觉中犯的一些小错误，也">
+<meta name="keywords" content="LCTT 翻译,Linux,cron">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Linux 中安全且轻松地管理 Cron 定时任务">
+<meta property="og:url" content="http://github.hankchow.net/2018/10/03/How-To-Easily-And-Safely-Manage-Cron-Jobs-In-Linux/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:description" content="在 Linux 中遇到计划任务的时候，你首先会想到的大概就是 Cron 定时任务了。Cron 定时任务能帮助你在类 Unix 操作系统中计划性地执行命令或者任务。也可以参考一下我们之前的一篇《关于 Cron 定时任务的新手指导》。对于有一定 Linux 经验的人来说，设置 Cron 定时任务不是什么难事，但对于新手来说就不一定了，他们在编辑 crontab 文件的时候不知不觉中犯的一些小错误，也">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/08/Crontab-UI-720x340.jpg">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/08/crontab-ui-dashboard.png">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/08/create-new-cron-job.png">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/08/crontab-ui-dashboard-1.png">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/08/backup-cron-jobs.png">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/08/get-from-crontab.png">
+<meta property="og:updated_time" content="2019-10-12T08:11:41.440Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Linux 中安全且轻松地管理 Cron 定时任务">
+<meta name="twitter:description" content="在 Linux 中遇到计划任务的时候，你首先会想到的大概就是 Cron 定时任务了。Cron 定时任务能帮助你在类 Unix 操作系统中计划性地执行命令或者任务。也可以参考一下我们之前的一篇《关于 Cron 定时任务的新手指导》。对于有一定 Linux 经验的人来说，设置 Cron 定时任务不是什么难事，但对于新手来说就不一定了，他们在编辑 crontab 文件的时候不知不觉中犯的一些小错误，也">
+<meta name="twitter:image" content="https://www.ostechnix.com/wp-content/uploads/2018/08/Crontab-UI-720x340.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/2018/10/03/How-To-Easily-And-Safely-Manage-Cron-Jobs-In-Linux/">
+
+
+
+
+
+  <title>在 Linux 中安全且轻松地管理 Cron 定时任务 | HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/10/03/How-To-Easily-And-Safely-Manage-Cron-Jobs-In-Linux/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在 Linux 中安全且轻松地管理 Cron 定时任务</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T21:29:43+08:00">
+                2018-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://www.ostechnix.com/wp-content/uploads/2018/08/Crontab-UI-720x340.jpg" alt=""></p>
+<p>在 Linux 中遇到计划任务的时候，你首先会想到的大概就是 Cron 定时任务了。Cron 定时任务能帮助你在类 Unix 操作系统中计划性地执行命令或者任务。也可以参考一下我们之前的一篇《<a href="https://www.ostechnix.com/a-beginners-guide-to-cron-jobs/" target="_blank" rel="noopener">关于 Cron 定时任务的新手指导</a>》。对于有一定 Linux 经验的人来说，设置 Cron 定时任务不是什么难事，但对于新手来说就不一定了，他们在编辑 crontab 文件的时候不知不觉中犯的一些小错误，也有可能把整个 Cron 定时任务搞挂了。如果你在处理 Cron 定时任务的时候为了以防万一，可以尝试使用 <strong>Crontab UI</strong>，它是一个可以在类 Unix 操作系统上安全轻松管理 Cron 定时任务的 Web 页面工具。</p>
+<p>Crontab UI 是使用 NodeJS 编写的自由开源软件。有了 Crontab UI，你在创建、删除和修改 Cron 定时任务的时候就不需要手工编辑 Crontab 文件了，只需要打开浏览器稍微操作一下，就能完成上面这些工作。你可以用 Crontab UI 轻松创建、编辑、暂停、删除、备份 Cron 定时任务，甚至还可以简单地做到导入、导出、部署其它机器上的 Cron 定时任务，它还支持错误日志、邮件发送和钩子。</p>
+<h3 id="安装-Crontab-UI"><a href="#安装-Crontab-UI" class="headerlink" title="安装 Crontab UI"></a>安装 Crontab UI</h3><p>只需要一条命令就可以安装好 Crontab UI，但前提是已经安装好 NPM。如果还没有安装 NPM，可以参考《<a href="https://www.ostechnix.com/install-node-js-linux/" target="_blank" rel="noopener">如何在 Linux 上安装 NodeJS</a>》这篇文章。</p>
+<p>执行这一条命令来安装 Crontab UI。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g crontab-ui</span><br></pre></td></tr></table></figure>
+<p>就是这么简单，下面继续来看看在 Crontab UI 上如何管理 Cron 定时任务。</p>
+<h3 id="在-Linux-上安全轻松管理-Cron-定时任务"><a href="#在-Linux-上安全轻松管理-Cron-定时任务" class="headerlink" title="在 Linux 上安全轻松管理 Cron 定时任务"></a>在 Linux 上安全轻松管理 Cron 定时任务</h3><p>执行这一条命令启动 Crontab UI：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ crontab-ui</span><br></pre></td></tr></table></figure>
+<p>你会看到这样的输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Node version: 10.8.0</span><br><span class="line">Crontab UI is running at http://127.0.0.1:8000</span><br></pre></td></tr></table></figure>
+<p>首先在你的防火墙和路由器上放开 8000 端口，然后打开浏览器访问 <code>&lt;http://127.0.0.1:8000&gt;</code>。</p>
+<p>注意，默认只有在本地才能访问到 Crontab UI 的控制台页面。但如果你想让 Crontab UI 使用系统的 IP 地址和自定义端口，也就是想让其它机器也访问到本地的 Crontab UI，你需要使用以下这个命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ HOST=0.0.0.0 PORT=9000 crontab-ui</span><br><span class="line">Node version: 10.8.0</span><br><span class="line">Crontab UI is running at http://0.0.0.0:9000</span><br></pre></td></tr></table></figure>
+<p>Crontab UI 就能够通过 <code>&lt;http://IP-Address&gt;:9000</code> 这样的 URL 被远程机器访问到了。</p>
+<p>Crontab UI 的控制台页面长这样：</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/08/crontab-ui-dashboard.png" alt=""></p>
+<p>从上面的截图就可以看到，Crontab UI 的界面非常简洁，所有选项的含义都能不言自明。</p>
+<p>在终端输入 <code>Ctrl + C</code> 就可以关闭 Crontab UI。</p>
+<h4 id="创建、编辑、运行、停止、删除-Cron-定时任务"><a href="#创建、编辑、运行、停止、删除-Cron-定时任务" class="headerlink" title="创建、编辑、运行、停止、删除 Cron 定时任务"></a>创建、编辑、运行、停止、删除 Cron 定时任务</h4><p>点击 “New”，输入 Cron 定时任务的信息并点击 “Save” 保存，就可以创建一个新的 Cron 定时任务了。</p>
+<ol>
+<li>为 Cron 定时任务命名，这是可选的；</li>
+<li>你想要执行的完整命令；</li>
+<li>设定计划执行的时间。你可以按照启动、每时、每日、每周、每月、每年这些指标快速指定计划任务，也可以明确指定任务执行的具体时间。指定好计划时间后，“Jobs” 区域就会显示 Cron 定时任务的句式。</li>
+<li>选择是否为某个 Cron 定时任务记录错误日志。</li>
+</ol>
+<p>这是我的一个 Cron 定时任务样例。</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/08/create-new-cron-job.png" alt=""></p>
+<p>如你所见，我设置了一个每月清理 <code>pacman</code> 缓存的 Cron 定时任务。你也可以设置多个 Cron 定时任务，都能在控制台页面看到。</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/08/crontab-ui-dashboard-1.png" alt=""></p>
+<p>如果你需要更改 Cron 定时任务中的某些参数，只需要点击 “Edit” 按钮并按照你的需求更改对应的参数。点击 “Run” 按钮可以立即执行 Cron 定时任务，点击 “Stop” 则可以立即停止 Cron 定时任务。如果想要查看某个 Cron 定时任务的详细日志，可以点击 “Log” 按钮。对于不再需要的 Cron 定时任务，就可以按 “Delete” 按钮删除。</p>
+<h4 id="备份-Cron-定时任务"><a href="#备份-Cron-定时任务" class="headerlink" title="备份 Cron 定时任务"></a>备份 Cron 定时任务</h4><p>点击控制台页面的 “Backup” 按钮并确认，就可以备份所有 Cron 定时任务。</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/08/backup-cron-jobs.png" alt=""></p>
+<p>备份之后，一旦 Crontab 文件出现了错误，就可以使用备份来恢复了。</p>
+<h4 id="导入-导出其它机器上的-Cron-定时任务"><a href="#导入-导出其它机器上的-Cron-定时任务" class="headerlink" title="导入/导出其它机器上的 Cron 定时任务"></a>导入/导出其它机器上的 Cron 定时任务</h4><p>Crontab UI 还有一个令人注目的功能，就是导入、导出、部署其它机器上的 Cron 定时任务。如果同一个网络里的多台机器都需要执行同样的 Cron 定时任务，只需要点击 “Export” 按钮并选择文件的保存路径，所有的 Cron 定时任务都会导出到 <code>crontab.db</code> 文件中。</p>
+<p>以下是 <code>crontab.db</code> 文件的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat Downloads/crontab.db</span><br><span class="line">&#123;&quot;name&quot;:&quot;Remove Pacman Cache&quot;,&quot;command&quot;:&quot;rm -rf /var/cache/pacman&quot;,&quot;schedule&quot;:&quot;@monthly&quot;,&quot;stopped&quot;:false,&quot;timestamp&quot;:&quot;Thu Aug 23 2018 10:34:19 GMT+0000 (Coordinated Universal Time)&quot;,&quot;logging&quot;:&quot;true&quot;,&quot;mailing&quot;:&#123;&#125;,&quot;created&quot;:1535020459093,&quot;_id&quot;:&quot;lcVc1nSdaceqS1ut&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p>导出成文件以后，你就可以把这个 <code>crontab.db</code> 文件放置到其它机器上并导入成 Cron 定时任务，而不需要在每一台主机上手动设置 Cron 定时任务。总之，在一台机器上设置完，导出，再导入到其他机器，就完事了。</p>
+<h4 id="在-Crontab-文件获取-保存-Cron-定时任务"><a href="#在-Crontab-文件获取-保存-Cron-定时任务" class="headerlink" title="在 Crontab 文件获取/保存 Cron 定时任务"></a>在 Crontab 文件获取/保存 Cron 定时任务</h4><p>你可能在使用 Crontab UI 之前就已经使用 <code>crontab</code> 命令创建过 Cron 定时任务。如果是这样，你可以点击控制台页面上的 “Get from crontab” 按钮来获取已有的 Cron 定时任务。</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/08/get-from-crontab.png" alt=""></p>
+<p>同样地，你也可以使用 Crontab UI 来将新的 Cron 定时任务保存到 Crontab 文件中，只需要点击 “Save to crontab” 按钮就可以了。</p>
+<p>管理 Cron 定时任务并没有想象中那么难，即使是新手使用 Crontab UI 也能轻松管理 Cron 定时任务。赶快开始尝试并发表一下你的看法吧。</p>
+<hr>
+<p>via: <a href="https://www.ostechnix.com/how-to-easily-and-safely-manage-cron-jobs-in-linux/" target="_blank" rel="noopener">https://www.ostechnix.com/how-to-easily-and-safely-manage-cron-jobs-in-linux/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LCTT-翻译/" rel="tag"># LCTT 翻译</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/cron/" rel="tag"># cron</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/02/How-To-Find-Out-Which-Port-Number-A-Process-Is-Using-In-Linux/" rel="next" title="如何在 Linux 中查看进程占用的端口号">
+                <i class="fa fa-chevron-left"></i> 如何在 Linux 中查看进程占用的端口号
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/03/How-to-Use-RAR-files-in-Ubuntu-Linux/" rel="prev" title="如何在 Ubuntu Linux 中使用 RAR 文件">
+                如何在 Ubuntu Linux 中使用 RAR 文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Crontab-UI"><span class="nav-number">1.</span> <span class="nav-text">安装 Crontab UI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Linux-上安全轻松管理-Cron-定时任务"><span class="nav-number">2.</span> <span class="nav-text">在 Linux 上安全轻松管理 Cron 定时任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建、编辑、运行、停止、删除-Cron-定时任务"><span class="nav-number">2.1.</span> <span class="nav-text">创建、编辑、运行、停止、删除 Cron 定时任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#备份-Cron-定时任务"><span class="nav-number">2.2.</span> <span class="nav-text">备份 Cron 定时任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入-导出其它机器上的-Cron-定时任务"><span class="nav-number">2.3.</span> <span class="nav-text">导入/导出其它机器上的 Cron 定时任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在-Crontab-文件获取-保存-Cron-定时任务"><span class="nav-number">2.4.</span> <span class="nav-text">在 Crontab 文件获取/保存 Cron 定时任务</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">111.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

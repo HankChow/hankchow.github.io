@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="LCTT 翻译,配置管理,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="了解一下配置管理工具，以找出哪个最适合你的 DevOps 组织。   DevOps 正因为有提高产品质量、缩短产品开发时间等优势，目前备受业界关注，同时也在长足发展当中。 DevOps 的核心价值观是团队文化Culture、自动化Automation、评估Measurement和分享Sharing（CAMS），同时，团队对 DevOps 的执行力也是 DevOps 能否成功的重要因素。  团队文">
+<meta name="keywords" content="LCTT 翻译,配置管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="五大最流行的配置管理工具">
+<meta property="og:url" content="http://github.hankchow.net/2019/02/01/Top-5-configuration-management-tools/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:description" content="了解一下配置管理工具，以找出哪个最适合你的 DevOps 组织。   DevOps 正因为有提高产品质量、缩短产品开发时间等优势，目前备受业界关注，同时也在长足发展当中。 DevOps 的核心价值观是团队文化Culture、自动化Automation、评估Measurement和分享Sharing（CAMS），同时，团队对 DevOps 的执行力也是 DevOps 能否成功的重要因素。  团队文">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/innovation_lightbulb_gears_devops_ansible.png?itok=TSbmp3_M">
+<meta property="og:updated_time" content="2019-10-12T08:11:41.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="五大最流行的配置管理工具">
+<meta name="twitter:description" content="了解一下配置管理工具，以找出哪个最适合你的 DevOps 组织。   DevOps 正因为有提高产品质量、缩短产品开发时间等优势，目前备受业界关注，同时也在长足发展当中。 DevOps 的核心价值观是团队文化Culture、自动化Automation、评估Measurement和分享Sharing（CAMS），同时，团队对 DevOps 的执行力也是 DevOps 能否成功的重要因素。  团队文">
+<meta name="twitter:image" content="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/innovation_lightbulb_gears_devops_ansible.png?itok=TSbmp3_M">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/2019/02/01/Top-5-configuration-management-tools/">
+
+
+
+
+
+  <title>五大最流行的配置管理工具 | HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2019/02/01/Top-5-configuration-management-tools/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">五大最流行的配置管理工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-01T17:52:23+08:00">
+                2019-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>了解一下配置管理工具，以找出哪个最适合你的 DevOps 组织。</p>
+</blockquote>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/innovation_lightbulb_gears_devops_ansible.png?itok=TSbmp3_M" alt=""></p>
+<p>DevOps 正因为有提高产品质量、缩短产品开发时间等优势，目前备受业界关注，同时也在长足发展当中。</p>
+<p><a href="https://www.oreilly.com/learning/why-use-terraform" target="_blank" rel="noopener">DevOps 的核心价值观</a>是<ruby>团队文化<rt>Culture</rt></ruby>、<ruby>自动化<rt>Automation</rt></ruby>、<ruby>评估<rt>Measurement</rt></ruby>和<ruby>分享<rt>Sharing</rt></ruby>（CAMS），同时，团队对 DevOps 的执行力也是 DevOps 能否成功的重要因素。</p>
+<ul>
+<li><strong>团队文化</strong>让大家团结一致；</li>
+<li><strong>自动化</strong>是 DevOps 的基础；</li>
+<li><strong>评估</strong>保证了及时的改进；</li>
+<li><strong>分享</strong>让 CAMS 成为一个完整的循环过程。</li>
+</ul>
+<p>DevOps 的另一个思想是任何东西，包括服务器、数据库、网络、日志文件、应用配置、文档、自动化测试、部署流程等，都可以通过代码来管理。</p>
+<p>在本文中，我主要介绍配置管理的自动化。配置管理工具作为<a href="https://www.oreilly.com/library/view/infrastructure-as-code/9781491924334/ch04.html" target="_blank" rel="noopener"><ruby>基础架构即代码<rt>Infrastructure as Code</rt></ruby></a>（IaC）的一部分，支持使用经过测试和验证的软件开发实践，通过明文定义文件管理和配置数据中心。</p>
+<p>DevOps 团队只需要通过操作简单的配置文件，就可以实现应用开发中包括版本控制、测试、小型部署、设计模式在内的这些最佳实践。总而言之，配置管理工具实现了通过编写代码来使基础架构的配置和管理变得自动化。</p>
+<h3 id="为什么要使用配置管理工具？"><a href="#为什么要使用配置管理工具？" class="headerlink" title="为什么要使用配置管理工具？"></a>为什么要使用配置管理工具？</h3><p>配置管理工具可以提高应用部署和变更的效率，还可以让这些流程变得可重用、可扩展、可预测，甚至让它们维持在期望的状态，从而让资产的可控性提高。</p>
+<p>使用配置管理工具的优势还包括：</p>
+<ul>
+<li>让代码遵守编码规范，提高代码可读性；</li>
+<li>具有<ruby>幂等性<rt>Idempotency</rt></ruby>，也就是说，无论执行多少次重复的配置管理操作，得到的结果都是一致的；</li>
+<li>分布式的设计可以方便地管理大量的远程服务器。</li>
+</ul>
+<p>配置管理工具主要分为<ruby>拉取<rt>pull</rt></ruby>模式和<ruby>推送<rt>push</rt></ruby>模式。拉取模式是指安装在各台服务器上的<ruby>代理<rt>agent</rt></ruby>定期从<ruby>中央存储库<rt>central repository</rt></ruby>拉取最新的配置并应用到对应的服务器上；而推送模式则由<ruby>中央服务器<rt>central server</rt></ruby>的中央服务器会触发其它受管服务器的更新。</p>
+<h3 id="五大最流行的配置管理工具"><a href="#五大最流行的配置管理工具" class="headerlink" title="五大最流行的配置管理工具"></a>五大最流行的配置管理工具</h3><p>目前配置管理工具有很多，不同的配置管理工具都有自己最适合的使用场景。而对于下面五个我按照字母顺序列出的配置管理工具，都对 DevOps 有明显的帮助：全都具有开源许可证、使用外部配置文件、支持无人值守运行、可以通过脚本自定义运行。下面对它们的介绍都来源于它们的软件库和官网内容。</p>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><p>“Ansible 是一个极其简洁的 IT 自动化平台，可以让你的应用和系统以更简单的方式部署。不需要安装任何代理，只需要使用 SSH 的方式和简单的语言，就可以免去脚本或代码部署应用的过程。”——<a href="https://github.com/ansible/ansible" target="_blank" rel="noopener">GitHub Ansible 代码库</a></p>
+<ul>
+<li><a href="https://www.ansible.com/" target="_blank" rel="noopener">官网</a></li>
+<li><a href="https://docs.ansible.com/ansible/" target="_blank" rel="noopener">文档</a></li>
+<li><a href="https://www.ansible.com/community" target="_blank" rel="noopener">社区</a></li>
+</ul>
+<p>Ansible 是我最喜欢的工具之一，我在几年前就开始使用了。你可以使用 Ansible 在命令行中让多个服务器执行同一个命令，也可以使用 YAML 格式的<ruby>剧本<rt>playbook</rt></ruby>来让它自动执行特定的操作，这促进了技术团队和非技术团队之间的沟通。简洁、无代理、配置文件对非技术人员友好是它的几个主要优点。</p>
+<p>由于 Ansible 不需要代理，因此对服务器的资源消耗会很少。Ansible 默认使用的推送模式需要借助 SSH 连接，但 Ansible 也支持拉取模式。<a href="https://opensource.com/article/18/8/ansible-playbooks-you-should-try" target="_blank" rel="noopener">剧本</a> 可以使用最少的命令集编写，当然也可以扩展为更加精细的自动化任务，包括引入角色、变量和其它人写的模块。</p>
+<p>你可以将 Ansible 和其它工具（包括 Ansible Works、Jenkins、RunDeck、<a href="https://github.com/openstack/ara" target="_blank" rel="noopener">ARA</a> 等）结合起来使用，因为这些工具 <a href="https://opensource.com/article/18/5/analyzing-ansible-runs-using-ara" target="_blank" rel="noopener">提供了运行剧本时的可追溯性</a>，这样就可以创建控制流程的中央控制台。</p>
+<h3 id="CFEngine"><a href="#CFEngine" class="headerlink" title="CFEngine"></a>CFEngine</h3><p>“CFEngine 3 是一个流行的开源配置管理系统，它主要用于为大规模的系统提供自动化配置和维护。”——<a href="https://github.com/cfengine/core" target="_blank" rel="noopener">GitHub CFEngine 代码库</a></p>
+<ul>
+<li><a href="https://cfengine.com/" target="_blank" rel="noopener">官网</a></li>
+<li><a href="https://docs.cfengine.com/docs/3.12/" target="_blank" rel="noopener">文档</a></li>
+<li><a href="https://cfengine.com/community/" target="_blank" rel="noopener">社区</a></li>
+</ul>
+<p>CFEngine 最早在 1993 年由 Mark Burgess 作为自动配置管理的科学方法提出，目的是降低计算机系统配置中的熵，最终收敛到期望的配置状态，同时还阐述了幂等性是让系统达到期望状态的能力。Burgess 在 2004 年又提出了<ruby><a href="https://en.wikipedia.org/wiki/Promise_theory" target="_blank" rel="noopener">承诺理论</a><rt>Promise Theory</rt></ruby>，这个理论描述了代理之间自发合作的模型。</p>
+<p>CFEngine 的最新版本已经用到了承诺理论，在各个服务器上的代理程序会从中央存储库拉取配置。CFEngine 的配置对专业技能要求较高，因此它比较适合技术团队使用。</p>
+<h3 id="Chef"><a href="#Chef" class="headerlink" title="Chef"></a>Chef</h3><p>“为整个基础架构在配置管理上带来便利的一个系统集成框架。”——<a href="https://github.com/chef/chef" target="_blank" rel="noopener">GitHub Chef 代码库</a></p>
+<ul>
+<li><a href="http://www.chef.io/chef/" target="_blank" rel="noopener">官网</a></li>
+<li><a href="https://docs.chef.io/" target="_blank" rel="noopener">文档</a></li>
+<li><a href="https://www.chef.io/community/" target="_blank" rel="noopener">社区</a></li>
+</ul>
+<p>Chef 通过由 Ruby 编写的“<ruby>菜谱<rt>recipe</rt></ruby>”来让你的基础架构保持在最新、最兼容的状态，这些“菜谱”描述了一系列应处于某种状态的资源。Chef 既可以通过客户端-服务端的模式运行，也可以在 <a href="https://docs.chef.io/chef_solo.html" target="_blank" rel="noopener">chef-solo</a> 这种独立配置的模式下运行。大部分云提供商都很好地集成了 Chef，因此可以使用它为新机器做自动配置。</p>
+<p>Chef 有广泛的用户基础，同时也提供了完备的工具包，让不同技术背景的团队可以通过“菜谱”进行沟通。尽管如此，它仍然算是一个技术导向的工具。</p>
+<h3 id="Puppet"><a href="#Puppet" class="headerlink" title="Puppet"></a>Puppet</h3><p>“Puppet 是一个可以在 Linux、Unix 和 Windows 系统上运行的自动化管理引擎，它可以根据集中的规范来执行诸如添加用户、安装软件包、更新服务器配置等等管理任务。”——<a href="https://github.com/puppetlabs/puppet" target="_blank" rel="noopener">GitHub Puppet 代码库</a></p>
+<ul>
+<li><a href="https://puppet.com/" target="_blank" rel="noopener">官网</a></li>
+<li><a href="https://puppet.com/docs" target="_blank" rel="noopener">文档</a></li>
+<li><a href="https://puppet.com/community" target="_blank" rel="noopener">社区</a></li>
+</ul>
+<p>Puppet 作为一款面向运维工程师和系统管理员的工具，在更多情况下是作为配置管理工具来使用。它通过客户端-服务端的模式工作，使用代理从主服务器获取配置指令。</p>
+<p>Puppet 使用<ruby>声明式语言<rt>declarative language</rt></ruby>或 Ruby 来描述系统配置。它包含了不同的模块，并使用<ruby>清单文件<rt>manifest files</rt></ruby>记录期望达到的目标状态。Puppet 默认使用推送模式，但也支持拉取模式。</p>
+<h3 id="Salt"><a href="#Salt" class="headerlink" title="Salt"></a>Salt</h3><p>“为大规模基础结构或应用程序实现自动化管理的软件。”——<a href="https://github.com/saltstack/salt" target="_blank" rel="noopener">GitHub Salt 代码库</a></p>
+<ul>
+<li><a href="https://www.saltstack.com/" target="_blank" rel="noopener">官网</a></li>
+<li><a href="https://docs.saltstack.com/en/latest/contents.html" target="_blank" rel="noopener">文档</a></li>
+<li><a href="https://www.saltstack.com/resources/community/" target="_blank" rel="noopener">社区</a></li>
+</ul>
+<p>Salt 的专长就是快速收集数据，即使是上万台服务器也能够轻松完成任务。它使用 Python 模块来管理配置信息和执行特定的操作，这些模块可以让 Salt 实现所有远程操作和状态管理。但配置 Salt 模块对技术水平有一定的要求。</p>
+<p>Salt 使用客户端-服务端的结构（Salt minions 是客户端，而 Salt master 是服务端），并以 Salt 状态文件记录需要达到的目标状态。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>DevOps 工具领域一直在发展，因此必须时刻关注其中的最新动态。希望这篇文章能够鼓励读者进一步探索相关的概念和工具。为此，<ruby>云原生计算基金会<rt>Cloud Native Computing Foundation</rt></ruby>（CNCF）在 <a href="https://github.com/cncf/landscape" target="_blank" rel="noopener">Cloud Native Landscape Project</a> 中也提供了很好的参考案例。</p>
+<hr>
+<p>via: <a href="https://opensource.com/article/18/12/configuration-management-tools" target="_blank" rel="noopener">https://opensource.com/article/18/12/configuration-management-tools</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LCTT-翻译/" rel="tag"># LCTT 翻译</a>
+          
+            <a href="/tags/配置管理/" rel="tag"># 配置管理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/26/how-to-install-and-manage-ruby/" rel="next" title="如何安装及管理 Ruby">
+                <i class="fa fa-chevron-left"></i> 如何安装及管理 Ruby
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/02/Understanding-Angle-Brackets-in-Bash/" rel="prev" title="理解 Bash 中的尖括号">
+                理解 Bash 中的尖括号 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要使用配置管理工具？"><span class="nav-number">1.</span> <span class="nav-text">为什么要使用配置管理工具？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五大最流行的配置管理工具"><span class="nav-number">2.</span> <span class="nav-text">五大最流行的配置管理工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ansible"><span class="nav-number">2.1.</span> <span class="nav-text">Ansible</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CFEngine"><span class="nav-number">3.</span> <span class="nav-text">CFEngine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chef"><span class="nav-number">4.</span> <span class="nav-text">Chef</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Puppet"><span class="nav-number">5.</span> <span class="nav-text">Puppet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Salt"><span class="nav-number">6.</span> <span class="nav-text">Salt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">111.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

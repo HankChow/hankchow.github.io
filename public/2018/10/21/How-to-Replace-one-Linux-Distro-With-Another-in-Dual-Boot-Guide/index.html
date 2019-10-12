@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="LCTT 翻译,Linux,双系统,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在双系统引导的状态下，你可以将已安装的 Linux 发行版替换为另一个发行版，同时还可以保留原本的个人数据。   假设你的电脑上已经以双系统的形式安装了 Ubuntu 和 Windows，但经过将 Linux Mint 与 Ubuntu 比较之后，你又觉得 Linux Mint 会更适合自己的时候，你会怎样做？又该如何在删除 Ubuntu 的同时在双系统中安装 Mint 呢？ 你或许觉得应该首先">
+<meta name="keywords" content="LCTT 翻译,Linux,双系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在双系统引导下替换 Linux 发行版">
+<meta property="og:url" content="http://github.hankchow.net/2018/10/21/How-to-Replace-one-Linux-Distro-With-Another-in-Dual-Boot-Guide/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:description" content="在双系统引导的状态下，你可以将已安装的 Linux 发行版替换为另一个发行版，同时还可以保留原本的个人数据。   假设你的电脑上已经以双系统的形式安装了 Ubuntu 和 Windows，但经过将 Linux Mint 与 Ubuntu 比较之后，你又觉得 Linux Mint 会更适合自己的时候，你会怎样做？又该如何在删除 Ubuntu 的同时在双系统中安装 Mint 呢？ 你或许觉得应该首先">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/Replace-Linux-Distro-from-dual-boot.png">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-1.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-2.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-3.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-4.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-5.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-6.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-7.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-8.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-9.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-10.jpg">
+<meta property="og:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-11.jpg">
+<meta property="og:updated_time" content="2019-10-12T08:11:41.441Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何在双系统引导下替换 Linux 发行版">
+<meta name="twitter:description" content="在双系统引导的状态下，你可以将已安装的 Linux 发行版替换为另一个发行版，同时还可以保留原本的个人数据。   假设你的电脑上已经以双系统的形式安装了 Ubuntu 和 Windows，但经过将 Linux Mint 与 Ubuntu 比较之后，你又觉得 Linux Mint 会更适合自己的时候，你会怎样做？又该如何在删除 Ubuntu 的同时在双系统中安装 Mint 呢？ 你或许觉得应该首先">
+<meta name="twitter:image" content="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/Replace-Linux-Distro-from-dual-boot.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/2018/10/21/How-to-Replace-one-Linux-Distro-With-Another-in-Dual-Boot-Guide/">
+
+
+
+
+
+  <title>如何在双系统引导下替换 Linux 发行版 | HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/10/21/How-to-Replace-one-Linux-Distro-With-Another-in-Dual-Boot-Guide/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何在双系统引导下替换 Linux 发行版</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-21T00:22:05+08:00">
+                2018-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>在双系统引导的状态下，你可以将已安装的 Linux 发行版替换为另一个发行版，同时还可以保留原本的个人数据。</p>
+</blockquote>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/Replace-Linux-Distro-from-dual-boot.png" alt="How to Replace One Linux Distribution With Another From Dual Boot"></p>
+<p>假设你的电脑上已经<a href="https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/" target="_blank" rel="noopener">以双系统的形式安装了 Ubuntu 和 Windows</a>，但经过<a href="https://itsfoss.com/linux-mint-vs-ubuntu/" target="_blank" rel="noopener">将 Linux Mint 与 Ubuntu 比较</a>之后，你又觉得 <a href="https://www.linuxmint.com/" target="_blank" rel="noopener">Linux Mint</a> 会更适合自己的时候，你会怎样做？又该如何在<a href="https://itsfoss.com/uninstall-ubuntu-linux-windows-dual-boot/" target="_blank" rel="noopener">删除 Ubuntu</a> 的同时<a href="https://itsfoss.com/guide-install-linux-mint-16-dual-boot-windows/" target="_blank" rel="noopener">在双系统中安装 Mint</a> 呢？</p>
+<p>你或许觉得应该首先从在双系统中卸载 <a href="https://www.ubuntu.com/" target="_blank" rel="noopener">Ubuntu</a>，然后使用 Linux Mint 重新安装成双系统。但实际上并不需要这么麻烦。</p>
+<p>如果你已经在双系统引导中安装了一种 Linux 发行版，就可以轻松替换成另一个发行版了，而且也不必卸载已有的 Linux 发行版，只需要删除其所在的分区，然后在腾出的磁盘空间上安装另一个 Linux 发行版就可以了。</p>
+<p>与此同时，更换 Linux 发行版后，仍然会保留原本 home 目录中包含所有文件。</p>
+<p>下面就来详细介绍一下。</p>
+<h3 id="在双系统引导中替换-Linux-发行版"><a href="#在双系统引导中替换-Linux-发行版" class="headerlink" title="在双系统引导中替换 Linux 发行版"></a>在双系统引导中替换 Linux 发行版</h3><p><a href="https://youtu.be/ptF2RUehbKs" target="_blank" rel="noopener">https://youtu.be/ptF2RUehbKs</a></p>
+<p>这是我的演示范例。我使用双系统引导同时安装了 Windows 10 和 Linux Mint 19，然后我会把 Linux Mint 19 替换成 Elementary OS 5，同时在替换后保留我的个人文件（包括音乐、图片、视频和 home 目录中的文件）。</p>
+<p>你需要做好以下这些准备：</p>
+<ul>
+<li>使用 Linux 和 Windows 双系统引导</li>
+<li>需要安装的 Linux 发行版的 USB live 版</li>
+<li>在外部磁盘备份 Windows 和 Linux 中的重要文件（并非必要，但建议备份一下）</li>
+</ul>
+<h4 id="在替换-Linux-发行版时要记住保留你的-home-目录"><a href="#在替换-Linux-发行版时要记住保留你的-home-目录" class="headerlink" title="在替换 Linux 发行版时要记住保留你的 home 目录"></a>在替换 Linux 发行版时要记住保留你的 home 目录</h4><p>如果想让个人文件在安装新 Linux 系统的过程中不受影响，原有的 Linux 系统必须具有单独的 root 目录和 home 目录。你可能会发现我的<a href="https://itsfoss.com/guide-install-elementary-os-luna/" target="_blank" rel="noopener">双系统引导教程</a>在安装过程中不选择“与 Windows 共存”选项，而选择“其它”选项，然后手动创建 root 和 home 分区。所以，手动创建单独的 home 分区也算是一个磨刀不误砍柴工的操作。因为如果要在不丢失文件的情况下，将现有的 Linux 发行版替换为另一个发行版，需要将 home 目录存放在一个单独的分区上。</p>
+<p>不过，你必须记住现有 Linux 系统的用户名和密码才能使用与新系统中相同的 home 目录。</p>
+<p>如果你没有单独的 home 分区，也可以后续再进行创建。但这并不是推荐做法，因为这个过程会比较复杂，有可能会把你的系统搞乱。</p>
+<p>下面来看看如何替换到另一个 Linux 发行版。</p>
+<h4 id="步骤-1：为新的-Linux-发行版创建一个-USB-live-版"><a href="#步骤-1：为新的-Linux-发行版创建一个-USB-live-版" class="headerlink" title="步骤 1：为新的 Linux 发行版创建一个 USB live 版"></a>步骤 1：为新的 Linux 发行版创建一个 USB live 版</h4><p>尽管上文中已经提到了它，但我还是要重复一次以免忽略。</p>
+<p>你可以使用 Windows 或 Linux 中的启动盘创建器（例如 <a href="https://etcher.io/" target="_blank" rel="noopener">Etcher</a>）来创建 USB live 版，这个过程比较简单，这里不再详细叙述。</p>
+<h4 id="步骤-2：启动-USB-live-版并安装-Linux"><a href="#步骤-2：启动-USB-live-版并安装-Linux" class="headerlink" title="步骤 2：启动 USB live 版并安装 Linux"></a>步骤 2：启动 USB live 版并安装 Linux</h4><p>你应该已经使用过双系统启动，对这个过程不会陌生。使用 USB live 版重新启动系统，在启动时反复按 F10 或 F12 进入 BIOS 设置。选择从 USB 启动，就可以看到进入 live 环境或立即安装的选项。</p>
+<p>在安装过程中，进入“安装类型”界面时，选择“其它”选项。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-1.jpg" alt="Replacing one Linux with another from dual boot"></p>
+<p><em>在这里选择“其它”选项</em></p>
+<h4 id="步骤-3：准备分区操作"><a href="#步骤-3：准备分区操作" class="headerlink" title="步骤 3：准备分区操作"></a>步骤 3：准备分区操作</h4><p>下图是分区界面。你会看到使用 Ext4 文件系统类型来安装 Linux。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-2.jpg" alt="Identifying Linux partition in dual boot"></p>
+<p><em>确定 Linux 的安装位置</em></p>
+<p>在上图中，标记为 Linux Mint 19 的 Ext4 分区是 root 分区，大小为 82691 MB 的第二个 Ext4 分区是 home 分区。在这里我这里没有使用<a href="https://itsfoss.com/swap-size/" target="_blank" rel="noopener">交换空间</a>。</p>
+<p>如果你只有一个 Ext4 分区，就意味着你的 home 目录与 root 目录位于同一分区。在这种情况下，你就无法保留 home 目录中的文件了，这个时候我建议将重要文件复制到外部磁盘，否则这些文件将不会保留。</p>
+<p>然后是删除 root 分区。选择 root 分区，然后点击 <code>-</code> 号，这个操作释放了一些磁盘空间。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-3.jpg" alt="Delete root partition of your existing Linux install"></p>
+<p><em>删除 root 分区</em></p>
+<p>磁盘空间释放出来后，点击 <code>+</code> 号。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-4.jpg" alt="Create root partition for the new Linux"></p>
+<p><em>创建新的 root 分区</em></p>
+<p>现在已经在可用空间中创建一个新分区。如果你之前的 Linux 系统中只有一个 root 分区，就应该在这里创建 root 分区和 home 分区。如果需要，还可以创建交换分区。</p>
+<p>如果你之前已经有 root 分区和 home 分区，那么只需要从已删除的 root 分区创建 root 分区就可以了。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-5.jpg" alt="Create root partition for the new Linux"></p>
+<p><em>创建 root 分区</em></p>
+<p>你可能有疑问，为什么要经过“删除”和“添加”两个过程，而不使用“更改”选项。这是因为以前使用“更改”选项好像没有效果，所以我更喜欢用 <code>-</code> 和 <code>+</code>。这是迷信吗？也许是吧。</p>
+<p>这里有一个重要的步骤，对新创建的 root 分区进行格式化。在没有更改分区大小的情况下，默认是不会对分区进行格式化的。如果分区没有被格式化，之后可能会出现问题。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-6.jpg" alt=""></p>
+<p><em>格式化 root 分区很重要</em></p>
+<p>如果你在新的 Linux 系统上已经划分了单独的 home 分区，选中它并点击更改。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-7.jpg" alt="Recreate home partition"></p>
+<p><em>修改已有的 home 分区</em></p>
+<p>然后指定将其作为 home 分区挂载即可。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-8.jpg" alt="Specify the home mount point"></p>
+<p><em>指定 home 分区的挂载点</em></p>
+<p>如果你还有交换分区，可以重复与 home 分区相同的步骤，唯一不同的是要指定将空间用作交换空间。</p>
+<p>现在的状态应该是有一个 root 分区（将被格式化）和一个 home 分区（如果需要，还可以使用交换分区）。点击“立即安装”可以开始安装。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-9.jpg" alt="Verify partitions while replacing one Linux with another"></p>
+<p><em>检查分区情况</em></p>
+<p>接下来的几个界面就很熟悉了，要重点注意的是创建用户和密码的步骤。如果你之前有一个单独的 home 分区，并且还想使用相同的 home 目录，那你必须使用和之前相同的用户名和密码，至于设备名称则可以任意指定。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-10.jpg" alt="To keep the home partition intact, use the previous user and password"></p>
+<p><em>要保持 home 分区不变，请使用之前的用户名和密码</em></p>
+<p>接下来只要静待安装完成，不需执行任何操作。</p>
+<p><img src="https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/replace-linux-with-another-11.jpg" alt="Wait for installation to finish"></p>
+<p><em>等待安装完成</em></p>
+<p>安装完成后重新启动系统，你就能使用新的 Linux 发行版。</p>
+<p>在以上的例子中，我可以在新的 Linux Mint 19 中使用原有的 Elementary OS 中的整个 home 目录，并且其中所有视频和图片都原封不动。岂不美哉？</p>
+<hr>
+<p>via: <a href="https://itsfoss.com/replace-linux-from-dual-boot/" target="_blank" rel="noopener">https://itsfoss.com/replace-linux-from-dual-boot/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LCTT-翻译/" rel="tag"># LCTT 翻译</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/双系统/" rel="tag"># 双系统</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/20/the-parameter-ensure-ascii-in-json-dumps/" rel="next" title="json.dumps() 中的 ensure_ascii 参数">
+                <i class="fa fa-chevron-left"></i> json.dumps() 中的 ensure_ascii 参数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/27/Why-is-Python-so-slow/" rel="prev" title="为什么 Python 这么慢？">
+                为什么 Python 这么慢？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在双系统引导中替换-Linux-发行版"><span class="nav-number">1.</span> <span class="nav-text">在双系统引导中替换 Linux 发行版</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在替换-Linux-发行版时要记住保留你的-home-目录"><span class="nav-number">1.1.</span> <span class="nav-text">在替换 Linux 发行版时要记住保留你的 home 目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤-1：为新的-Linux-发行版创建一个-USB-live-版"><span class="nav-number">1.2.</span> <span class="nav-text">步骤 1：为新的 Linux 发行版创建一个 USB live 版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤-2：启动-USB-live-版并安装-Linux"><span class="nav-number">1.3.</span> <span class="nav-text">步骤 2：启动 USB live 版并安装 Linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤-3：准备分区操作"><span class="nav-number">1.4.</span> <span class="nav-text">步骤 3：准备分区操作</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">111.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

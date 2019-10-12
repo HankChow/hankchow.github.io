@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="LCTT 翻译,Linux,命令,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="如果你是一个 Linux 方面的新手，你可能会在 more、less、most 这三个命令行工具之间产生疑惑。在本文当中，我会对这三个命令行工具进行对比，以及展示它们各自在 Linux 中的一些使用例子。总的来说，这几个命令行工具之间都有相通和差异，而且它们在大部分 Linux 发行版上都有自带。 我们首先来看看 more 命令。 more 命令more 是一个老式的、基础的终端分页阅读器，它可">
+<meta name="keywords" content="LCTT 翻译,Linux,命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="more、less 和 most 的区别">
+<meta property="og:url" content="http://github.hankchow.net/2018/11/19/The-Difference-Between-more-less-And-most-Commands/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:description" content="如果你是一个 Linux 方面的新手，你可能会在 more、less、most 这三个命令行工具之间产生疑惑。在本文当中，我会对这三个命令行工具进行对比，以及展示它们各自在 Linux 中的一些使用例子。总的来说，这几个命令行工具之间都有相通和差异，而且它们在大部分 Linux 发行版上都有自带。 我们首先来看看 more 命令。 more 命令more 是一个老式的、基础的终端分页阅读器，它可">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/11/more-less-and-most-commands-720x340.png">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/11/more-command-demo.gif">
+<meta property="og:image" content="http://www.ostechnix.com/wp-content/uploads/2018/11/more-1.png">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/11/less-command-demo.gif">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/11/most-command.png">
+<meta property="og:image" content="http://www.ostechnix.com/wp-content/uploads/2018/11/most-1-1.gif">
+<meta property="og:image" content="https://www.ostechnix.com/wp-content/uploads/2018/11/most-2.gif">
+<meta property="og:updated_time" content="2019-10-12T08:11:41.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="more、less 和 most 的区别">
+<meta name="twitter:description" content="如果你是一个 Linux 方面的新手，你可能会在 more、less、most 这三个命令行工具之间产生疑惑。在本文当中，我会对这三个命令行工具进行对比，以及展示它们各自在 Linux 中的一些使用例子。总的来说，这几个命令行工具之间都有相通和差异，而且它们在大部分 Linux 发行版上都有自带。 我们首先来看看 more 命令。 more 命令more 是一个老式的、基础的终端分页阅读器，它可">
+<meta name="twitter:image" content="https://www.ostechnix.com/wp-content/uploads/2018/11/more-less-and-most-commands-720x340.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/2018/11/19/The-Difference-Between-more-less-And-most-Commands/">
+
+
+
+
+
+  <title>more、less 和 most 的区别 | HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2018/11/19/The-Difference-Between-more-less-And-most-Commands/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">more、less 和 most 的区别</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T23:21:12+08:00">
+                2018-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://www.ostechnix.com/wp-content/uploads/2018/11/more-less-and-most-commands-720x340.png" alt=""></p>
+<p>如果你是一个 Linux 方面的新手，你可能会在 <code>more</code>、<code>less</code>、<code>most</code> 这三个命令行工具之间产生疑惑。在本文当中，我会对这三个命令行工具进行对比，以及展示它们各自在 Linux 中的一些使用例子。总的来说，这几个命令行工具之间都有相通和差异，而且它们在大部分 Linux 发行版上都有自带。</p>
+<p>我们首先来看看 <code>more</code> 命令。</p>
+<h3 id="more-命令"><a href="#more-命令" class="headerlink" title="more 命令"></a>more 命令</h3><p><code>more</code> 是一个老式的、基础的终端分页阅读器，它可以用于打开指定的文件并进行交互式阅读。如果文件的内容太长，在一屏以内无法完整显示，就会逐页显示文件内容。使用回车键或者空格键可以滚动浏览文件的内容，但有一个限制，就是只能够单向滚动。也就是说只能按顺序往下翻页，而不能进行回看。</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/11/more-command-demo.gif" alt=""></p>
+<p><strong>更正</strong></p>
+<p>有的 Linux 用户向我指出，在 <code>more</code> 当中是可以向上翻页的。不过，最原始版本的 <code>more</code> 确实只允许向下翻页，在后续出现的较新的版本中也允许了有限次数的向上翻页，只需要在浏览过程中按 <code>b</code> 键即可向上翻页。唯一的限制是 <code>more</code> 不能搭配管道使用（如 <code>ls | more</code>）。（LCTT 译注：此处原作者疑似有误，译者使用 <code>more</code> 是可以搭配管道使用的，或许与不同 <code>more</code> 版本有关）</p>
+<p>按 <code>q</code> 即可退出 <code>more</code>。</p>
+<p><strong>更多示例</strong></p>
+<p>打开 <code>ostechnix.txt</code> 文件进行交互式阅读，可以执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more ostechnix.txt</span><br></pre></td></tr></table></figure>
+<p>在阅读过程中，如果需要查找某个字符串，只需要像下面这样输入斜杠（<code>/</code>）之后接着输入需要查找的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/linux</span><br></pre></td></tr></table></figure>
+<p>按 <code>n</code> 键可以跳转到下一个匹配的字符串。</p>
+<p>如果需要在文件的第 <code>10</code> 行开始阅读，只需要执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more +10 file</span><br></pre></td></tr></table></figure>
+<p>就可以从文件的第 <code>10</code> 行开始显示文件的内容了。</p>
+<p>如果你需要让 <code>more</code> 提示你按空格键来翻页，可以加上 <code>-d</code> 参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more -d ostechnix.txt</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.ostechnix.com/wp-content/uploads/2018/11/more-1.png" alt=""></p>
+<p>如上图所示，<code>more</code> 会提示你可以按空格键翻页。</p>
+<p>如果需要查看所有选项以及对应的按键，可以按 <code>h</code> 键。</p>
+<p>要查看 <code>more</code> 的更多详细信息，可以参考手册：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ man more</span><br></pre></td></tr></table></figure>
+<h3 id="less-命令"><a href="#less-命令" class="headerlink" title="less 命令"></a>less 命令</h3><p><code>less</code> 命令也是用于打开指定的文件并进行交互式阅读，它也支持翻页和搜索。如果文件的内容太长，也会对输出进行分页，因此也可以翻页阅读。比 <code>more</code> 命令更好的一点是，<code>less</code> 支持向上翻页和向下翻页，也就是可以在整个文件中任意阅读。</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/11/less-command-demo.gif" alt=""></p>
+<p>在使用功能方面，<code>less</code> 比 <code>more</code> 命令具有更多优点，以下列出其中几个：</p>
+<ul>
+<li>支持向上翻页和向下翻页</li>
+<li>支持向上搜索和向下搜索</li>
+<li>可以跳转到文件的末尾并立即从文件的开头开始阅读</li>
+<li>在编辑器中打开指定的文件</li>
+</ul>
+<p><strong>更多示例</strong></p>
+<p>打开文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ less ostechnix.txt</span><br></pre></td></tr></table></figure>
+<p>按空格键或回车键可以向下翻页，按 <code>b</code> 键可以向上翻页。</p>
+<p>如果需要向下搜索，在输入斜杠（<code>/</code>）之后接着输入需要搜索的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/linux</span><br></pre></td></tr></table></figure>
+<p>按 <code>n</code> 键可以跳转到下一个匹配的字符串，如果需要跳转到上一个匹配的字符串，可以按 <code>N</code> 键。</p>
+<p>如果需要向上搜索，在输入问号（<code>?</code>）之后接着输入需要搜索的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?linux</span><br></pre></td></tr></table></figure>
+<p>同样是按 <code>n</code> 键或 <code>N</code> 键跳转到下一个或上一个匹配的字符串。</p>
+<p>只需要按 <code>v</code> 键，就会将正在阅读的文件在默认编辑器中打开，然后就可以对文件进行各种编辑操作了。</p>
+<p>按 <code>h</code> 键可以查看 <code>less</code> 工具的选项和对应的按键。</p>
+<p>按 <code>q</code> 键可以退出阅读。</p>
+<p>要查看 <code>less</code> 的更多详细信息，可以参考手册：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ man less</span><br></pre></td></tr></table></figure>
+<h3 id="most-命令"><a href="#most-命令" class="headerlink" title="most 命令"></a>most 命令</h3><p><code>most</code> 同样是一个终端阅读工具，而且比 <code>more</code> 和 <code>less</code> 的功能更为丰富。<code>most</code> 支持同时打开多个文件。你可以在打开的文件之间切换、编辑当前打开的文件、迅速跳转到文件中的某一行、分屏阅读、同时锁定或滚动多个屏幕等等功能。在默认情况下，对于较长的行，<code>most</code> 不会将其截断成多行显示，而是提供了左右滚动功能以在同一行内显示。</p>
+<p><strong>更多示例</strong></p>
+<p>打开文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ most ostechnix1.txt</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/11/most-command.png" alt=""></p>
+<p>按 <code>e</code> 键可以编辑当前文件。</p>
+<p>如果需要向下搜索，在斜杠（<code>/</code>）或 <code>S</code> 或 <code>f</code> 之后输入需要搜索的内容，按 <code>n</code> 键就可以跳转到下一个匹配的字符串。</p>
+<p><img src="http://www.ostechnix.com/wp-content/uploads/2018/11/most-1-1.gif" alt=""></p>
+<p>如果需要向上搜索，在问号（<code>?</code>）之后输入需要搜索的内容，也是通过按 <code>n</code> 键跳转到下一个匹配的字符串。</p>
+<p>同时打开多个文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ most ostechnix1.txt ostechnix2.txt ostechnix3.txt</span><br></pre></td></tr></table></figure>
+<p>在打开了多个文件的状态下，可以输入 <code>:n</code> 切换到下一个文件，使用 <code>↑</code> 或 <code>↓</code> 键选择需要切换到的文件，按回车键就可以查看对应的文件。</p>
+<p><img src="https://www.ostechnix.com/wp-content/uploads/2018/11/most-2.gif" alt=""></p>
+<p>要打开文件并跳转到某个字符串首次出现的位置（例如 linux），可以执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ most file +/linux</span><br></pre></td></tr></table></figure>
+<p>按 <code>h</code> 键可以查看帮助。</p>
+<p><strong>按键操作列表</strong></p>
+<p>移动：</p>
+<ul>
+<li>空格键或 <code>D</code> 键 – 向下滚动一屏</li>
+<li><code>DELETE</code> 键或 <code>U</code> 键 – 向上滚动一屏</li>
+<li><code>↓</code> 键 – 向下移动一行</li>
+<li><code>↑</code> 键 – 向上移动一行</li>
+<li><code>T</code> 键 – 移动到文件开头</li>
+<li><code>B</code> 键 – 移动到文件末尾</li>
+<li><code>&gt;</code> 键或 <code>TAB</code> 键 – 向右滚动屏幕</li>
+<li><code>&lt;</code> 键 – 向左滚动屏幕</li>
+<li><code>→</code> 键 – 向右移动一列</li>
+<li><code>←</code> 键 – 向左移动一列</li>
+<li><code>J</code> 键或 <code>G</code> 键 – 移动到某一行，例如 <code>10j</code> 可以移动到第 10 行</li>
+<li><code>%</code> 键 – 移动到文件长度某个百分比的位置</li>
+</ul>
+<p>窗口命令：</p>
+<ul>
+<li><code>Ctrl-X 2</code>、<code>Ctrl-W 2</code> – 分屏</li>
+<li><code>Ctrl-X 1</code>、<code>Ctrl-W 1</code> – 只显示一个窗口</li>
+<li><code>O</code> 键、<code>Ctrl-X O</code> – 切换到另一个窗口</li>
+<li><code>Ctrl-X 0</code> – 删除窗口</li>
+</ul>
+<p>文件内搜索：</p>
+<ul>
+<li><code>S</code> 键或 <code>f</code> 键或 <code>/</code> 键 – 向下搜索</li>
+<li><code>?</code> 键 – 向上搜索</li>
+<li><code>n</code> 键 – 跳转到下一个匹配的字符串</li>
+</ul>
+<p>退出：</p>
+<ul>
+<li><code>q</code> 键 – 退出 <code>most</code> ，且所有打开的文件都会被关闭</li>
+<li><code>:N</code>、<code>:n</code> – 退出当前文件并查看下一个文件（使用 <code>↑</code> 键、<code>↓</code> 键选择下一个文件）</li>
+</ul>
+<p>要查看 <code>most</code> 的更多详细信息，可以参考手册：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ man most</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><code>more</code> – 传统且基础的分页阅读工具，仅支持向下翻页和有限次数的向上翻页。</p>
+<p><code>less</code> – 比 <code>more</code> 功能丰富，支持向下翻页和向上翻页，也支持文本搜索。在打开大文件的时候，比 <code>vi</code> 这类文本编辑器启动得更快。</p>
+<p><code>most</code> – 在上述两个工具功能的基础上，还加入了同时打开多个文件、同时锁定或滚动多个屏幕、分屏等等大量功能。</p>
+<p>以上就是我的介绍，希望能让你通过我的文章对这三个工具有一定的认识。如果想了解这篇文章以外的关于这几个工具的详细功能，请参阅它们的 <code>man</code> 手册。</p>
+<hr>
+<p>via: <a href="https://www.ostechnix.com/the-difference-between-more-less-and-most-commands/" target="_blank" rel="noopener">https://www.ostechnix.com/the-difference-between-more-less-and-most-commands/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LCTT-翻译/" rel="tag"># LCTT 翻译</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/命令/" rel="tag"># 命令</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/19/Gitbase-Exploring-git-repos-with-SQL/" rel="next" title="gitbase：用 SQL 查询 Git 仓库">
+                <i class="fa fa-chevron-left"></i> gitbase：用 SQL 查询 Git 仓库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/21/a-pitfall-of-connecting-failure-to-mysql-in-docker/" rel="prev" title="Docker 运行官方 MySQL 镜像无法远程连接的坑">
+                Docker 运行官方 MySQL 镜像无法远程连接的坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#more-命令"><span class="nav-number">1.</span> <span class="nav-text">more 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#less-命令"><span class="nav-number">2.</span> <span class="nav-text">less 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#most-命令"><span class="nav-number">3.</span> <span class="nav-text">most 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">111.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

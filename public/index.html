@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="HankChow's Blog">
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="HankChow&#39;s Blog">
+<meta property="og:url" content="http://github.hankchow.net/index.html">
+<meta property="og:site_name" content="HankChow&#39;s Blog">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HankChow&#39;s Blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.hankchow.net/">
+
+
+
+
+
+  <title>HankChow's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HankChow's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2019/05/05/what-if-disk-space-is-not-freed-after-deleting-files/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/05/what-if-disk-space-is-not-freed-after-deleting-files/" itemprop="url">如何处理删除文件后磁盘空间未被释放的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:12:48+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  264
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在磁盘空间即将耗尽的时候，需要清理一些文件。在找到需要删除的文件之后，如果直接使用 <code>rm</code> 删除文件，可能会发现删除文件后磁盘空间并没有被清理出来的情况。</p>
+<p>这是由于刚刚删除的文件还在被某个进程打开，导致几时文件看起来被删除了，但仍然是打开状态，因此仍然会占用磁盘空间。</p>
+<p>如果需要彻底清理出磁盘空间，可以通过 <code>lsof | grep -i delete</code> 查看这种“在打开状态下被删除了”的文件，会显示出这个文件正在被哪个进程所打开，只需要将进程 <code>kill</code> 掉，对应的文件空间就被释放出来了。</p>
+<p>但如果由于某些原因，不能终止某个进程，还可以采用另一个折中一点的办法。使用 <code>echo &gt; foo(需要删除的文件)</code> 将文件内容置空，同样可以达到清理磁盘空间的目标。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2019/04/22/Using-Square-Brackets-in-Bash-Part-2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/22/Using-Square-Brackets-in-Bash-Part-2/" itemprop="url">在 Bash 中使用[方括号]（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-22T10:09:17+08:00">
+                2019-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://www.linux.com/sites/lcom/files/styles/rendered_file/public/square-brackets-3734552_1920.jpg?itok=hv9D6TBy" alt="square brackets" title="square brackets"></p>
+<blockquote>
+<p>我们继续来看方括号的用法，它们甚至还可以在 Bash 当中作为一个命令使用。</p>
+</blockquote>
+<p>欢迎回到我们的方括号专题。在<a href="https://linux.cn/article-10717-1.html" target="_blank" rel="noopener">前一篇文章</a>当中，我们介绍了方括号在命令行中可以用于通配操作，如果你已经读过前一篇文章，就可以从这里继续了。</p>
+<p>方括号还可以以一个命令的形式使用，就像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ &quot;a&quot; = &quot;a&quot; ]</span><br></pre></td></tr></table></figure>
+<p>上面这种  <code>[ ... ]</code> 的形式就可以看成是一个可执行的命令。要注意，方括号内部的内容 <code>&quot;a&quot; = &quot;a&quot;</code> 和方括号 <code>[</code>、<code>]</code> 之间是有空格隔开的。因为这里的方括号被视作一个命令，因此要用空格将命令和它的参数隔开。</p>
+<p>上面这个命令的含义是“判断字符串 <code>&quot;a&quot;</code> 和字符串 <code>&quot;a&quot;</code> 是否相同”，如果判断结果为真，那么 <code>[ ... ]</code> 就会以<ruby>状态码<rt>status code</rt></ruby> 0 退出，否则以状态码 1 退出。在<a href="https://linux.cn/article-10596-1.html" target="_blank" rel="noopener">之前的文章</a>中，我们也有介绍过状态码的概念，可以通过 <code>$?</code> 变量获取到最近一个命令的状态码。</p>
+<p>分别执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ &quot;a&quot; = &quot;a&quot; ]</span><br><span class="line">echo $?</span><br></pre></td></tr></table></figure>
+<p>以及</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ &quot;a&quot; = &quot;b&quot; ]</span><br><span class="line">echo $?</span><br></pre></td></tr></table></figure>
+<p>这两段命令中，前者会输出 0（判断结果为真），后者则会输出 1（判断结果为假）。在 Bash 当中，如果一个命令的状态码是 0，表示这个命令正常执行完成并退出，而且其中没有出现错误，对应布尔值 <code>true</code>；如果在命令执行过程中出现错误，就会返回一个非零的状态码，对应布尔值 <code>false</code>。而 <code>[ ... ]</code> 也同样遵循这样的规则。</p>
+<p>因此，<code>[ ... ]</code> 很适合在 <code>if ... then</code>、<code>while</code> 或 <code>until</code> 这种在代码块结束前需要判断是否达到某个条件结构中使用。</p>
+<p>对应使用的逻辑判断运算符也相当直观：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[ STRING1 = STRING2 ] =&gt; 检查字符串是否相等</span><br><span class="line">[ STRING1 != STRING2 ] =&gt; 检查字符串是否不相等</span><br><span class="line">[ INTEGER1 -eq INTEGER2 ] =&gt; 检查整数 INTEGER1 是否等于 INTEGER2 </span><br><span class="line">[ INTEGER1 -ge INTEGER2 ] =&gt; 检查整数 INTEGER1 是否大于等于 INTEGER2</span><br><span class="line">[ INTEGER1 -gt INTEGER2 ] =&gt; 检查整数 INTEGER1 是否大于 INTEGER2</span><br><span class="line">[ INTEGER1 -le INTEGER2 ] =&gt; 检查整数 INTEGER1 是否小于等于 INTEGER2</span><br><span class="line">[ INTEGER1 -lt INTEGER2 ] =&gt; 检查整数 INTEGER1 是否小于 INTEGER2</span><br><span class="line">[ INTEGER1 -ne INTEGER2 ] =&gt; 检查整数 INTEGER1 是否不等于 INTEGER2</span><br><span class="line">等等……</span><br></pre></td></tr></table></figure>
+<p>方括号的这种用法也可以很有 shell 风格，例如通过带上 <code>-f</code> 参数可以判断某个文件是否存在：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for i in &#123;000..099&#125;; \</span><br><span class="line"> do \</span><br><span class="line">  if [ -f file$i ]; \</span><br><span class="line">  then \</span><br><span class="line">   echo file$i exists; \</span><br><span class="line">  else \</span><br><span class="line">   touch file$i; \</span><br><span class="line">   echo I made file$i; \</span><br><span class="line">  fi; \</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>如果你在上一篇文章使用到的测试目录中运行以上这串命令，其中的第 3 行会判断那几十个文件当中的某个文件是否存在。如果文件存在，会输出一条提示信息；如果文件不存在，就会把对应的文件创建出来。最终，这个目录中会完整存在从 <code>file000</code> 到 <code>file099</code> 这一百个文件。</p>
+<p>上面这段命令还可以写得更加简洁：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for i in &#123;000..099&#125;;\</span><br><span class="line">do\</span><br><span class="line"> if [ ! -f file$i ];\</span><br><span class="line"> then\</span><br><span class="line">  touch file$i;\</span><br><span class="line">  echo I made file$i;\</span><br><span class="line"> fi;\</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>其中 <code>!</code> 运算符表示将判断结果取反，因此第 3 行的含义就是“如果文件 <code>file$i</code> 不存在”。</p>
+<p>可以尝试一下将测试目录中那几十个文件随意删除几个，然后运行上面的命令，你就可以看到它是如何把被删除的文件重新创建出来的。</p>
+<p>除了 <code>-f</code> 之外，还有很多有用的参数。<code>-d</code> 参数可以判断某个目录是否存在，<code>-h</code> 参数可以判断某个文件是不是一个符号链接。可以用 <code>-G</code> 参数判断某个文件是否属于某个用户组，用 <code>-ot</code> 参数判断某个文件的最后更新时间是否早于另一个文件，甚至还可以判断某个文件是否为空文件。</p>
+<p>运行下面的几条命令，可以向几个文件中写入一些内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Hello World&quot; &gt;&gt; file023</span><br><span class="line">echo &quot;This is a message&quot; &gt;&gt; file065</span><br><span class="line">echo &quot;To humanity&quot; &gt;&gt; file010</span><br></pre></td></tr></table></figure>
+<p>然后运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for i in &#123;000..099&#125;;\</span><br><span class="line">do\</span><br><span class="line"> if [ ! -s file$i ];\</span><br><span class="line"> then\</span><br><span class="line">  rm file$i;\</span><br><span class="line">  echo I removed file$i;\</span><br><span class="line"> fi;\</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>你就会发现所有空文件都被删除了，只剩下少数几个非空的文件。</p>
+<p>如果你还想了解更多别的参数，可以执行 <code>man test</code> 来查看 <code>test</code> 命令的 man 手册（<code>test</code> 是 <code>[ ... ]</code> 的命令别名）。</p>
+<p>有时候你还会看到 <code>[[ ... ]]</code> 这种双方括号的形式，使用起来和单方括号差别不大。但双方括号支持的比较运算符更加丰富：例如可以使用 <code>==</code> 来判断某个字符串是否符合某个<ruby>模式<rt>pattern</rt></ruby>，也可以使用 <code>&lt;</code>、<code>&gt;</code> 来判断两个字符串的出现顺序。</p>
+<p>可以在 <a href="https://www.gnu.org/software/bash/manual/bashref.html#Bash-Conditional-Expressions" target="_blank" rel="noopener">Bash 表达式文档</a>中了解到双方括号支持的更多运算符。</p>
+<h3 id="下一集"><a href="#下一集" class="headerlink" title="下一集"></a>下一集</h3><p>在下一篇文章中，我们会开始介绍圆括号 <code>()</code> 在 Linux 命令行中的用法，敬请关注！</p>
+<h3 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h3><ul>
+<li><a href="https://linux.cn/article-10465-1.html" target="_blank" rel="noopener">Linux 工具：点的含义</a></li>
+<li><a href="https://linux.cn/article-10502-1.html" target="_blank" rel="noopener">理解 Bash 中的尖括号</a></li>
+<li><a href="https://linux.cn/article-10529-1.html" target="_blank" rel="noopener">Bash 中尖括号的更多用法</a></li>
+<li><a href="https://linux.cn/article-10587-1.html" target="_blank" rel="noopener">Linux 中的 &amp;</a></li>
+<li><a href="https://linux.cn/article-10591-1.html" target="_blank" rel="noopener">Bash 中的 ＆ 符号和文件描述符</a></li>
+<li><a href="https://linux.cn/article-10596-1.html" target="_blank" rel="noopener">Bash 中的逻辑和（&amp;）</a></li>
+<li><a href="https://linux.cn/article-10624-1.html" target="_blank" rel="noopener">浅析 Bash 中的 {花括号}</a></li>
+<li><a href="https://linux.cn/article-10717-1.html" target="_blank" rel="noopener">在 Bash 中使用[方括号] （一）</a></li>
+</ul>
+<hr>
+<p>via: <a href="https://www.linux.com/blog/learn/2019/4/using-square-brackets-bash-part-2" target="_blank" rel="noopener">https://www.linux.com/blog/learn/2019/4/using-square-brackets-bash-part-2</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2019/04/13/Using-Square-Brackets-in-Bash-Part-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/13/Using-Square-Brackets-in-Bash-Part-1/" itemprop="url">在 Bash 中使用[方括号] （一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-13T00:08:26+08:00">
+                2019-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://www.linux.com/sites/lcom/files/styles/rendered_file/public/square-gabriele-diwald-475007-unsplash.jpg?itok=cKmysLfd" alt="square brackets" title="square brackets"></p>
+<blockquote>
+<p>这篇文章将要介绍方括号及其在命令行中的不同用法。</p>
+</blockquote>
+<p>看完<a href="https://linux.cn/article-10624-1.html" target="_blank" rel="noopener">花括号在命令行中的用法</a>之后，现在我们继续来看方括号（<code>[]</code>）在上下文中是如何发挥作用的。</p>
+<h3 id="通配"><a href="#通配" class="headerlink" title="通配"></a>通配</h3><p>方括号最简单的用法就是通配。你可能在知道“<ruby><rt>Globbing</rt></ruby>”这个概念之前就已经通过通配来匹配内容了，列出具有相同特征的多个文件就是一个很常见的场景，例如列出所有 JPEG 文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls *.jpg</span><br></pre></td></tr></table></figure>
+<p>使用<ruby>通配符<rt>wildcard</rt></ruby>来得到符合某个模式的所有内容，这个过程就叫通配。</p>
+<p>在上面的例子当中，星号（<code>*</code>）就代表“0 个或多个字符”。除此以外，还有代表“有且仅有一个字符”的问号（<code>?</code>）。因此</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls d*k*</span><br></pre></td></tr></table></figure>
+<p>可以列出 <code>darkly</code> 和 <code>ducky</code>，而且 <code>dark</code> 和 <code>duck</code> 也是可以被列出的，因为 <code>*</code> 可以匹配 0 个字符。而</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls d*k?</span><br></pre></td></tr></table></figure>
+<p>则只能列出 <code>ducky</code>，不会列出 <code>darkly</code>、<code>dark</code> 和 <code>duck</code>。</p>
+<p>方括号也可以用于通配。为了便于演示，可以创建一个用于测试的目录，并在这个目录下创建文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch file0&#123;0..9&#125;&#123;0..9&#125;</span><br></pre></td></tr></table></figure>
+<p>（如果你还不清楚上面这个命令的原理，可以看一下<a href="https://linux.cn/article-10624-1.html" target="_blank" rel="noopener">另一篇介绍花括号的文章</a>）</p>
+<p>执行上面这个命令之后，就会创建 <code>file000</code>、<code>file001</code>、……、<code>file099</code> 这 100 个文件。</p>
+<p>如果要列出这些文件当中第二位数字是 7 或 8 的文件，可以执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls file0[78]?</span><br></pre></td></tr></table></figure>
+<p>如果要列出 <code>file022</code>、<code>file027</code>、<code>file028</code>、<code>file052</code>、<code>file057</code>、<code>file058</code>、<code>file092</code>、<code>file097</code>、<code>file098</code>，可以执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls file0[259][278]</span><br></pre></td></tr></table></figure>
+<p>当然，不仅仅是 <code>ls</code>，很多其它的命令行工具都可以使用方括号来进行通配操作。但在删除文件、移动文件、复制文件的过程中使用通配，你需要有一点横向思维。</p>
+<p>例如将 <code>file010</code> 到 <code>file029</code> 这 30 个文件复制成 <code>archive010</code> 到 <code>archive029</code> 这 30 个副本，不可以这样执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp file0[12]? archive0[12]?</span><br></pre></td></tr></table></figure>
+<p>因为通配只能针对已有的文件，而 <code>archive</code> 开头的文件并不存在，不能进行通配。</p>
+<p>而这条命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp file0[12]? archive0[1..2][0..9]</span><br></pre></td></tr></table></figure>
+<p>也同样不行，因为 <code>cp</code> 并不允许将多个文件复制到多个文件。在复制多个文件的情况下，只能将多个文件复制到一个指定的目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir archive</span><br><span class="line">cp file0[12]? archive</span><br></pre></td></tr></table></figure>
+<p>这条命令是可以正常运行的，但它只会把这 30 个文件以同样的名称复制到 <code>archive/</code> 目录下，而这并不是我们想要的效果。</p>
+<p>如果你阅读过我<a href="https://linux.cn/article-10624-1.html" target="_blank" rel="noopener">关于花括号的文章</a>，你大概会记得可以使用 <code>%</code> 来截掉字符串的末尾部分，而使用 <code>#</code> 则可以截掉字符串的开头部分。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myvar=&quot;Hello World&quot;</span><br><span class="line">echo Goodbye Cruel $&#123;myvar#Hello&#125;</span><br></pre></td></tr></table></figure>
+<p>就会输出 <code>Goodbye Cruel World</code>，因为 <code>#Hello</code> 将 <code>myvar</code> 变量中开头的 <code>Hello</code> 去掉了。</p>
+<p>在通配的过程中，也可以使用这一个技巧。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in file0[12]?;\</span><br><span class="line">do\</span><br><span class="line">cp $i archive$&#123;i#file&#125;;\</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>上面的第一行命令告诉 Bash 需要对所有 <code>file01</code> 开头或者 <code>file02</code> 开头，且后面只跟一个任意字符的文件进行操作，第二行的 <code>do</code> 和第四行的 <code>done</code> 代表需要对这些文件都执行这一块中的命令。</p>
+<p>第三行就是实际的复制操作了，这里使用了两次 <code>$i</code> 变量：第一次在 <code>cp</code> 命令中直接作为源文件的文件名使用，第二次则是截掉文件名开头的 <code>file</code> 部分，然后在开头补上一个 <code>archive</code>，也就是这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;archive&quot; + &quot;file019&quot; - &quot;file&quot; = &quot;archive019&quot;</span><br></pre></td></tr></table></figure>
+<p>最终整个 <code>cp</code> 命令展开为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp file019 archive019</span><br></pre></td></tr></table></figure>
+<p>最后，顺带说明一下反斜杠 <code>\</code> 的作用是将一条长命令拆分成多行，这样可以方便阅读。</p>
+<p>在下一节，我们会了解方括号的更多用法，敬请关注。</p>
+<hr>
+<p>via: <a href="https://www.linux.com/blog/2019/3/using-square-brackets-bash-part-1" target="_blank" rel="noopener">https://www.linux.com/blog/2019/3/using-square-brackets-bash-part-1</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2019/04/03/10-Python-image-manipulation-tools/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/03/10-Python-image-manipulation-tools/" itemprop="url">10 个 Python 图像编辑工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T11:39:45+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>以下提到的这些 Python 工具在编辑图像、操作图像底层数据方面都提供了简单直接的方法。</p>
+</blockquote>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/daisy_gimp_art_design.jpg?itok=6kCxAKWO" alt=""></p>
+<p>当今的世界充满了数据，而图像数据就是其中很重要的一部分。但只有经过处理和分析，提高图像的质量，从中提取出有效地信息，才能利用到这些图像数据。</p>
+<p>常见的图像处理操作包括显示图像，基本的图像操作，如裁剪、翻转、旋转；图像的分割、分类、特征提取；图像恢复；以及图像识别等等。Python 作为一种日益风靡的科学编程语言，是这些图像处理操作的最佳选择。同时，在 Python 生态当中也有很多可以免费使用的优秀的图像处理工具。</p>
+<p>下文将介绍 10 个可以用于图像处理任务的 Python 库，它们在编辑图像、查看图像底层数据方面都提供了简单直接的方法。</p>
+<h3 id="1、scikit-image"><a href="#1、scikit-image" class="headerlink" title="1、scikit-image"></a>1、scikit-image</h3><p><a href="https://scikit-image.org/" target="_blank" rel="noopener">scikit-image</a> 是一个结合 <a href="http://docs.scipy.org/doc/numpy/reference/index.html#module-numpy" target="_blank" rel="noopener">NumPy</a> 数组使用的开源 Python 工具，它实现了可用于研究、教育、工业应用的算法和应用程序。即使是对于刚刚接触 Python 生态圈的新手来说，它也是一个在使用上足够简单的库。同时它的代码质量也很高，因为它是由一个活跃的志愿者社区开发的，并且通过了<ruby>同行评审<rt>peer review</rt></ruby>。 </p>
+<h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4><p>scikit-image 的<a href="http://scikit-image.org/docs/stable/user_guide.html" target="_blank" rel="noopener">文档</a>非常完善，其中包含了丰富的用例。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>可以通过导入 <code>skimage</code> 使用，大部分的功能都可以在它的子模块中找到。</p>
+<p><ruby>图像滤波<rt>image filtering</rt></ruby>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">from skimage import data,filters</span><br><span class="line"></span><br><span class="line">image = data.coins() # ... or any other NumPy array!</span><br><span class="line">edges = filters.sobel(image)</span><br><span class="line">plt.imshow(edges, cmap=&apos;gray&apos;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://opensource.com/sites/default/files/uploads/1-scikit-image.png" alt="Image filtering in scikit-image" title="Image filtering in scikit-image"></p>
+<p>使用 <a href="http://scikit-image.org/docs/dev/auto_examples/features_detection/plot_template.html#sphx-glr-auto-examples-features-detection-plot-template-py" target="_blank" rel="noopener">match_template()</a> 方法实现<ruby>模板匹配<rt>template matching</rt></ruby>：</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/2-scikit-image.png" alt="Template matching in scikit-image" title="Template matching in scikit-image"></p>
+<p>在<a href="https://scikit-image.org/docs/dev/auto_examples" target="_blank" rel="noopener">展示页面</a>可以看到更多相关的例子。</p>
+<h3 id="2、NumPy"><a href="#2、NumPy" class="headerlink" title="2、NumPy"></a>2、NumPy</h3><p><a href="http://www.numpy.org/" target="_blank" rel="noopener">NumPy</a> 提供了对数组的支持，是 Python 编程的一个核心库。图像的本质其实也是一个包含像素数据点的标准 NumPy 数组，因此可以通过一些基本的 NumPy 操作（例如切片、<ruby>掩膜<rt>mask</rt></ruby>、<ruby>花式索引<rt>fancy indexing</rt></ruby>等），就可以从像素级别对图像进行编辑。通过 NumPy 数组存储的图像也可以被 skimage 加载并使用 matplotlib 显示。</p>
+<h4 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h4><p>在 NumPy 的<a href="http://www.numpy.org/" target="_blank" rel="noopener">官方文档</a>中提供了完整的代码文档和资源列表。</p>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><p>使用 NumPy 对图像进行<ruby>掩膜<rt>mask</rt></ruby>操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">from skimage import data</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">image = data.camera()</span><br><span class="line">type(image)</span><br><span class="line">numpy.ndarray #Image is a NumPy array:</span><br><span class="line"></span><br><span class="line">mask = image &lt; 87</span><br><span class="line">image[mask]=255</span><br><span class="line">plt.imshow(image, cmap=&apos;gray&apos;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://opensource.com/sites/default/files/uploads/3-numpy.png" alt="NumPy" title="NumPy"></p>
+<h3 id="3、SciPy"><a href="#3、SciPy" class="headerlink" title="3、SciPy"></a>3、SciPy</h3><p>像 NumPy 一样，<a href="https://www.scipy.org/" target="_blank" rel="noopener">SciPy</a> 是 Python 的一个核心科学计算模块，也可以用于图像的基本操作和处理。尤其是 SciPy v1.1.0 中的  <a href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" target="_blank" rel="noopener">scipy.ndimage</a> 子模块，它提供了在 n 维 NumPy 数组上的运行的函数。SciPy 目前还提供了<ruby>线性和非线性滤波<rt>linear and non-linear filtering</rt></ruby>、<ruby>二值形态学<rt>binary morphology</rt></ruby>、<ruby>B 样条插值<rt>B-spline interpolation</rt></ruby>、<ruby>对象测量<rt>object measurements</rt></ruby>等方面的函数。</p>
+<h4 id="资源-2"><a href="#资源-2" class="headerlink" title="资源"></a>资源</h4><p>在<a href="https://docs.scipy.org/doc/scipy/reference/tutorial/ndimage.html#correlation-and-convolution" target="_blank" rel="noopener">官方文档</a>中可以查阅到 <code>scipy.ndimage</code> 的完整函数列表。</p>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h4><p>使用 SciPy 的<a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html" target="_blank" rel="noopener">高斯滤波</a>对图像进行模糊处理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from scipy import misc,ndimage</span><br><span class="line"></span><br><span class="line">face = misc.face()</span><br><span class="line">blurred_face = ndimage.gaussian_filter(face, sigma=3)</span><br><span class="line">very_blurred = ndimage.gaussian_filter(face, sigma=5)</span><br><span class="line"></span><br><span class="line">#Results</span><br><span class="line">plt.imshow(&lt;image to be displayed&gt;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://opensource.com/sites/default/files/uploads/4-scipy.png" alt="Using a Gaussian filter in SciPy" title="Using a Gaussian filter in SciPy"></p>
+<h3 id="4、PIL-Pillow"><a href="#4、PIL-Pillow" class="headerlink" title="4、PIL/Pillow"></a>4、PIL/Pillow</h3><p>PIL (Python Imaging Library) 是一个免费 Python 编程库，它提供了对多种格式图像文件的打开、编辑、保存的支持。但在 2009 年之后 PIL 就停止发布新版本了。幸运的是，还有一个 PIL 的积极开发的分支 <a href="https://python-pillow.org/" target="_blank" rel="noopener">Pillow</a>，它的安装过程比 PIL 更加简单，支持大部分主流的操作系统，并且还支持 Python 3。Pillow 包含了图像的基础处理功能，包括像素点操作、使用内置卷积内核进行滤波、颜色空间转换等等。</p>
+<h4 id="资源-3"><a href="#资源-3" class="headerlink" title="资源"></a>资源</h4><p>Pillow 的<a href="https://pillow.readthedocs.io/en/3.1.x/index.html" target="_blank" rel="noopener">官方文档</a>提供了 Pillow 的安装说明自己代码库中每一个模块的示例。</p>
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h4><p>使用 Pillow 中的 ImageFilter 模块实现图像增强：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image,ImageFilter</span><br><span class="line">#Read image</span><br><span class="line">im = Image.open(&apos;image.jpg&apos;)</span><br><span class="line">#Display image</span><br><span class="line">im.show()</span><br><span class="line"></span><br><span class="line">from PIL import ImageEnhance</span><br><span class="line">enh = ImageEnhance.Contrast(im)</span><br><span class="line">enh.enhance(1.8).show(&quot;30% more contrast&quot;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://opensource.com/sites/default/files/uploads/5-pillow.png" alt="Enhancing an image in Pillow using ImageFilter" title="Enhancing an image in Pillow using ImageFilter"></p>
+<ul>
+<li><a href="http://sipi.usc.edu/database/" target="_blank" rel="noopener">源码</a></li>
+</ul>
+<h3 id="5、OpenCV-Python"><a href="#5、OpenCV-Python" class="headerlink" title="5、OpenCV-Python"></a>5、OpenCV-Python</h3><p>OpenCV（Open Source Computer Vision 库）是计算机视觉领域最广泛使用的库之一，<a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_setup/py_intro/py_intro.html" target="_blank" rel="noopener">OpenCV-Python</a> 则是 OpenCV 的 Python API。OpenCV-Python 的运行速度很快，这归功于它使用 C/C++ 编写的后台代码，同时由于它使用了 Python 进行封装，因此调用和部署的难度也不大。这些优点让 OpenCV-Python 成为了计算密集型计算机视觉应用程序的一个不错的选择。</p>
+<h4 id="资源-4"><a href="#资源-4" class="headerlink" title="资源"></a>资源</h4><p>入门之前最好先阅读 <a href="https://github.com/abidrahmank/OpenCV2-Python-Tutorials" target="_blank" rel="noopener">OpenCV2-Python-Guide</a> 这份文档。</p>
+<h4 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h4><p>使用 OpenCV-Python 中的<ruby>金字塔融合<rt>Pyramid Blending</rt></ruby>将苹果和橘子融合到一起：</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/6-opencv.jpeg" alt="Image blending using Pyramids in OpenCV-Python" title="Image blending using Pyramids in OpenCV-Python"></p>
+<ul>
+<li><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_pyramids/py_pyramids.html#pyramids" target="_blank" rel="noopener">源码</a></li>
+</ul>
+<h3 id="6、SimpleCV"><a href="#6、SimpleCV" class="headerlink" title="6、SimpleCV"></a>6、SimpleCV</h3><p><a href="http://simplecv.org/" target="_blank" rel="noopener">SimpleCV</a> 是一个开源的计算机视觉框架。它支持包括 OpenCV 在内的一些高性能计算机视觉库，同时不需要去了解<ruby>位深度<rt>bit depth</rt></ruby>、文件格式、<ruby>色彩空间<rt>color space</rt></ruby>之类的概念，因此 SimpleCV 的学习曲线要比 OpenCV 平缓得多，正如它的口号所说，“将计算机视觉变得更简单”。SimpleCV 的优点还有：</p>
+<ul>
+<li>即使是刚刚接触计算机视觉的程序员也可以通过 SimpleCV 来实现一些简易的计算机视觉测试</li>
+<li>录像、视频文件、图像、视频流都在支持范围内</li>
+</ul>
+<h4 id="资源-5"><a href="#资源-5" class="headerlink" title="资源"></a>资源</h4><p><a href="http://examples.simplecv.org/en/latest/" target="_blank" rel="noopener">官方文档</a>简单易懂，同时也附有大量的学习用例。</p>
+<h4 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h4><p><img src="https://opensource.com/sites/default/files/uploads/7-_simplecv.png" alt="SimpleCV" title="SimpleCV"></p>
+<h3 id="7、Mahotas"><a href="#7、Mahotas" class="headerlink" title="7、Mahotas"></a>7、Mahotas</h3><p><a href="https://mahotas.readthedocs.io/en/latest/" target="_blank" rel="noopener">Mahotas</a> 是另一个 Python 图像处理和计算机视觉库。在图像处理方面，它支持滤波和形态学相关的操作；在计算机视觉方面，它也支持<ruby>特征计算<rt>feature computation</rt></ruby>、<ruby>兴趣点检测<rt>interest point detection</rt></ruby>、<ruby>局部描述符<rt>local descriptors</rt></ruby>等功能。Mahotas 的接口使用了 Python 进行编写，因此适合快速开发，而算法使用 C++ 实现，并针对速度进行了优化。Mahotas 尽可能做到代码量少和依赖项少，因此它的运算速度非常快。可以参考<a href="https://openresearchsoftware.metajnl.com/articles/10.5334/jors.ac/" target="_blank" rel="noopener">官方文档</a>了解更多详细信息。</p>
+<h4 id="资源-6"><a href="#资源-6" class="headerlink" title="资源"></a>资源</h4><p><a href="https://mahotas.readthedocs.io/en/latest/install.html" target="_blank" rel="noopener">文档</a>包含了安装介绍、示例以及一些 Mahotas 的入门教程。</p>
+<h4 id="示例-6"><a href="#示例-6" class="headerlink" title="示例"></a>示例</h4><p>Mahotas 力求使用少量的代码来实现功能。例如这个 <a href="https://blog.clarifai.com/wheres-waldo-using-machine-learning-to-find-all-the-waldos" target="_blank" rel="noopener">Finding Wally</a> 游戏：</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/8-mahotas.png" alt="Finding Wally problem in Mahotas" title="Finding Wally problem in Mahotas"></p>
+<p><img src="https://opensource.com/sites/default/files/uploads/9-mahotas.png" alt="Finding Wally problem in Mahotas" title="Finding Wally problem in Mahotas"></p>
+<ul>
+<li><a href="https://mahotas.readthedocs.io/en/latest/wally.html" target="_blank" rel="noopener">源码</a></li>
+</ul>
+<h3 id="8、SimpleITK"><a href="#8、SimpleITK" class="headerlink" title="8、SimpleITK"></a>8、SimpleITK</h3><p><a href="https://itk.org/" target="_blank" rel="noopener">ITK</a>（Insight Segmentation and Registration Toolkit）是一个为开发者提供普适性图像分析功能的开源、跨平台工具套件，<a href="http://www.simpleitk.org/" target="_blank" rel="noopener">SimpleITK</a> 则是基于 ITK 构建出来的一个简化层，旨在促进 ITK 在快速原型设计、教育、解释语言中的应用。SimpleITK 作为一个图像分析工具包，它也带有<a href="https://itk.org/ITK/resources/resources.html" target="_blank" rel="noopener">大量的组件</a>，可以支持常规的滤波、图像分割、<ruby>图像配准<rt>registration</rt></ruby>功能。尽管 SimpleITK 使用 C++ 编写，但它也支持包括 Python 在内的大部分编程语言。</p>
+<h4 id="资源-7"><a href="#资源-7" class="headerlink" title="资源"></a>资源</h4><p>有很多 <a href="http://insightsoftwareconsortium.github.io/SimpleITK-Notebooks/" target="_blank" rel="noopener">Jupyter Notebooks</a> 用例可以展示 SimpleITK 在教育和科研领域中的应用，通过这些用例可以看到如何使用 Python 和 R 利用 SimpleITK 来实现交互式图像分析。</p>
+<h4 id="示例-7"><a href="#示例-7" class="headerlink" title="示例"></a>示例</h4><p>使用 Python + SimpleITK 实现的 CT/MR 图像配准过程：</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/10-simpleitk.gif" alt="SimpleITK animation" title="SimpleITK animation"></p>
+<ul>
+<li><a href="https://github.com/InsightSoftwareConsortium/SimpleITK-Notebooks/blob/master/Utilities/intro_animation.py" target="_blank" rel="noopener">源码</a></li>
+</ul>
+<h3 id="9、pgmagick"><a href="#9、pgmagick" class="headerlink" title="9、pgmagick"></a>9、pgmagick</h3><p><a href="https://pypi.org/project/pgmagick/" target="_blank" rel="noopener">pgmagick</a> 是使用 Python 封装的 GraphicsMagick 库。<a href="http://www.graphicsmagick.org/" target="_blank" rel="noopener">GraphicsMagick</a> 通常被认为是图像处理界的瑞士军刀，因为它强大而又高效的工具包支持对多达 88 种主流格式图像文件的读写操作，包括 DPX、GIF、JPEG、JPEG-2000、PNG、PDF、PNM、TIFF 等等。</p>
+<h4 id="资源-8"><a href="#资源-8" class="headerlink" title="资源"></a>资源</h4><p>pgmagick 的 <a href="https://github.com/hhatto/pgmagick" target="_blank" rel="noopener">GitHub 仓库</a>中有相关的安装说明、依赖列表，以及详细的<a href="https://pgmagick.readthedocs.io/en/latest/" target="_blank" rel="noopener">使用指引</a>。</p>
+<h4 id="示例-8"><a href="#示例-8" class="headerlink" title="示例"></a>示例</h4><p>图像缩放：</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/11-pgmagick.png" alt="Image scaling in pgmagick" title="Image scaling in pgmagick"></p>
+<ul>
+<li><a href="https://pgmagick.readthedocs.io/en/latest/cookbook.html#scaling-a-jpeg-image" target="_blank" rel="noopener">源码</a></li>
+</ul>
+<p>边缘提取：</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/12-pgmagick.png" alt="Edge extraction in pgmagick" title="Edge extraction in pgmagick"></p>
+<ul>
+<li><a href="https://pgmagick.readthedocs.io/en/latest/cookbook.html#edge-extraction" target="_blank" rel="noopener">源码</a></li>
+</ul>
+<h3 id="10、Pycairo"><a href="#10、Pycairo" class="headerlink" title="10、Pycairo"></a>10、Pycairo</h3><p><a href="https://cairographics.org/" target="_blank" rel="noopener">Cairo</a> 是一个用于绘制矢量图的二维图形库，而 <a href="https://pypi.org/project/pycairo/" target="_blank" rel="noopener">Pycairo</a> 是用于 Cairo 的一组 Python 绑定。矢量图的优点在于做大小缩放的过程中不会丢失图像的清晰度。使用 Pycairo 可以在 Python 中调用 Cairo 的相关命令。</p>
+<h4 id="资源-9"><a href="#资源-9" class="headerlink" title="资源"></a>资源</h4><p>Pycairo 的 <a href="https://github.com/pygobject/pycairo" target="_blank" rel="noopener">GitHub 仓库</a>提供了关于安装和使用的详细说明，以及一份简要介绍 Pycairo 的<a href="https://pycairo.readthedocs.io/en/latest/tutorial.html" target="_blank" rel="noopener">入门指南</a>。</p>
+<h4 id="示例-9"><a href="#示例-9" class="headerlink" title="示例"></a>示例</h4><p>使用 Pycairo 绘制线段、基本图形、<ruby>径向渐变<rt>radial gradients</rt></ruby>：</p>
+<p><img src="https://opensource.com/sites/default/files/uploads/13-pycairo.png" alt="Pycairo" title="Pycairo"></p>
+<ul>
+<li><a href="http://zetcode.com/gfx/pycairo/basicdrawing/" target="_blank" rel="noopener">源码</a></li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上就是 Python 中的一些有用的图像处理库，无论你有没有听说过、有没有使用过，都值得试用一下并了解它们。</p>
+<hr>
+<p>via: <a href="https://opensource.com/article/19/3/python-image-manipulation-tools" target="_blank" rel="noopener">https://opensource.com/article/19/3/python-image-manipulation-tools</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.hankchow.net/2019/03/27/Building-tiny-container-images/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HankChow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HankChow's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/27/Building-tiny-container-images/" itemprop="url">如何打造更小巧的容器镜像</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-27T23:07:14+08:00">
+                2019-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>五种优化 Linux 容器大小和构建更小的镜像的方法。</p>
+</blockquote>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/containers_scale_performance.jpg?itok=R7jyMeQf" alt=""></p>
+<p><a href="https://www.docker.com/" target="_blank" rel="noopener">Docker</a> 近几年的爆炸性发展让大家逐渐了解到容器和容器镜像的概念。尽管 Linux 容器技术在很早之前就已经出现，但这项技术近来的蓬勃发展却还是要归功于 Docker 对用户友好的命令行界面以及使用 Dockerfile 格式轻松构建镜像的方式。纵然 Docker 大大降低了入门容器技术的难度，但构建一个兼具功能强大、体积小巧的容器镜像的过程中，有很多技巧需要了解。</p>
+<h3 id="第一步：清理不必要的文件"><a href="#第一步：清理不必要的文件" class="headerlink" title="第一步：清理不必要的文件"></a>第一步：清理不必要的文件</h3><p>这一步和在普通服务器上清理文件没有太大的区别，而且要清理得更加仔细。一个小体积的容器镜像在传输方面有很大的优势，同时，在磁盘上存储不必要的数据的多个副本也是对资源的一种浪费。因此，这些技术对于容器来说应该比有大量专用内存的服务器更加需要。</p>
+<p>清理容器镜像中的缓存文件可以有效缩小镜像体积。下面的对比是使用 <code>dnf</code> 安装 <a href="https://www.nginx.com/" target="_blank" rel="noopener">Nginx</a> 构建的镜像，分别是清理和没有清理 yum 缓存文件的结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># Dockerfile with cache</span><br><span class="line">FROM fedora:28</span><br><span class="line">LABEL maintainer Chris Collins &lt;collins.christopher@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">RUN dnf install -y nginx</span><br><span class="line"></span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line"># Dockerfile w/o cache</span><br><span class="line">FROM fedora:28</span><br><span class="line">LABEL maintainer Chris Collins &lt;collins.christopher@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">RUN dnf install -y nginx \</span><br><span class="line">        &amp;&amp; dnf clean all \</span><br><span class="line">        &amp;&amp; rm -rf /var/cache/yum</span><br><span class="line"></span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">[chris@krang] $ docker build -t cache -f Dockerfile .  </span><br><span class="line">[chris@krang] $ docker images --format &quot;&#123;&#123;.Repository&#125;&#125;: &#123;&#123;.Size&#125;&#125;&quot; </span><br><span class="line">| head -n 1</span><br><span class="line">cache: 464 MB</span><br><span class="line"></span><br><span class="line">[chris@krang] $ docker build -t no-cache -f Dockerfile-wo-cache .</span><br><span class="line">[chris@krang] $ docker images --format &quot;&#123;&#123;.Repository&#125;&#125;: &#123;&#123;.Size&#125;&#125;&quot;  | head -n 1</span><br><span class="line">no-cache: 271 MB</span><br></pre></td></tr></table></figure>
+<p>从上面的结果来看，清理缓存文件的效果相当显著。和清除了元数据和缓存文件的容器镜像相比，不清除的镜像体积接近前者的两倍。除此以外，包管理器缓存文件、Ruby gem 的临时文件、nodejs 缓存文件，甚至是下载的源码 tarball 最好都全部清理掉。</p>
+<h3 id="层：一个潜在的隐患"><a href="#层：一个潜在的隐患" class="headerlink" title="层：一个潜在的隐患"></a>层：一个潜在的隐患</h3><p>很不幸（当你往下读，你会发现这是不幸中的万幸），根据容器中的层的概念，不能简单地向 Dockerfile 中写一句 <code>RUN rm -rf /var/cache/yum</code> 就完事儿了。因为 Dockerfile 的每一条命令都以一个层的形式存储，并一层层地叠加。所以，如果你是这样写的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RUN dnf install -y nginx</span><br><span class="line">RUN dnf clean all</span><br><span class="line">RUN rm -rf /var/cache/yum</span><br></pre></td></tr></table></figure>
+<p>你的容器镜像就会包含三层，而 <code>RUN dnf install -y nginx</code> 这一层仍然会保留着那些缓存文件，然后在另外两层中被移除。但缓存实际上仍然是存在的，当你把一个文件系统挂载在另外一个文件系统之上时，文件仍然在那里，只不过你见不到也访问不到它们而已。</p>
+<p>在上一节的示例中，你会看到正确的做法是将几条命令链接起来，在产生缓存文件的同一条 Dockerfile 指令里把缓存文件清理掉：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RUN dnf install -y nginx \</span><br><span class="line">        &amp;&amp; dnf clean all \</span><br><span class="line">        &amp;&amp; rm -rf /var/cache/yum</span><br></pre></td></tr></table></figure>
+<p>这样就把几条命令连成了一条命令，在最终的镜像中只占用一个层。这样只会浪费一点缓存的好处，稍微多耗费一点点构建容器镜像的时间，但被清理掉的缓存文件就不会留存在最终的镜像中了。作为一个折衷方法，只需要把一些相关的命令（例如 <code>yum install</code> 和 <code>yum clean all</code>、下载文件、解压文件、移除 tarball 等等）连接成一个命令，就可以在最终的容器镜像中节省出大量体积，你也能够利用 Docker 的缓存加快开发速度。</p>
+<p>层还有一个更隐蔽的特性。每一层都记录了文件的更改，这里的更改并不仅仅已有的文件累加起来，而是包括文件属性在内的所有更改。因此即使是对文件使用了 <code>chmod</code> 操作也会被在新的层创建文件的副本。</p>
+<p>下面是一次 <code>docker images</code> 命令的输出内容。其中容器镜像 <code>layer_test_1</code> 是在 CentOS 基础镜像中增加了一个 1GB 大小的文件后构建出来的镜像，而容器镜像 <code>layer_test_2</code> 是使用了 <code>FROM layer_test_1</code> 语句创建出来的，除了执行一条 <code>chmod u+x</code> 命令没有做任何改变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">layer_test_2        latest       e11b5e58e2fc           7 seconds ago           2.35 GB</span><br><span class="line">layer_test_1        latest       6eca792a4ebe           2 minutes ago           1.27 GB</span><br></pre></td></tr></table></figure>
+<p>如你所见，<code>layer_test_2</code> 镜像比 <code>layer_test_1</code> 镜像大了 1GB 以上。尽管事实上 <code>layer_test_1</code> 只是 <code>layer_test_2</code> 的前一层，但隐藏在这第二层中有一个额外的 1GB 的文件。在构建容器镜像的过程中，如果在单独一层中进行移动、更改、删除文件，都会出现类似的结果。</p>
+<h3 id="专用镜像和公用镜像"><a href="#专用镜像和公用镜像" class="headerlink" title="专用镜像和公用镜像"></a>专用镜像和公用镜像</h3><p>有这么一个亲身经历：我们部门重度依赖于 <a href="https://rubyonrails.org/" target="_blank" rel="noopener">Ruby on Rails</a>，于是我们开始使用容器。一开始我们就建立了一个正式的 Ruby 的基础镜像供所有的团队使用，为了简单起见（以及在“这就是我们自己在服务器上瞎鼓捣的”想法的指导下），我们使用 <a href="https://github.com/rbenv/rbenv" target="_blank" rel="noopener">rbenv</a> 将 Ruby 最新的 4 个版本都安装到了这个镜像当中，目的是让开发人员只用这个单一的镜像就可以将使用不同版本 Ruby 的应用程序迁移到容器中。我们当时还认为这是一个虽然非常大但兼容性相当好的镜像，因为这个镜像可以同时满足各个团队的使用。</p>
+<p>实际上这是费力不讨好的。如果维护独立的、版本略微不同的镜像中，可以很轻松地实现镜像的自动化维护。同时，选择特定版本的特定镜像，还有助于在引入破坏性改变，在应用程序接近生命周期结束前提前做好预防措施，以免产生不可控的后果。庞大的公用镜像也会对资源造成浪费，当我们后来将这个庞大的镜像按照 Ruby 版本进行拆分之后，我们最终得到了共享一个基础镜像的多个镜像，如果它们都放在一个服务器上，会额外多占用一点空间，但是要比安装了多个版本的巨型镜像要小得多。</p>
+<p>这个例子也不是说构建一个灵活的镜像是没用的，但仅对于这个例子来说，从一个公共镜像创建根据用途而构建的镜像最终将节省存储资源和维护成本，而在受益于公共基础镜像的好处的同时，每个团队也能够根据需要来做定制化的配置。</p>
+<h3 id="从零开始：将你需要的内容添加到空白镜像中"><a href="#从零开始：将你需要的内容添加到空白镜像中" class="headerlink" title="从零开始：将你需要的内容添加到空白镜像中"></a>从零开始：将你需要的内容添加到空白镜像中</h3><p>有一些和 Dockerfile 一样易用的工具可以轻松创建非常小的兼容 Docker 的容器镜像，这些镜像甚至不需要包含一个完整的操作系统，就可以像标准的 Docker 基础镜像一样小。</p>
+<p>我曾经写过一篇<a href="https://opensource.com/article/18/6/getting-started-buildah" target="_blank" rel="noopener">关于 Buildah 的文章</a>，我想在这里再一次推荐一下这个工具。因为它足够的灵活，可以使用宿主机上的工具来操作一个空白镜像并安装打包好的应用程序，而且这些工具不会被包含到镜像当中。</p>
+<p>Buildah 取代了 <code>docker build</code> 命令。可以使用 Buildah 将容器的文件系统挂载到宿主机上并进行交互。</p>
+<p>下面来使用 Buildah 实现上文中 Nginx 的例子（现在忽略了缓存的处理）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">set -o errexit</span><br><span class="line"></span><br><span class="line"># Create a container</span><br><span class="line">container=$(buildah from scratch)</span><br><span class="line"></span><br><span class="line"># Mount the container filesystem</span><br><span class="line">mountpoint=$(buildah mount $container)</span><br><span class="line"></span><br><span class="line"># Install a basic filesystem and minimal set of packages, and nginx</span><br><span class="line">dnf install --installroot $mountpoint  --releasever 28 glibc-minimal-langpack nginx --setopt install_weak_deps=false -y</span><br><span class="line"></span><br><span class="line"># Save the container to an image</span><br><span class="line">buildah commit --format docker $container nginx</span><br><span class="line"></span><br><span class="line"># Cleanup</span><br><span class="line">buildah unmount $container</span><br><span class="line"></span><br><span class="line"># Push the image to the Docker daemon’s storage</span><br><span class="line">buildah push nginx:latest docker-daemon:nginx:latest</span><br></pre></td></tr></table></figure>
+<p>你会发现这里使用的已经不再是 Dockerfile 了，而是普通的 Bash 脚本，而且是从框架（或空白）镜像开始构建的。上面这段 Bash 脚本将容器的根文件系统挂载到了宿主机上，然后使用宿主机的命令来安装应用程序，这样的话就不需要把软件包管理器放置到容器镜像中了。</p>
+<p>这样所有无关的内容（基础镜像之外的部分，例如 <code>dnf</code>）就不再会包含在镜像中了。在这个例子当中，构建出来的镜像大小只有 304 MB，比使用 Dockerfile 构建的镜像减少了 100 MB 以上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[chris@krang] $ docker images |grep nginx</span><br><span class="line">docker.io/nginx      buildah      2505d3597457    4 minutes ago         304 MB</span><br></pre></td></tr></table></figure>
+<p>注：这个镜像是使用上面的构建脚本构建的，镜像名称中前缀的 <code>docker.io</code> 只是在推送到镜像仓库时加上的。</p>
+<p>对于一个 300MB 级别的容器基础镜像来说，能缩小 100MB 已经是很显著的节省了。使用软件包管理器来安装 Nginx 会带来大量的依赖项，如果能够使用宿主机直接从源代码对应用程序进行编译然后构建到容器镜像中，节省出来的空间还可以更多，因为这个时候可以精细的选用必要的依赖项，非必要的依赖项一概不构建到镜像中。</p>
+<p><a href="https://twitter.com/TSweeneyRedHat" target="_blank" rel="noopener">Tom Sweeney</a> 有一篇文章《<a href="https://opensource.com/article/18/5/containers-buildah" target="_blank" rel="noopener">用 Buildah 构建更小的容器</a>》，如果你想在这方面做深入的优化，不妨参考一下。</p>
+<p>通过 Buildah 可以构建一个不包含完整操作系统和代码编译工具的容器镜像，大幅缩减了容器镜像的体积。对于某些类型的镜像，我们可以进一步采用这种方式，创建一个只包含应用程序本身的镜像。</p>
+<h3 id="使用静态链接的二进制文件来构建镜像"><a href="#使用静态链接的二进制文件来构建镜像" class="headerlink" title="使用静态链接的二进制文件来构建镜像"></a>使用静态链接的二进制文件来构建镜像</h3><p>按照这个思路，我们甚至可以更进一步舍弃容器内部的管理和构建工具。例如，如果我们足够专业，不需要在容器中进行排错调试，是不是可以不要 Bash 了？是不是可以不要 <a href="https://www.gnu.org/software/coreutils/coreutils.html" target="_blank" rel="noopener">GNU 核心套件</a>了？是不是可以不要 Linux 基础文件系统了？如果你使用的编译型语言支持<a href="https://en.wikipedia.org/wiki/Static_library" target="_blank" rel="noopener">静态链接库</a>，将应用程序所需要的所有库和函数都编译成二进制文件，那么程序所需要的函数和库都可以复制和存储在二进制文件本身里面。</p>
+<p>这种做法在 <a href="https://golang.org/" target="_blank" rel="noopener">Golang</a> 社区中已经十分常见，下面我们使用由 Go 语言编写的应用程序进行展示：</p>
+<p>以下这个 Dockerfile 基于 golang:1.8 镜像构建一个小的 Hello World 应用程序镜像：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">FROM golang:1.8</span><br><span class="line"></span><br><span class="line">ENV GOOS=linux</span><br><span class="line">ENV appdir=/go/src/gohelloworld</span><br><span class="line"></span><br><span class="line">COPY ./ /go/src/goHelloWorld</span><br><span class="line">WORKDIR /go/src/goHelloWorld</span><br><span class="line"></span><br><span class="line">RUN go get</span><br><span class="line">RUN go build -o /goHelloWorld -a</span><br><span class="line"></span><br><span class="line">CMD [&quot;/goHelloWorld&quot;]</span><br></pre></td></tr></table></figure>
+<p>构建出来的镜像中包含了二进制文件、源代码以及基础镜像层，一共 716MB。但对于应用程序运行唯一必要的只有编译后的二进制文件，其余内容在镜像中都是多余的。</p>
+<p>如果在编译的时候通过指定参数 <code>CGO_ENABLED=0</code> 来禁用 <code>cgo</code>，就可以在编译二进制文件的时候忽略某些函数的 C 语言库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GOOS=linux CGO_ENABLED=0 go build -a goHelloWorld.go</span><br></pre></td></tr></table></figure>
+<p>编译出来的二进制文件可以加到一个空白（或框架）镜像：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FROM scratch</span><br><span class="line">COPY goHelloWorld /</span><br><span class="line">CMD [&quot;/goHelloWorld&quot;]</span><br></pre></td></tr></table></figure>
+<p>来看一下两次构建的镜像对比：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ chris@krang ] $ docker images</span><br><span class="line">REPOSITORY      TAG             IMAGE ID                CREATED                 SIZE</span><br><span class="line">goHello     scratch     a5881650d6e9            13 seconds ago          1.55 MB</span><br><span class="line">goHello     builder     980290a100db            14 seconds ago          716 MB</span><br></pre></td></tr></table></figure>
+<p>从镜像体积来说简直是天差地别了。基于 golang:1.8 镜像构建出来带有 goHelloWorld 二进制的镜像（带有 <code>builder</code> 标签）体积是基于空白镜像构建的只包含该二进制文件的镜像的 460 倍！后者的整个镜像大小只有 1.55MB，也就是说，有 713MB 的数据都是非必要的。</p>
+<p>正如上面提到的，这种缩减镜像体积的方式在 Golang 社区非常流行，因此不乏这方面的文章。<a href="https://twitter.com/kelseyhightower" target="_blank" rel="noopener">Kelsey Hightower</a> 有一篇<a href="https://medium.com/@kelseyhightower/optimizing-docker-images-for-static-binaries-b5696e26eb07" target="_blank" rel="noopener">文章</a>专门介绍了如何处理这些库的依赖关系。</p>
+<h3 id="压缩镜像层"><a href="#压缩镜像层" class="headerlink" title="压缩镜像层"></a>压缩镜像层</h3><p>除了前面几节中讲到的将多个命令链接成一个命令的技巧，还可以对镜像进行压缩。镜像压缩的实质是导出它，删除掉镜像构建过程中的所有中间层，然后保存镜像的当前状态为单个镜像层。这样可以进一步将镜像缩小到更小的体积。</p>
+<p>在 Docker 1.13 之前，压缩镜像层的的过程可能比较麻烦，需要用到 <code>docker-squash</code> 之类的工具来导出容器的内容并重新导入成一个单层的镜像。但 Docker 在 Docker 1.13 中引入了 <code>--squash</code> 参数，可以在构建过程中实现同样的功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">FROM fedora:28</span><br><span class="line">LABEL maintainer Chris Collins &lt;collins.christopher@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">RUN dnf install -y nginx</span><br><span class="line">RUN dnf clean all</span><br><span class="line">RUN rm -rf /var/cache/yum</span><br><span class="line"></span><br><span class="line">[chris@krang] $ docker build -t squash -f Dockerfile-squash --squash .</span><br><span class="line">[chris@krang] $ docker images --format &quot;&#123;&#123;.Repository&#125;&#125;: &#123;&#123;.Size&#125;&#125;&quot;  | head -n 1</span><br><span class="line">squash: 271 MB</span><br></pre></td></tr></table></figure>
+<p>通过这种方式使用 Dockerfile 构建出来的镜像有 271MB 大小，和上面连接多条命令的方案构建出来的镜像体积一样，因此这个方案也是有效的，但也有一个潜在的问题，而且是另一种问题。</p>
+<p>“什么？还有另外的问题？”</p>
+<p>好吧，有点像以前一样的问题，以另一种方式引发了问题。</p>
+<h3 id="过头了：过度压缩、太小太专用了"><a href="#过头了：过度压缩、太小太专用了" class="headerlink" title="过头了：过度压缩、太小太专用了"></a>过头了：过度压缩、太小太专用了</h3><p>容器镜像之间可以共享镜像层。基础镜像或许大小上有几 Mb，但它只需要拉取/存储一次，并且每个镜像都能复用它。所有共享基础镜像的实际镜像大小是基础镜像层加上每个特定改变的层的差异内容，因此，如果有数千个基于同一个基础镜像的容器镜像，其体积之和也有可能只比一个基础镜像大不了多少。</p>
+<p>因此，这就是过度使用压缩或专用镜像层的缺点。将不同镜像压缩成单个镜像层，各个容器镜像之间就没有可以共享的镜像层了，每个容器镜像都会占有单独的体积。如果你只需要维护少数几个容器镜像来运行很多容器，这个问题可以忽略不计；但如果你要维护的容器镜像很多，从长远来看，就会耗费大量的存储空间。</p>
+<p>回顾上面 Nginx 压缩的例子，我们能看出来这种情况并不是什么大的问题。在这个镜像中，有 Fedora 操作系统和 Nginx 应用程序，没有缓存，并且已经被压缩。但我们一般不会使用一个原始的 Nginx，而是会修改配置文件，以及引入其它代码或应用程序来配合 Nginx 使用，而要做到这些，Dockerfile 就变得更加复杂了。</p>
+<p>如果使用普通的镜像构建方式，构建出来的容器镜像就会带有 Fedora 操作系统的镜像层、一个安装了 Nginx 的镜像层（带或不带缓存）、为 Nginx 作自定义配置的其它多个镜像层，而如果有其它容器镜像需要用到 Fedora 或者 Nginx，就可以复用这个容器镜像的前两层。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[   App 1 Layer (  5 MB) ]          [   App 2 Layer (6 MB) ]</span><br><span class="line">[   Nginx Layer ( 21 MB) ] ------------------^</span><br><span class="line">[ Fedora  Layer (249 MB) ]</span><br></pre></td></tr></table></figure>
+<p>如果使用压缩镜像层的构建方式，Fedora 操作系统会和 Nginx 以及其它配置内容都被压缩到同一层里面，如果有其它容器镜像需要使用到 Fedora，就必须重新引入 Fedora 基础镜像，这样每个容器镜像都会额外增加 249MB 的大小。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ Fedora + Nginx + App 1 (275 MB)]      [ Fedora + Nginx + App 2 (276 MB) ]</span><br></pre></td></tr></table></figure>
+<p>当你构建了大量在功能上趋于分化的的小型容器镜像时，这个问题就会暴露出来了。</p>
+<p>就像生活中的每一件事一样，关键是要做到适度。根据镜像层的实现原理，如果一个容器镜像变得越小、越专用化，就越难和其它容器镜像共享基础的镜像层，这样反而带来不好的效果。</p>
+<p>对于仅在基础镜像上做微小变动构建出来的多个容器镜像，可以考虑共享基础镜像层。如上所述，一个镜像层本身会带有一定的体积，但只要存在于镜像仓库中，就可以被其它容器镜像复用。这种情况下，数千个镜像也许要比单个镜像占用更少的空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[ specific app   ]      [ specific app 2 ]</span><br><span class="line">[ customizations ]--------------^</span><br><span class="line">[ base layer     ]</span><br></pre></td></tr></table></figure>
+<p>一个容器镜像变得越小、越专用化，就越难和其它容器镜像共享基础的镜像层，最终会不必要地占用越来越多的存储空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ specific app 1 ]     [ specific app 2 ]      [ specific app 3 ]</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>减少处理容器镜像时所需的存储空间和带宽的方法有很多，其中最直接的方法就是减小容器镜像本身的大小。在使用容器的过程中，要经常留意容器镜像是否体积过大，根据不同的情况采用上述提到的清理缓存、压缩到一层、将二进制文件加入在空白镜像中等不同的方法，将容器镜像的体积缩减到一个有效的大小。</p>
+<hr>
+<p>via: <a href="https://opensource.com/article/18/7/building-container-images" target="_blank" rel="noopener">https://opensource.com/article/18/7/building-container-images</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="HankChow">
+            
+              <p class="site-author-name" itemprop="name">HankChow</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HankChow" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HankZC" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-home"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HankChow</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">111.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
